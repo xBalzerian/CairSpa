@@ -41,32 +41,83 @@
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       }
-      /* Phoenix logo styling */
-      #phoenix-logo {
+      /* Logo container styling */
+      #cairspa-logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      #logo-box {
+        width: 55px;
+        height: 55px;
+        background-color: #8B1538;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+      }
+      #logo-box img {
         width: 40px;
         height: 40px;
-        margin-right: 12px;
-        vertical-align: middle;
-        display: inline-block;
+        object-fit: contain;
+      }
+      #logo-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+      #logo-text .brand-name {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 28px;
+        font-weight: 500;
+        color: inherit;
+        letter-spacing: 0.1em;
+      }
+      #logo-text .brand-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        color: #8B1538;
+        text-transform: uppercase;
+        margin-top: 2px;
       }
     </style>
     
     <script type="module" crossorigin="" src="./assets/index-i-WX4XLI.js"></script>
     <link rel="stylesheet" crossorigin="" href="./assets/index-BTwSc0Ro.css"/>
     
-    <!-- Inject Phoenix Logo into Header -->
+    <!-- Fix Header Logo -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
-          var logoText = document.querySelector('nav .font-serif') || document.querySelector('header .font-serif') || document.querySelector('.text-white.font-serif');
-          if (logoText && !document.getElementById('phoenix-logo')) {
-            var logoImg = document.createElement('img');
-            logoImg.id = 'phoenix-logo';
-            logoImg.src = './images/logo-phoenix.png';
-            logoImg.alt = 'CAIR SPA';
-            logoText.parentNode.insertBefore(logoImg, logoText);
+          // Find the header logo area
+          var headerLogo = document.querySelector('nav a[href="/"]') || 
+                           document.querySelector('header a[href="/"]') ||
+                           document.querySelector('.text-white.font-serif') ||
+                           document.querySelector('nav h1, header h1');
+          
+          if (headerLogo && !document.getElementById('cairspa-logo-container')) {
+            // Create new logo HTML
+            var logoContainer = document.createElement('div');
+            logoContainer.id = 'cairspa-logo-container';
+            logoContainer.innerHTML = `
+              <div id="logo-box">
+                <img src="./images/logo-phoenix.png" alt="CAIR SPA">
+              </div>
+              <div id="logo-text">
+                <span class="brand-name">CAIR SPA</span>
+                <span class="brand-subtitle">MEDICAL SPA</span>
+              </div>
+            `;
+            
+            // Replace or insert
+            if (headerLogo.parentNode) {
+              headerLogo.style.display = 'none'; // Hide original
+              headerLogo.parentNode.insertBefore(logoContainer, headerLogo);
+            }
           }
-        }, 800);
+        }, 1000);
       });
     </script>
   <script src="https://www.kimi.com/sdk-seed.js" defer=""></script></head>
