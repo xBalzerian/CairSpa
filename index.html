@@ -42,15 +42,33 @@
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       }
       /* Phoenix logo styling */
-      .logo-phoenix {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
+      #phoenix-logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+        vertical-align: middle;
+        display: inline-block;
       }
     </style>
     
     <script type="module" crossorigin="" src="./assets/index-i-WX4XLI.js"></script>
     <link rel="stylesheet" crossorigin="" href="./assets/index-BTwSc0Ro.css"/>
+    
+    <!-- Inject Phoenix Logo into Header -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var logoText = document.querySelector('nav .font-serif') || document.querySelector('header .font-serif') || document.querySelector('.text-white.font-serif');
+          if (logoText && !document.getElementById('phoenix-logo')) {
+            var logoImg = document.createElement('img');
+            logoImg.id = 'phoenix-logo';
+            logoImg.src = './images/logo-phoenix.png';
+            logoImg.alt = 'CAIR SPA';
+            logoText.parentNode.insertBefore(logoImg, logoText);
+          }
+        }, 800);
+      });
+    </script>
   <script src="https://www.kimi.com/sdk-seed.js" defer=""></script></head>
   <body>
     <div id="root"></div>
