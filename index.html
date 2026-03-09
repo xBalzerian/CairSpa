@@ -27,7 +27,7 @@
     
     <title>CAIR SPA - Medical Spa Huntington Beach | Orange County</title>
     
-    <!-- Elegant Serif Headers - Normal (not italic) -->
+    <!-- Elegant Serif Headers -->
     <style>
       h1, h2, h3, .font-serif {
         font-family: 'Cormorant Garamond', Georgia, serif !important;
@@ -41,11 +41,11 @@
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       }
-      /* Logo container styling */
-      #cairspa-logo-container {
-        display: flex;
-        align-items: center;
-        gap: 15px;
+      /* Logo styling - hide original, show new */
+      #cairspa-logo-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        gap: 15px !important;
       }
       #logo-box {
         width: 55px;
@@ -66,14 +66,13 @@
         flex-direction: column;
         line-height: 1.1;
       }
-      #logo-text .brand-name {
+      .brand-name {
         font-family: 'Cormorant Garamond', Georgia, serif;
         font-size: 28px;
         font-weight: 500;
-        color: inherit;
         letter-spacing: 0.1em;
       }
-      #logo-text .brand-subtitle {
+      .brand-subtitle {
         font-family: 'Inter', sans-serif;
         font-size: 11px;
         font-weight: 500;
@@ -82,42 +81,49 @@
         text-transform: uppercase;
         margin-top: 2px;
       }
+      /* Hide original logos */
+      .original-logo, .old-logo {
+        display: none !important;
+      }
     </style>
     
     <script type="module" crossorigin="" src="./assets/index-i-WX4XLI.js"></script>
     <link rel="stylesheet" crossorigin="" href="./assets/index-BTwSc0Ro.css"/>
     
-    <!-- Fix Header Logo -->
+    <!-- Fix Header Logo - Remove Duplicates -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
-          // Find the header logo area
-          var headerLogo = document.querySelector('nav a[href="/"]') || 
-                           document.querySelector('header a[href="/"]') ||
-                           document.querySelector('.text-white.font-serif') ||
-                           document.querySelector('nav h1, header h1');
+          // Find all logo elements
+          var navLinks = document.querySelectorAll('nav a, header a');
+          var logoFound = false;
           
-          if (headerLogo && !document.getElementById('cairspa-logo-container')) {
-            // Create new logo HTML
-            var logoContainer = document.createElement('div');
-            logoContainer.id = 'cairspa-logo-container';
-            logoContainer.innerHTML = `
-              <div id="logo-box">
-                <img src="./images/logo-phoenix.png" alt="CAIR SPA">
-              </div>
-              <div id="logo-text">
-                <span class="brand-name">CAIR SPA</span>
-                <span class="brand-subtitle">MEDICAL SPA</span>
-              </div>
-            `;
+          navLinks.forEach(function(link) {
+            // Check if this is a logo link
+            var hasLogoText = link.textContent.includes('CAIR') || 
+                              link.querySelector('.font-serif') ||
+                              link.querySelector('svg');
             
-            // Replace or insert
-            if (headerLogo.parentNode) {
-              headerLogo.style.display = 'none'; // Hide original
-              headerLogo.parentNode.insertBefore(logoContainer, headerLogo);
+            if (hasLogoText && !link.querySelector('#cairspa-logo-wrapper') && !logoFound) {
+              // Replace with new logo
+              link.innerHTML = `
+                <div id="cairspa-logo-wrapper">
+                  <div id="logo-box">
+                    <img src="./images/logo-phoenix.png" alt="CAIR SPA">
+                  </div>
+                  <div id="logo-text">
+                    <span class="brand-name">CAIR SPA</span>
+                    <span class="brand-subtitle">MEDICAL SPA</span>
+                  </div>
+                </div>
+              `;
+              logoFound = true;
+            } else if (hasLogoText) {
+              // Hide duplicate logos
+              link.style.display = 'none';
             }
-          }
-        }, 1000);
+          });
+        }, 1200);
       });
     </script>
   <script src="https://www.kimi.com/sdk-seed.js" defer=""></script></head>
