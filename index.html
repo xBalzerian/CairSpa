@@ -68,188 +68,18 @@
     
     <title>CAIR SPA - Medical Spa Huntington Beach | Orange County</title>
     
-    <!-- Elegant Serif Headers + Book Now Button -->
+    <!-- CSS ONLY - No JavaScript modifications -->
     <style>
       h1, h2, h3, .font-serif {
         font-family: 'Cormorant Garamond', Georgia, serif !important;
-        font-style: normal;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-      }
-      h1 {
-        font-weight: 600;
       }
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      }
-      /* Logo styling */
-      #cairspa-logo-wrapper {
-        display: flex !important;
-        align-items: center !important;
-        gap: 15px !important;
-      }
-      #logo-box {
-        width: 55px;
-        height: 55px;
-        background-color: #8B1538;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 2px;
-      }
-      #logo-box img {
-        width: 40px;
-        height: 40px;
-        object-fit: contain;
-      }
-      #logo-text {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.1;
-      }
-      .brand-name {
-        font-family: 'Cormorant Garamond', Georgia, serif;
-        font-size: 28px;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-      }
-      .brand-subtitle {
-        font-family: 'Inter', sans-serif;
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.25em;
-        color: #8B1538;
-        text-transform: uppercase;
-        margin-top: 2px;
-      }
-      /* Book Now Button */
-      .book-now-btn {
-        background-color: #8B1538 !important;
-        color: white !important;
-        padding: 12px 24px !important;
-        border-radius: 30px !important;
-        text-decoration: none !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 500 !important;
-        font-size: 14px !important;
-        letter-spacing: 0.5px !important;
-        transition: all 0.3s ease !important;
-        border: none !important;
-        cursor: pointer !important;
-      }
-      .book-now-btn:hover {
-        background-color: #A91D3A !important;
-      }
-      .book-now-btn svg {
-        width: 16px;
-        height: 16px;
       }
     </style>
     
     <script type="module" crossorigin="" src="./assets/index-i-WX4XLI.js"></script>
     <link rel="stylesheet" crossorigin="" href="./assets/index-BTwSc0Ro.css"/>
-    
-    <!-- Fix Header: Logo + Book Now Button + Address Fix -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          // Find the navigation
-          var nav = document.querySelector('nav') || document.querySelector('header');
-          var navLinks = document.querySelectorAll('nav a, header a');
-          var logoFound = false;
-          
-          // Replace logo
-          navLinks.forEach(function(link) {
-            var hasLogoText = link.textContent.includes('CAIR') || 
-                              link.querySelector('.font-serif') ||
-                              link.querySelector('svg');
-            
-            if (hasLogoText && !link.querySelector('#cairspa-logo-wrapper') && !logoFound) {
-              link.innerHTML = `
-                <div id="cairspa-logo-wrapper">
-                  <div id="logo-box">
-                    <img src="./images/logo-phoenix.png" alt="CAIR SPA">
-                  </div>
-                  <div id="logo-text">
-                    <span class="brand-name">CAIR SPA</span>
-                    <span class="brand-subtitle">MEDICAL SPA</span>
-                  </div>
-                </div>
-              `;
-              logoFound = true;
-            } else if (hasLogoText && logoFound) {
-              link.style.display = 'none';
-            }
-          });
-          
-          // Add Book Now button if not exists
-          if (nav && !document.getElementById('nav-book-btn')) {
-            var bookBtn = document.createElement('a');
-            bookBtn.id = 'nav-book-btn';
-            bookBtn.href = '/contact';
-            bookBtn.className = 'book-now-btn';
-            bookBtn.innerHTML = `
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Book Now
-            `;
-            nav.appendChild(bookBtn);
-          }
-          
-          // Fix Suite Number: 117 → 115
-          function fixSuiteNumber() {
-            var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-            var node;
-            while (node = walker.nextNode()) {
-              if (node.nodeValue.includes('Ste 117') || node.nodeValue.includes('Suite 117') || node.nodeValue.includes('#117')) {
-                node.nodeValue = node.nodeValue.replace(/Ste 117/g, 'Ste 115').replace(/Suite 117/g, 'Suite 115').replace(/#117/g, '#115');
-              }
-            }
-          }
-          fixSuiteNumber();
-          
-          // Fix Footer Links - Privacy Policy, Terms, Gallery, Blog
-          var footerLinks = document.querySelectorAll('footer a, [class*="footer"] a, a[href="#"]');
-          footerLinks.forEach(function(link) {
-            var text = link.textContent.toLowerCase().trim();
-            var href = link.getAttribute('href');
-            
-            if (text.includes('privacy') && href === '#') {
-              link.setAttribute('href', '/privacy-policy.html');
-            }
-            if ((text.includes('terms') || text.includes('terms of service')) && href === '#') {
-              link.setAttribute('href', '/terms-of-service.html');
-            }
-            if (text.includes('gallery') && href === '#') {
-              link.style.display = 'none'; // Hide until Gallery page is created
-            }
-            if (text.includes('blog') && href === '#') {
-              link.style.display = 'none'; // Hide until Blog is created
-            }
-          });
-          
-          // Hide social media icons that link to # (placeholder)
-          var socialLinks = document.querySelectorAll('a[href="#"]');
-          socialLinks.forEach(function(link) {
-            var parent = link.parentElement;
-            var grandparent = parent ? parent.parentElement : null;
-            // Check if it's likely a social icon (small image, icon class, etc.)
-            if (link.querySelector('img, svg, i') || parent.className.toLowerCase().includes('social')) {
-              link.style.display = 'none';
-            }
-          });
-          
-          // Also check for dynamically loaded content
-          setTimeout(fixSuiteNumber, 2000);
-          setTimeout(fixSuiteNumber, 5000);
-          
-        }, 1200);
-      });
-    </script>
   </head>
   <body>
     <div id="root"></div>
