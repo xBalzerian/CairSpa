@@ -5,6 +5,47 @@
     <meta name="keywords" content="medical spa Huntington Beach, dermal fillers, Hydrafacial, skin rejuvenation, RF microneedling, IV therapy, weight loss injections, Orange County med spa"/>
     <meta name="author" content="CAIR SPA"/>
     <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://cair-spa.vercel.app/"/>
+    
+    <!-- LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "CAIR SPA",
+      "alternateName": "Comprehensive Aesthetic Integrative Regeneration Spa",
+      "description": "Premier medical spa in Huntington Beach offering dermal fillers, Hydrafacial, RF microneedling, IV therapy, and advanced aesthetic treatments.",
+      "url": "https://cair-spa.vercel.app",
+      "telephone": "+1-949-688-5898",
+      "email": "CAIRmedspa@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "20951 Brookhurst St, Ste 115",
+        "addressLocality": "Huntington Beach",
+        "addressRegion": "CA",
+        "postalCode": "92646",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.6784,
+        "longitude": -117.9988
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$$",
+      "paymentAccepted": "Cash, Credit Card, Debit Card",
+      "areaServed": ["Huntington Beach", "Costa Mesa", "Newport Beach", "Orange County"],
+      "serviceType": ["Dermal Fillers", "Hydrafacial", "RF Microneedling", "Thread Lift", "IV Infusions", "Skin Rejuvenation", "Vein Treatment", "Weight Loss Injections"],
+      "image": "https://cair-spa.vercel.app/images/logo-phoenix.png"
+    }
+    </script>
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website"/>
@@ -111,7 +152,7 @@
     <script type="module" crossorigin="" src="./assets/index-i-WX4XLI.js"></script>
     <link rel="stylesheet" crossorigin="" href="./assets/index-BTwSc0Ro.css"/>
     
-    <!-- Fix Header: Logo + Book Now Button -->
+    <!-- Fix Header: Logo + Book Now Button + Address Fix -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
@@ -158,10 +199,58 @@
             `;
             nav.appendChild(bookBtn);
           }
+          
+          // Fix Suite Number: 117 → 115
+          function fixSuiteNumber() {
+            var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+            var node;
+            while (node = walker.nextNode()) {
+              if (node.nodeValue.includes('Ste 117') || node.nodeValue.includes('Suite 117') || node.nodeValue.includes('#117')) {
+                node.nodeValue = node.nodeValue.replace(/Ste 117/g, 'Ste 115').replace(/Suite 117/g, 'Suite 115').replace(/#117/g, '#115');
+              }
+            }
+          }
+          fixSuiteNumber();
+          
+          // Fix Footer Links - Privacy Policy, Terms, Gallery, Blog
+          var footerLinks = document.querySelectorAll('footer a, [class*="footer"] a, a[href="#"]');
+          footerLinks.forEach(function(link) {
+            var text = link.textContent.toLowerCase().trim();
+            var href = link.getAttribute('href');
+            
+            if (text.includes('privacy') && href === '#') {
+              link.setAttribute('href', '/privacy-policy.html');
+            }
+            if ((text.includes('terms') || text.includes('terms of service')) && href === '#') {
+              link.setAttribute('href', '/terms-of-service.html');
+            }
+            if (text.includes('gallery') && href === '#') {
+              link.style.display = 'none'; // Hide until Gallery page is created
+            }
+            if (text.includes('blog') && href === '#') {
+              link.style.display = 'none'; // Hide until Blog is created
+            }
+          });
+          
+          // Hide social media icons that link to # (placeholder)
+          var socialLinks = document.querySelectorAll('a[href="#"]');
+          socialLinks.forEach(function(link) {
+            var parent = link.parentElement;
+            var grandparent = parent ? parent.parentElement : null;
+            // Check if it's likely a social icon (small image, icon class, etc.)
+            if (link.querySelector('img, svg, i') || parent.className.toLowerCase().includes('social')) {
+              link.style.display = 'none';
+            }
+          });
+          
+          // Also check for dynamically loaded content
+          setTimeout(fixSuiteNumber, 2000);
+          setTimeout(fixSuiteNumber, 5000);
+          
         }, 1200);
       });
     </script>
-  <script src="https://www.kimi.com/sdk-seed.js" defer=""></script></head>
+  </head>
   <body>
     <div id="root"></div>
   </body>
