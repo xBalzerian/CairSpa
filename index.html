@@ -76,6 +76,39 @@
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       }
+      
+      /* Hide the old "C" logo and show phoenix logo */
+      nav a[href="/"] > div:first-child,
+      header a[href="/"] > div:first-child,
+      a[href="/"] .w-10.h-10,
+      a[href="/"] .w-12.h-12,
+      .logo-container,
+      nav .flex.items-center > a > div {
+        background-image: url('./images/logo-phoenix.png') !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        color: transparent !important;
+        overflow: hidden !important;
+      }
+      
+      nav a[href="/"] > div:first-child *,
+      header a[href="/"] > div:first-child *,
+      a[href="/"] .w-10.h-10 *,
+      a[href="/"] .w-12.h-12 *,
+      .logo-container *,
+      nav .flex.items-center > a > div * {
+        display: none !important;
+      }
+      
+      /* Ensure all headings use Playfair Display */
+      h1, h2, h3, h4, h5, h6,
+      .text-4xl, .text-3xl, .text-2xl, .text-xl,
+      .font-serif,
+      [class*="heading"],
+      [class*="title"] {
+        font-family: 'Playfair Display', Georgia, serif !important;
+      }
     </style>
     
     <script type="module" crossorigin="" src="./assets/index-i-WX4XLI.js"></script>
