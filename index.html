@@ -110,104 +110,32 @@
         font-family: 'Playfair Display', Georgia, serif !important;
       }
       
-      /* White background for main navigation menu - ALL PAGES */
-      nav,
-      header nav,
-      .navbar,
-      [class*="nav"],
-      header[class*="fixed"],
-      nav[class*="bg-white"],
-      nav[class*="bg-opacity"],
-      nav[class*="backdrop"],
-      #root nav,
-      #root header,
-      [role="navigation"],
-      header {
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-        background-image: none !important;
-      }
-      
-      /* Force white background on all header elements */
-      header *,
-      nav *,
-      [class*="header"] *,
-      [class*="navbar"] * {
-        background-color: transparent !important;
-      }
-      
-      header,
-      nav,
-      [class*="header"],
-      [class*="navbar"] {
-        background-color: #ffffff !important;
-      }
-      
-      /* Services page specific - white background */
-      [class*="service"] nav,
-      [class*="service"] header,
-      [class*="treatment"] nav,
-      [class*="treatment"] header,
-      main nav,
-      main header {
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-      }
-      
-      /* AGGRESSIVE: Force white nav on ALL pages */
-      * nav,
-      * header,
-      body nav,
-      body header,
-      div nav,
-      div header {
-        background-color: #ffffff !important;
-      }
-      
-      /* Ensure navigation is always white */
-      nav,
-      header,
-      [role="banner"] {
-        background: #ffffff !important;
-        background-color: #ffffff !important;
-      }
-      
-      /* Remove shadow/dropdown shadow on logo - ALL PAGES */
+      /* Remove shadow on logo */
       nav a[href="/"] > div:first-child,
-      header a[href="/"] > div:first-child,
-      a[href="/"] .w-10.h-10,
-      a[href="/"] .w-12.h-12,
-      .logo-container,
-      nav .flex.items-center > a > div,
-      [class*="logo"],
-      a[href="/"] img,
-      a[href="/"] > div,
-      header a > div,
-      nav a > div,
-      a[href="/"] [class*="w-"],
-      header [class*="logo"],
-      nav [class*="logo"] {
+      header a[href="/"] > div:first-child {
         box-shadow: none !important;
         filter: none !important;
-        drop-shadow: none !important;
-        -webkit-filter: none !important;
-        text-shadow: none !important;
       }
       
-      /* Remove any shadow classes on logo elements */
-      .shadow,
-      .shadow-md,
-      .shadow-lg,
-      .shadow-xl,
-      .shadow-sm,
-      .drop-shadow,
-      .drop-shadow-md,
-      .drop-shadow-lg,
-      .drop-shadow-sm,
-      [class*="shadow"],
-      [class*="drop-shadow"] {
-        box-shadow: none !important;
-        filter: none !important;
+      /* Style "Areas We Treat" section on services pages */
+      [class*="Areas We Treat"],
+      h2:contains("Areas We Treat"),
+      section:has(h2[class*="font-serif"]:contains("Areas")),
+      [class*="treatment-areas"],
+      [class*="service"] [class*="grid"]:has(> div:contains("Lips")),
+      [class*="service"] [class*="grid"]:has(> div:contains("Cheeks")) {
+        background: linear-gradient(135deg, #8B2635 0%, #A63A4A 100%) !important;
+      }
+      
+      /* Style treatment area cards */
+      [class*="service"] [class*="grid"] > div,
+      [class*="treatment"] [class*="grid"] > div,
+      [class*="area-card"],
+      a[href*="/areas/"] {
+        background: rgba(255, 255, 255, 0.15) !important;
+        backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 16px !important;
       }
     </style>
     
