@@ -109,6 +109,48 @@
       [class*="title"] {
         font-family: 'Playfair Display', Georgia, serif !important;
       }
+      
+      /* White background for main navigation menu */
+      nav,
+      header nav,
+      .navbar,
+      [class*="nav"],
+      header[class*="fixed"],
+      nav[class*="bg-white"],
+      nav[class*="bg-opacity"],
+      nav[class*="backdrop"] {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+      }
+      
+      /* Remove shadow/dropdown shadow on logo */
+      nav a[href="/"] > div:first-child,
+      header a[href="/"] > div:first-child,
+      a[href="/"] .w-10.h-10,
+      a[href="/"] .w-12.h-12,
+      .logo-container,
+      nav .flex.items-center > a > div,
+      [class*="logo"],
+      a[href="/"] img,
+      a[href="/"] > div {
+        box-shadow: none !important;
+        filter: none !important;
+        drop-shadow: none !important;
+        -webkit-filter: none !important;
+        text-shadow: none !important;
+      }
+      
+      /* Remove any shadow classes on logo elements */
+      .shadow,
+      .shadow-md,
+      .shadow-lg,
+      .shadow-xl,
+      .drop-shadow,
+      .drop-shadow-md,
+      .drop-shadow-lg {
+        box-shadow: none !important;
+        filter: none !important;
+      }
     </style>
     
     <script type="module" crossorigin="" src="./assets/index-i-WX4XLI.js"></script>
