@@ -6,9 +6,6 @@ services:
     staticPublishPath: .
     routes:
       - type: rewrite
-        source: /*
-        destination: /index.html
-      - type: rewrite
         source: /services/*
         destination: /index.html
       - type: rewrite
@@ -16,4 +13,7 @@ services:
         destination: /index.html
       - type: rewrite
         source: /blog/*
+        destination: /index.html
+      - type: rewrite
+        source: /*
         destination: /index.html

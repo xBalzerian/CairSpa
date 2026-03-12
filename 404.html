@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CAIR SPA</title>
+  <script>
+    // SPA redirect: preserve the path and redirect to index.html
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+    
+    // Store the full URL for the SPA router to handle
+    sessionStorage.setItem('spa_redirect', path + search + hash);
+    
+    // Redirect to home
+    window.location.replace('/');
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
