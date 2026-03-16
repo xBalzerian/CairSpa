@@ -339,5 +339,88 @@
   </head>
   <body>
     <div id="root"></div>
-  </body>
+  
+    <script>
+    // ── CAIR SPA: Fix mobile nav — inject missing services ──────────────
+    // The compiled JS uses r.slice(0,6) for mobile, cutting off 5 services.
+    // This script watches for the mobile menu and appends the missing ones.
+
+    const MISSING_SERVICES = [
+      { id: 'vein-treatment',    name: 'Vein Treatment' },
+      { id: 'weight-loss',       name: 'Weight Loss Injections' },
+      { id: 'exosome-therapy',   name: 'Exosome Therapy' },
+      { id: 'nad-therapy',       name: 'NAD Therapy' },
+      { id: 'hair-transplant',   name: 'Hair Transplant ARTAS' },
+    ];
+
+    function patchMobileMenu() {
+      // Find the mobile menu container (lg:hidden panel)
+      const mobilePanel = document.querySelector('.lg\\:hidden.bg-white.border-t');
+      if (!mobilePanel) return false;
+
+      // Find the Services sub-section — it contains a pl-4 div with service links
+      const serviceContainers = mobilePanel.querySelectorAll('.pl-4.space-y-1');
+      if (!serviceContainers.length) return false;
+
+      const serviceList = serviceContainers[0]; // first pl-4 group = Services
+
+      // Check if already patched
+      if (serviceList.dataset.patched) return true;
+      serviceList.dataset.patched = '1';
+
+      // Check which services are already present
+      const existing = new Set(
+        Array.from(serviceList.querySelectorAll('a'))
+          .map(a => a.getAttribute('href'))
+      );
+
+      MISSING_SERVICES.forEach(svc => {
+        const href = '/services/' + svc.id;
+        if (existing.has(href)) return; // already there
+
+        const a = document.createElement('a');
+        a.href = href;
+        a.className = 'block px-3 py-2 text-sm text-[#2D2926] hover:text-[#8B1538] transition-colors';
+        a.style.cssText = 'display:block;padding:10px 16px;font-size:14px;color:#2D2926;text-decoration:none;border-radius:8px;transition:all 0.2s;';
+        a.textContent = svc.name;
+        a.addEventListener('mouseenter', () => { a.style.color = '#8B1538'; a.style.background = '#FEF2F2'; });
+        a.addEventListener('mouseleave', () => { a.style.color = '#2D2926'; a.style.background = ''; });
+        // Handle React Router navigation
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.history.pushState({}, '', href);
+          window.dispatchEvent(new PopStateEvent('popstate'));
+          // Close mobile menu by clicking hamburger
+          const hamburger = document.querySelector('button.lg\\:hidden');
+          if (hamburger) hamburger.click();
+          window.scrollTo(0, 0);
+        });
+        serviceList.appendChild(a);
+      });
+
+      return true;
+    }
+
+    // Watch for mobile menu appearing using MutationObserver
+    const menuObserver = new MutationObserver(() => {
+      patchMobileMenu();
+    });
+
+    // Start observing once DOM is ready
+    function startObserver() {
+      const header = document.querySelector('header') || document.body;
+      menuObserver.observe(header, { childList: true, subtree: true });
+      // Also try immediately in case menu is already open
+      patchMobileMenu();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startObserver);
+    } else {
+      startObserver();
+    }
+    // ────────────────────────────────────────────────────────────────────
+    </script>
+
+</body>
 </html>
