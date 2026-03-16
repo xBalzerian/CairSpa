@@ -125,7 +125,7 @@
       <h1>CAIR SPA</h1>
       <p>Admin Portal</p>
     </div>
-    <input type="email" id="login-email" placeholder="Admin email" autocomplete="email"/>
+    <input type="text" id="login-username" placeholder="Username" autocomplete="username" onkeydown="if(event.key==='Enter')doLogin()"/>
     <input type="password" id="login-password" placeholder="Password" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"/>
     <button class="login-btn" onclick="doLogin()">Sign In</button>
     <div class="login-error" id="login-error">Invalid credentials. Please try again.</div>
@@ -278,23 +278,26 @@ const API_KEY = '46f615e2544049cdb3ab55ff18e42f99';
 let S = { appointments:[], leads:[], blog:[], page:'dashboard', editId:null, calY:new Date().getFullYear(), calM:new Date().getMonth(), token:null };
 
 // ── AUTH ─────────────────────────────────────────────
-async function doLogin(){
-  const email=document.getElementById('login-email').value.trim();
+function doLogin(){
+  const username=document.getElementById('login-username').value.trim();
   const pw=document.getElementById('login-password').value;
   const err=document.getElementById('login-error');
   err.style.display='none';
-  if(!email||!pw){err.textContent='Please enter email and password.';err.style.display='block';return;}
-  try{
-    const r=await fetch(API+'/auth/login/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password:pw})});
-    const d=await r.json();
-    if(!r.ok||!d.token) throw new Error(d.error||d.detail||'Login failed');
-    S.token=d.token;
-    localStorage.setItem('cs_token',d.token);
-    localStorage.setItem('cs_email',email);
-    boot(email);
-  }catch(e){err.textContent=e.message;err.style.display='block';}
+  if(!username||!pw){err.textContent='Please enter username and password.';err.style.display='block';return;}
+  // Hardcoded admin credentials - no external API needed
+  const USERS={'cairspa_admin':'7H97HrGmUVp6mc','admin':'7H97HrGmUVp6mc'};
+  if(USERS[username.toLowerCase()]&&USERS[username.toLowerCase()]===pw){
+    const fakeToken='local_'+btoa(username+':'+Date.now());
+    S.token=fakeToken;
+    localStorage.setItem('cs_token',fakeToken);
+    localStorage.setItem('cs_email',username);
+    boot(username);
+  }else{
+    err.textContent='Invalid username or password.';
+    err.style.display='block';
+  }
 }
-function doLogout(){localStorage.removeItem('cs_token');localStorage.removeItem('cs_email');S.token=null;document.getElementById('app').style.display='none';document.getElementById('login-screen').style.display='flex';}
+function doLogout(){localStorage.removeItem('cs_token');localStorage.removeItem('cs_email');S.token=null;document.getElementById('app').style.display='none';document.getElementById('login-screen').style.display='flex';const u=document.getElementById('login-username');if(u)u.value='';document.getElementById('login-password').value='';}
 async function boot(email){
   document.getElementById('login-screen').style.display='none';
   document.getElementById('app').style.display='block';
@@ -307,7 +310,7 @@ async function boot(email){
 
 // ── API ──────────────────────────────────────────────
 async function api(path,opts={}){
-  const h={'Content-Type':'application/json','x-api-key':API_KEY,...(S.token?{'Authorization':'Bearer '+S.token}:{}),...(opts.headers||{})};
+  const h={'Content-Type':'application/json','x-api-key':API_KEY,...(opts.headers||{})};
   const r=await fetch(API+path,{...opts,headers:h});
   if(r.status===401){doLogout();return null;}
   if(r.status===204) return {ok:true};
@@ -477,7 +480,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 // ── INIT ─────────────────────────────────────────────
 (async()=>{
   const t=localStorage.getItem('cs_token'),e=localStorage.getItem('cs_email');
-  if(t&&e){S.token=t;await boot(e);}
+  if(t&&e&&t.startsWith('local_')){S.token=t;await boot(e);}
 })();
 </script>
 </body>
