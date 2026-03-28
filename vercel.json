@@ -2,20 +2,91 @@
   "headers": [
     {
       "source": "/images/(.*)",
-      "headers": [{"key":"Cache-Control","value":"public, max-age=31536000, immutable"}]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/assets/(.*)",
-      "headers": [{"key":"Cache-Control","value":"public, max-age=31536000, immutable"}]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ],
   "rewrites": [
-    {"source": "/admin", "destination": "/admin/index.html"},
-    {"source": "/admin/(.*)", "destination": "/admin/index.html"},
-    {"source": "/huntington-beach-medical-spa", "destination": "/huntington-beach-medical-spa/index.html"},
-    {"source": "/orange-county-medical-spa", "destination": "/orange-county-medical-spa/index.html"},
-    {"source": "/about", "destination": "/about/index.html"},
-    {"source": "/faq", "destination": "/faq/index.html"},
-    {"source": "/(.*)", "destination": "/index.html"}
+    {
+      "source": "/admin",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/admin/(.*)",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/huntington-beach-medical-spa",
+      "destination": "/huntington-beach-medical-spa/index.html"
+    },
+    {
+      "source": "/orange-county-medical-spa",
+      "destination": "/orange-county-medical-spa/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq/index.html"
+    },
+    {
+      "source": "/newport-beach-medical-spa",
+      "destination": "/newport-beach-medical-spa/index.html"
+    },
+    {
+      "source": "/costa-mesa-medical-spa",
+      "destination": "/costa-mesa-medical-spa/index.html"
+    },
+    {
+      "source": "/fountain-valley-medical-spa",
+      "destination": "/fountain-valley-medical-spa/index.html"
+    },
+    {
+      "source": "/seal-beach-medical-spa",
+      "destination": "/seal-beach-medical-spa/index.html"
+    },
+    {
+      "source": "/westminster-medical-spa",
+      "destination": "/westminster-medical-spa/index.html"
+    },
+    {
+      "source": "/garden-grove-medical-spa",
+      "destination": "/garden-grove-medical-spa/index.html"
+    },
+    {
+      "source": "/irvine-medical-spa",
+      "destination": "/irvine-medical-spa/index.html"
+    },
+    {
+      "source": "/long-beach-medical-spa",
+      "destination": "/long-beach-medical-spa/index.html"
+    },
+    {
+      "source": "/anaheim-medical-spa",
+      "destination": "/anaheim-medical-spa/index.html"
+    },
+    {
+      "source": "/santa-ana-medical-spa",
+      "destination": "/santa-ana-medical-spa/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
