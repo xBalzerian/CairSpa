@@ -338,7 +338,6 @@
     
     <script type="module" crossorigin="" src="/assets/index-i-WX4XLI.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/index-BTwSc0Ro.css"/>
-  <!-- cache-bust: 2026-03-28T04:35:00Z -->
 </head>
   <body>
     <div id="root"></div>
@@ -423,6 +422,109 @@
       startObserver();
     }
     // ────────────────────────────────────────────────────────────────────
+    </script>
+
+    <script>
+    // ── CAIR SPA: Footer override — replace React-compiled footer ────────
+    // The compiled JS bundle has a hardcoded footer we can't edit directly.
+    // This script replaces it after React renders.
+
+    const FOOTER_HTML = `
+<div style="max-width:1280px;margin:0 auto;padding:60px 24px 0;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <img src="/images/logo-phoenix-new.png" alt="CAIR SPA" style="width:34px;height:34px;object-fit:contain;"/>
+        <div>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;color:white;font-weight:600;">CAIR SPA</div>
+          <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#9A9590;">Medical Spa</div>
+        </div>
+      </div>
+      <p style="color:#9A9590;font-size:13px;line-height:1.75;margin-bottom:16px;">Comprehensive Aesthetic Integrative Regeneration Spa. Where Ashes Become Radiance.</p>
+      <p style="color:#9A9590;font-size:12px;line-height:1.7;">20951 Brookhurst St, Ste 115<br/>Huntington Beach, CA 92646</p>
+      <p style="margin-top:8px;"><a href="tel:+19496885898" style="color:#9A9590;text-decoration:none;font-size:12px;">1 (949) 688-5898</a></p>
+    </div>
+    <div>
+      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:white;margin-bottom:16px;font-weight:600;">Our Services</h4>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+        <li><a href="/services/dermal-fillers" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Dermal Fillers</a></li>
+        <li><a href="/services/hydrafacial" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">HydraFacial</a></li>
+        <li><a href="/services/rf-microneedling" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">RF Microneedling</a></li>
+        <li><a href="/services/thread-lift" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Thread Lift</a></li>
+        <li><a href="/services/iv-infusion" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">IV Therapy</a></li>
+        <li><a href="/services/skin-rejuvenation" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Skin Rejuvenation</a></li>
+        <li><a href="/services/vein-treatment" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Vein Treatment</a></li>
+        <li><a href="/services/weight-loss" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Weight Loss Injections</a></li>
+        <li><a href="/services/exosome-therapy" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Exosome Therapy</a></li>
+        <li><a href="/services/nad-therapy" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">NAD+ Therapy</a></li>
+        <li><a href="/services/hair-transplant" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Hair Transplant ARTAS</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:white;margin-bottom:16px;font-weight:600;">Our Pages</h4>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+        <li><a href="/" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Home</a></li>
+        <li><a href="/about" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">About Us</a></li>
+        <li><a href="/faq" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">FAQ</a></li>
+        <li><a href="/blog" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Blog</a></li>
+        <li><a href="/contact" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Contact</a></li>
+        <li><a href="/huntington-beach-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Huntington Beach</a></li>
+        <li><a href="/orange-county-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Orange County</a></li>
+        <li><a href="/privacy-policy" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Privacy Policy</a></li>
+        <li><a href="/terms-of-service" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:white;margin-bottom:16px;font-weight:600;">Contact Us</h4>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+        <li style="color:#9A9590;font-size:13px;line-height:1.6;">20951 Brookhurst St, Ste 115<br/>Huntington Beach, CA 92646</li>
+        <li><a href="tel:+19496885898" style="color:#9A9590;font-size:13px;text-decoration:none;">&#128222; 1 (949) 688-5898</a></li>
+        <li><a href="tel:+17145305888" style="color:#9A9590;font-size:13px;text-decoration:none;">&#128222; 1 (714) 530-5888</a></li>
+        <li><a href="mailto:CAIRmedspa@gmail.com" style="color:#9A9590;font-size:13px;text-decoration:none;">&#9993; CAIRmedspa@gmail.com</a></li>
+        <li style="color:#9A9590;font-size:13px;">Mon&ndash;Fri: 9:00 AM &ndash; 6:00 PM</li>
+      </ul>
+      <div style="margin-top:20px;">
+        <a href="/contact" style="display:inline-block;background:#8B1538;color:white;padding:11px 22px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;">Book a Consultation</a>
+      </div>
+    </div>
+  </div>
+  <div style="padding:24px 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
+    <p style="color:#9A9590;font-size:12px;margin:0;">&copy; 2025 CAIR SPA. All rights reserved. | Medical Spa Huntington Beach, CA</p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+      <a href="/privacy-policy" style="color:#9A9590;font-size:12px;text-decoration:none;">Privacy Policy</a>
+      <a href="/terms-of-service" style="color:#9A9590;font-size:12px;text-decoration:none;">Terms of Service</a>
+      <a href="/faq" style="color:#9A9590;font-size:12px;text-decoration:none;">FAQ</a>
+      <a href="/about" style="color:#9A9590;font-size:12px;text-decoration:none;">About Us</a>
+      <a href="/huntington-beach-medical-spa" style="color:#9A9590;font-size:12px;text-decoration:none;">Huntington Beach</a>
+      <a href="/orange-county-medical-spa" style="color:#9A9590;font-size:12px;text-decoration:none;">Orange County</a>
+    </div>
+  </div>
+</div>`;
+
+    function patchFooter() {
+      const footer = document.querySelector('footer');
+      if (!footer || footer.dataset.patched) return false;
+      footer.dataset.patched = '1';
+      footer.innerHTML = FOOTER_HTML;
+      return true;
+    }
+
+    function startFooterObserver() {
+      // Try immediately
+      if (patchFooter()) return;
+      // Otherwise watch for footer to appear
+      const observer = new MutationObserver(() => {
+        if (patchFooter()) observer.disconnect();
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startFooterObserver);
+    } else {
+      startFooterObserver();
+    }
+    // ── End footer override ──────────────────────────────────────────────
     </script>
 
 </body>
