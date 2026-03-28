@@ -151,22 +151,7 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
 .nav-mobile-sub a:hover{color:#8B1538;}
 .nav-mobile-book{display:block;margin:14px 24px 0;background:#8B1538;color:white!important;padding:12px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;}
 </style>
-<script>
-(function(){
-  function hideStatic(){
-    // React nav has class nav-inner inside - check for it
-    var allNavs = document.querySelectorAll('nav');
-    var allFooters = document.querySelectorAll('footer');
-    if(allNavs.length > 1){
-      document.getElementById('static-nav') && (document.getElementById('static-nav').style.display='none');
-    }
-    if(allFooters.length > 1){
-      document.getElementById('static-footer') && (document.getElementById('static-footer').style.display='none');
-    }
-  }
-  document.addEventListener('DOMContentLoaded', function(){ hideStatic(); setTimeout(hideStatic,300); });
-})();
-</script>
+
 </head>
 <body>
 <nav id="static-nav">
@@ -191,9 +176,9 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
       <a href="/">Home</a>
       <div class="nav-dropdown">
         <button class="nav-dropdown-btn">Services &#9662;</button>
-        <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-menu" id="dd-services">
           <a href="/services/dermal-fillers">Dermal Fillers</a>
-          <a href="/services/hydrafacial">Hydrafacial</a>
+          <a href="/services/hydrafacial">HydraFacial</a>
           <a href="/services/rf-microneedling">RF Microneedling</a>
           <a href="/services/thread-lift">Thread Lift</a>
           <a href="/services/iv-infusion">IV Infusions</a>
@@ -201,15 +186,25 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
           <a href="/services/vein-treatment">Vein Treatment</a>
           <a href="/services/weight-loss">Weight Loss Injections</a>
           <a href="/services/exosome-therapy">Exosome Therapy</a>
-          <a href="/services/nad-therapy">NAD Therapy</a>
+          <a href="/services/nad-therapy">NAD+ Therapy</a>
           <a href="/services/hair-transplant">Hair Transplant ARTAS</a>
         </div>
       </div>
       <div class="nav-dropdown">
         <button class="nav-dropdown-btn">Areas &#9662;</button>
-        <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-menu" id="dd-areas">
           <a href="/huntington-beach-medical-spa">Huntington Beach</a>
           <a href="/orange-county-medical-spa">Orange County</a>
+          <a href="/newport-beach-medical-spa">Newport Beach</a>
+          <a href="/costa-mesa-medical-spa">Costa Mesa</a>
+          <a href="/fountain-valley-medical-spa">Fountain Valley</a>
+          <a href="/seal-beach-medical-spa">Seal Beach</a>
+          <a href="/westminster-medical-spa">Westminster</a>
+          <a href="/garden-grove-medical-spa">Garden Grove</a>
+          <a href="/irvine-medical-spa">Irvine</a>
+          <a href="/long-beach-medical-spa">Long Beach</a>
+          <a href="/anaheim-medical-spa">Anaheim</a>
+          <a href="/santa-ana-medical-spa">Santa Ana</a>
         </div>
       </div>
       <a href="/about">About</a>
@@ -224,7 +219,7 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
     <div class="nav-mobile-label" onclick="toggleMobSub('mob-services')">Services <span>&#9662;</span></div>
     <div class="nav-mobile-sub" id="mob-services">
       <a href="/services/dermal-fillers">Dermal Fillers</a>
-      <a href="/services/hydrafacial">Hydrafacial</a>
+      <a href="/services/hydrafacial">HydraFacial</a>
       <a href="/services/rf-microneedling">RF Microneedling</a>
       <a href="/services/thread-lift">Thread Lift</a>
       <a href="/services/iv-infusion">IV Infusions</a>
@@ -232,13 +227,23 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
       <a href="/services/vein-treatment">Vein Treatment</a>
       <a href="/services/weight-loss">Weight Loss Injections</a>
       <a href="/services/exosome-therapy">Exosome Therapy</a>
-      <a href="/services/nad-therapy">NAD Therapy</a>
+      <a href="/services/nad-therapy">NAD+ Therapy</a>
       <a href="/services/hair-transplant">Hair Transplant ARTAS</a>
     </div>
     <div class="nav-mobile-label" onclick="toggleMobSub('mob-areas')">Areas <span>&#9662;</span></div>
     <div class="nav-mobile-sub" id="mob-areas">
       <a href="/huntington-beach-medical-spa">Huntington Beach</a>
       <a href="/orange-county-medical-spa">Orange County</a>
+      <a href="/newport-beach-medical-spa">Newport Beach</a>
+      <a href="/costa-mesa-medical-spa">Costa Mesa</a>
+      <a href="/fountain-valley-medical-spa">Fountain Valley</a>
+      <a href="/seal-beach-medical-spa">Seal Beach</a>
+      <a href="/westminster-medical-spa">Westminster</a>
+      <a href="/garden-grove-medical-spa">Garden Grove</a>
+      <a href="/irvine-medical-spa">Irvine</a>
+      <a href="/long-beach-medical-spa">Long Beach</a>
+      <a href="/anaheim-medical-spa">Anaheim</a>
+      <a href="/santa-ana-medical-spa">Santa Ana</a>
     </div>
     <a href="/about" class="nav-mobile-link">About</a>
     <a href="/blog" class="nav-mobile-link">Blog</a>
@@ -344,6 +349,7 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
         <p style="color:#9A9590;font-size:13px;line-height:1.75;margin-bottom:16px;">Comprehensive Aesthetic Integrative Regeneration Spa. Where Ashes Become Radiance.</p>
         <p style="color:#9A9590;font-size:12px;line-height:1.7;">20951 Brookhurst St, Ste 115<br>Huntington Beach, CA 92646</p>
         <p style="margin-top:8px;"><a href="tel:+19496885898" style="color:#9A9590;text-decoration:none;font-size:12px;">1 (949) 688-5898</a></p>
+        <div style="margin-top:20px;"><a href="/contact" style="display:inline-block;background:#8B1538;color:white;padding:11px 22px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;">Book a Consultation</a></div>
       </div>
       <div>
         <h4 class="footer-title">Our Services</h4>
@@ -362,30 +368,39 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
         </ul>
       </div>
       <div>
-        <h4 class="footer-title">Our Pages</h4>
+        <h4 class="footer-title">Areas We Serve</h4>
+        <ul class="footer-links">
+          <li><a href="/huntington-beach-medical-spa">Huntington Beach</a></li>
+          <li><a href="/orange-county-medical-spa">Orange County</a></li>
+          <li><a href="/newport-beach-medical-spa">Newport Beach</a></li>
+          <li><a href="/costa-mesa-medical-spa">Costa Mesa</a></li>
+          <li><a href="/fountain-valley-medical-spa">Fountain Valley</a></li>
+          <li><a href="/seal-beach-medical-spa">Seal Beach</a></li>
+          <li><a href="/westminster-medical-spa">Westminster</a></li>
+          <li><a href="/garden-grove-medical-spa">Garden Grove</a></li>
+          <li><a href="/irvine-medical-spa">Irvine</a></li>
+          <li><a href="/long-beach-medical-spa">Long Beach</a></li>
+          <li><a href="/anaheim-medical-spa">Anaheim</a></li>
+          <li><a href="/santa-ana-medical-spa">Santa Ana</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
         <ul class="footer-links">
           <li><a href="/">Home</a></li>
           <li><a href="/about">About Us</a></li>
           <li><a href="/faq">FAQ</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li><a href="/huntington-beach-medical-spa">Huntington Beach</a></li>
-          <li><a href="/orange-county-medical-spa">Orange County</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms-of-service">Terms of Service</a></li>
         </ul>
-      </div>
-      <div>
-        <h4 class="footer-title">Contact Us</h4>
-        <ul class="footer-links">
-          <li style="color:#9A9590;font-size:13px;line-height:1.6;">20951 Brookhurst St, Ste 115<br>Huntington Beach, CA 92646</li>
-          <li><a href="tel:+19496885898">&#128222; 1 (949) 688-5898</a></li>
-          <li><a href="tel:+17145305888">&#128222; 1 (714) 530-5888</a></li>
-          <li><a href="mailto:CAIRmedspa@gmail.com">&#9993; CAIRmedspa@gmail.com</a></li>
-          <li style="color:#9A9590;font-size:13px;">Mon&ndash;Fri: 9:00 AM &ndash; 6:00 PM</li>
-        </ul>
-        <div style="margin-top:20px;">
-          <a href="/contact" style="display:inline-block;background:#8B1538;color:white;padding:11px 22px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;">Book a Consultation</a>
+        <div style="margin-top:24px;">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+19496885898">&#128222; 1 (949) 688-5898</a></li>
+            <li><a href="tel:+17145305888">&#128222; 1 (714) 530-5888</a></li>
+            <li><a href="mailto:CAIRmedspa@gmail.com">&#9993; CAIRmedspa@gmail.com</a></li>
+            <li style="color:#9A9590;font-size:13px;">Mon&ndash;Fri: 9:00 AM &ndash; 6:00 PM</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -402,5 +417,36 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  var ham = document.getElementById('nav-hamburger');
+  var mob = document.getElementById('nav-mobile');
+  if(ham && mob){
+    ham.addEventListener('click',function(){
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+    });
+  }
+  // Desktop dropdowns
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    var btn = dd.querySelector('.nav-dropdown-btn');
+    var menu = dd.querySelector('.nav-dropdown-menu');
+    if(!btn||!menu) return;
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen = menu.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown-menu').forEach(function(m){ m.classList.remove('open'); });
+      if(!isOpen) menu.classList.add('open');
+    });
+  });
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.nav-dropdown-menu').forEach(function(m){ m.classList.remove('open'); });
+  });
+})();
+function toggleMobSub(id){
+  var el=document.getElementById(id);
+  if(el) el.classList.toggle('open');
+}
+</script>
 </body>
 </html>
