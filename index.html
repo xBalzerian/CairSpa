@@ -338,6 +338,22 @@
     
     <script type="module" crossorigin="" src="/assets/index-i-WX4XLI.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/index-BTwSc0Ro.css"/>
+<style id="global-footer-css">
+footer#react-footer-override,
+footer { background:#2D2926; color:white; }
+.footer-inner { max-width:1280px; margin:0 auto; padding:60px 24px 0; }
+.footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.footer-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:1rem; color:white; margin-bottom:16px; font-weight:600; }
+.footer-links { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.footer-links a { color:#9A9590; font-size:13px; text-decoration:none; transition:color 0.2s; }
+.footer-links a:hover { color:#C9A962; }
+.footer-links li { color:#9A9590; font-size:13px; }
+.footer-bottom { padding:24px 0; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; }
+.footer-bottom p { color:#9A9590; font-size:12px; margin:0; }
+.footer-bottom-links { display:flex; flex-wrap:wrap; gap:16px; }
+.footer-bottom-links a { color:#9A9590; font-size:12px; text-decoration:none; }
+.footer-bottom-links a:hover { color:#C9A962; }
+</style>
 </head>
   <body>
     <div id="root"></div>
@@ -426,91 +442,13 @@
 
     <script>
     // ── CAIR SPA: Footer override — replace React-compiled footer ────────
-    const FOOTER_HTML = `
-<div style="max-width:1280px;margin:0 auto;padding:60px 24px 0;">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);">
-    <div>
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-        <img src="/images/logo-phoenix-new.png" alt="CAIR SPA" style="width:34px;height:34px;object-fit:contain;"/>
-        <div>
-          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;color:white;font-weight:600;">CAIR SPA</div>
-          <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#9A9590;">Medical Spa</div>
-        </div>
-      </div>
-      <p style="color:#9A9590;font-size:13px;line-height:1.75;margin-bottom:16px;">Comprehensive Aesthetic Integrative Regeneration Spa. Where Ashes Become Radiance.</p>
-      <p style="color:#9A9590;font-size:12px;line-height:1.7;">20951 Brookhurst St, Ste 115<br/>Huntington Beach, CA 92646</p>
-      <p style="margin-top:8px;"><a href="tel:+19496885898" style="color:#9A9590;text-decoration:none;font-size:12px;">(949) 688-5898</a></p>
-      <div style="margin-top:20px;"><a href="/contact" style="display:inline-block;background:#8B1538;color:white;padding:10px 20px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;">Book a Consultation</a></div>
-    </div>
-    <div>
-      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:white;margin-bottom:16px;font-weight:600;">Our Services</h4>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-        <li><a href="/services/dermal-fillers" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Dermal Fillers</a></li>
-        <li><a href="/services/hydrafacial" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">HydraFacial</a></li>
-        <li><a href="/services/rf-microneedling" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">RF Microneedling</a></li>
-        <li><a href="/services/thread-lift" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Thread Lift</a></li>
-        <li><a href="/services/iv-infusion" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">IV Therapy</a></li>
-        <li><a href="/services/skin-rejuvenation" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Skin Rejuvenation</a></li>
-        <li><a href="/services/vein-treatment" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Vein Treatment</a></li>
-        <li><a href="/services/weight-loss" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Weight Loss Injections</a></li>
-        <li><a href="/services/exosome-therapy" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Exosome Therapy</a></li>
-        <li><a href="/services/nad-therapy" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">NAD+ Therapy</a></li>
-        <li><a href="/services/hair-transplant" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Hair Transplant ARTAS</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:white;margin-bottom:16px;font-weight:600;">Areas We Serve</h4>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-        <li><a href="/huntington-beach-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Huntington Beach</a></li>
-        <li><a href="/orange-county-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Orange County</a></li>
-        <li><a href="/newport-beach-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Newport Beach</a></li>
-        <li><a href="/costa-mesa-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Costa Mesa</a></li>
-        <li><a href="/fountain-valley-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Fountain Valley</a></li>
-        <li><a href="/seal-beach-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Seal Beach</a></li>
-        <li><a href="/westminster-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Westminster</a></li>
-        <li><a href="/garden-grove-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Garden Grove</a></li>
-        <li><a href="/irvine-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Irvine</a></li>
-        <li><a href="/long-beach-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Long Beach</a></li>
-        <li><a href="/anaheim-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Anaheim</a></li>
-        <li><a href="/santa-ana-medical-spa" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Santa Ana</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:white;margin-bottom:16px;font-weight:600;">Quick Links</h4>
-      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-        <li><a href="/" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Home</a></li>
-        <li><a href="/about" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">About Us</a></li>
-        <li><a href="/faq" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">FAQ</a></li>
-        <li><a href="/blog" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Blog</a></li>
-        <li><a href="/contact" style="color:#9A9590;font-size:13px;text-decoration:none;" onmouseover="this.style.color='#C9A962'" onmouseout="this.style.color='#9A9590'">Contact Us</a></li>
-      </ul>
-      <div style="margin-top:24px;">
-        <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;color:white;margin-bottom:12px;font-weight:600;">Contact</h4>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-          <li><a href="tel:+19496885898" style="color:#9A9590;font-size:13px;text-decoration:none;">(949) 688-5898</a></li>
-          <li><a href="tel:+17145305888" style="color:#9A9590;font-size:13px;text-decoration:none;">(714) 530-5888</a></li>
-          <li><a href="mailto:CAIRmedspa@gmail.com" style="color:#9A9590;font-size:13px;text-decoration:none;">CAIRmedspa@gmail.com</a></li>
-          <li style="color:#9A9590;font-size:12px;margin-top:4px;">Mon–Fri: 9:00 AM – 6:00 PM</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div style="padding:24px 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
-    <p style="color:#9A9590;font-size:12px;margin:0;">&copy; 2025 CAIR SPA. All rights reserved. | Medical Spa Huntington Beach, CA</p>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;">
-      <a href="/privacy-policy" style="color:#9A9590;font-size:12px;text-decoration:none;">Privacy Policy</a>
-      <a href="/terms-of-service" style="color:#9A9590;font-size:12px;text-decoration:none;">Terms of Service</a>
-      <a href="/huntington-beach-medical-spa" style="color:#9A9590;font-size:12px;text-decoration:none;">Huntington Beach</a>
-      <a href="/orange-county-medical-spa" style="color:#9A9590;font-size:12px;text-decoration:none;">Orange County</a>
-    </div>
-  </div>
-</div>`;
+    const FOOTER_HTML = '<footer id="static-footer">\n  <div class="footer-inner">\n    <div class="footer-grid">\n      <div>\n        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">\n          <img src="/images/logo-phoenix-new.png" alt="CAIR SPA" style="width:34px;height:34px;object-fit:contain;"/>\n          <div>\n            <div style="font-family:\'Cormorant Garamond\',Georgia,serif;font-size:1.05rem;color:white;font-weight:600;">CAIR SPA</div>\n            <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#9A9590;">Medical Spa</div>\n          </div>\n        </div>\n        <p style="color:#9A9590;font-size:13px;line-height:1.75;margin-bottom:16px;">Comprehensive Aesthetic Integrative Regeneration Spa. Where Ashes Become Radiance.</p>\n        <p style="color:#9A9590;font-size:12px;line-height:1.7;">20951 Brookhurst St, Ste 115<br>Huntington Beach, CA 92646</p>\n        <p style="margin-top:8px;"><a href="tel:+19496885898" style="color:#9A9590;text-decoration:none;font-size:12px;">1 (949) 688-5898</a></p>\n        <div style="margin-top:20px;"><a href="/contact" style="display:inline-block;background:#8B1538;color:white;padding:11px 22px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;">Book a Consultation</a></div>\n      </div>\n      <div>\n        <h4 class="footer-title">Our Services</h4>\n        <ul class="footer-links">\n          <li><a href="/services/dermal-fillers">Dermal Fillers</a></li>\n          <li><a href="/services/hydrafacial">HydraFacial</a></li>\n          <li><a href="/services/rf-microneedling">RF Microneedling</a></li>\n          <li><a href="/services/thread-lift">Thread Lift</a></li>\n          <li><a href="/services/iv-infusion">IV Therapy</a></li>\n          <li><a href="/services/skin-rejuvenation">Skin Rejuvenation</a></li>\n          <li><a href="/services/vein-treatment">Vein Treatment</a></li>\n          <li><a href="/services/weight-loss">Weight Loss Injections</a></li>\n          <li><a href="/services/exosome-therapy">Exosome Therapy</a></li>\n          <li><a href="/services/nad-therapy">NAD+ Therapy</a></li>\n          <li><a href="/services/hair-transplant">Hair Transplant ARTAS</a></li>\n        </ul>\n      </div>\n      <div>\n        <h4 class="footer-title">Areas We Serve</h4>\n        <ul class="footer-links">\n          <li><a href="/huntington-beach-medical-spa">Huntington Beach</a></li>\n          <li><a href="/orange-county-medical-spa">Orange County</a></li>\n          <li><a href="/newport-beach-medical-spa">Newport Beach</a></li>\n          <li><a href="/costa-mesa-medical-spa">Costa Mesa</a></li>\n          <li><a href="/fountain-valley-medical-spa">Fountain Valley</a></li>\n          <li><a href="/seal-beach-medical-spa">Seal Beach</a></li>\n          <li><a href="/westminster-medical-spa">Westminster</a></li>\n          <li><a href="/garden-grove-medical-spa">Garden Grove</a></li>\n          <li><a href="/irvine-medical-spa">Irvine</a></li>\n          <li><a href="/long-beach-medical-spa">Long Beach</a></li>\n          <li><a href="/anaheim-medical-spa">Anaheim</a></li>\n          <li><a href="/santa-ana-medical-spa">Santa Ana</a></li>\n        </ul>\n      </div>\n      <div>\n        <h4 class="footer-title">Quick Links</h4>\n        <ul class="footer-links">\n          <li><a href="/">Home</a></li>\n          <li><a href="/about">About Us</a></li>\n          <li><a href="/faq">FAQ</a></li>\n          <li><a href="/blog">Blog</a></li>\n          <li><a href="/contact">Contact</a></li>\n        </ul>\n        <div style="margin-top:24px;">\n          <h4 class="footer-title">Contact</h4>\n          <ul class="footer-links">\n            <li><a href="tel:+19496885898">&#128222; 1 (949) 688-5898</a></li>\n            <li><a href="tel:+17145305888">&#128222; 1 (714) 530-5888</a></li>\n            <li><a href="mailto:CAIRmedspa@gmail.com">&#9993; CAIRmedspa@gmail.com</a></li>\n            <li style="color:#9A9590;font-size:13px;">Mon&ndash;Fri: 9:00 AM &ndash; 6:00 PM</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <div class="footer-bottom">\n      <p>&copy; 2025 CAIR SPA. All rights reserved. | Medical Spa Huntington Beach, CA</p>\n      <div class="footer-bottom-links">\n        <a href="/privacy-policy">Privacy Policy</a>\n        <a href="/terms-of-service">Terms of Service</a>\n        <a href="/faq">FAQ</a>\n        <a href="/about">About Us</a>\n        <a href="/huntington-beach-medical-spa">Huntington Beach</a>\n        <a href="/orange-county-medical-spa">Orange County</a>\n      </div>\n    </div>\n  </div>\n</footer>';
 
     function patchFooter() {
       const footer = document.querySelector('footer');
       if (!footer || footer.dataset.patched) return false;
       footer.dataset.patched = '1';
-      footer.innerHTML = FOOTER_HTML;
+      footer.outerHTML = FOOTER_HTML;
       return true;
     }
 
