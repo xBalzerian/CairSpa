@@ -1,0 +1,501 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="CAIR SPA - Comprehensive Aesthetic Integrative Regeneration Spa in Huntington Beach. Expert dermal fillers, Hydrafacial, RF microneedling, IV therapy & more. Book your consultation today!"/>
+    <meta name="keywords" content="medical spa Huntington Beach, dermal fillers, Hydrafacial, skin rejuvenation, RF microneedling, IV therapy, weight loss injections, Orange County med spa"/>
+    <meta name="author" content="CAIR SPA"/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://cairspa.com/"/>
+    
+    <!-- LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "CAIR SPA",
+      "alternateName": "Comprehensive Aesthetic Integrative Regeneration Spa",
+      "description": "Premier medical spa in Huntington Beach offering dermal fillers, Hydrafacial, RF microneedling, IV therapy, and advanced aesthetic treatments.",
+      "url": "https://cairspa.com",
+      "telephone": "+1-949-688-5898",
+      "email": "CAIRmedspa@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "20951 Brookhurst St, Ste 115",
+        "addressLocality": "Huntington Beach",
+        "addressRegion": "CA",
+        "postalCode": "92646",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.6784,
+        "longitude": -117.9988
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$$",
+      "paymentAccepted": "Cash, Credit Card, Debit Card",
+      "areaServed": ["Huntington Beach", "Costa Mesa", "Newport Beach", "Orange County"],
+      "serviceType": ["Dermal Fillers", "Hydrafacial", "RF Microneedling", "Thread Lift", "IV Infusions", "Skin Rejuvenation", "Vein Treatment", "Weight Loss Injections"],
+      "image": "https://cairspa.com/images/logo-phoenix-new.png"
+    }
+    </script>
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="CAIR SPA - Medical Spa Huntington Beach"/>
+    <meta property="og:description" content="Comprehensive Aesthetic Integrative Regeneration Spa. Where Ashes become Radiance. Book your consultation today!"/>
+    <meta property="og:url" content="https://cairspa.com"/>
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="CAIR SPA - Medical Spa Huntington Beach"/>
+    <meta name="twitter:description" content="Comprehensive Aesthetic Integrative Regeneration Spa in Huntington Beach, CA"/>
+    
+    <!-- Favicon - Phoenix Logo -->
+    <link rel="icon" type="image/png" href="/images/logo-phoenix-new.png"/>
+    
+    <!-- Google Fonts - Elegant Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <title>CAIR SPA - Medical Spa Huntington Beach | Orange County</title>
+    
+    <!-- CSS ONLY - No JavaScript modifications -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+      h1, h2, h3, .font-serif {
+        font-family: 'Cormorant Garamond', Georgia, serif !important;
+      }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      
+      /* Hide the old "C" logo and show phoenix logo */
+      nav a[href="/"] > div:first-child,
+      header a[href="/"] > div:first-child,
+      a[href="/"] .w-10.h-10,
+      a[href="/"] .w-12.h-12,
+      .logo-container,
+      nav .flex.items-center > a > div {
+        background-image: url('/images/logo-phoenix.png') !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        color: transparent !important;
+        overflow: hidden !important;
+      }
+      
+      nav a[href="/"] > div:first-child *,
+      header a[href="/"] > div:first-child *,
+      a[href="/"] .w-10.h-10 *,
+      a[href="/"] .w-12.h-12 *,
+      .logo-container *,
+      nav .flex.items-center > a > div * {
+        display: none !important;
+      }
+      
+      /* Ensure all headings use Cormorant Garamond */
+      h1, h2, h3, h4, h5, h6,
+      .text-4xl, .text-3xl, .text-2xl, .text-xl,
+      .font-serif,
+      [class*="heading"],
+      [class*="title"] {
+        font-family: 'Cormorant Garamond', Georgia, serif !important;
+      }
+      
+      /* Remove shadow on logo */
+      nav a[href="/"] > div:first-child,
+      header a[href="/"] > div:first-child {
+        box-shadow: none !important;
+        filter: none !important;
+      }
+      
+      /* Style "Areas We Treat" section on services pages */
+      [class*="Areas We Treat"],
+      h2:contains("Areas We Treat"),
+      section:has(h2[class*="font-serif"]:contains("Areas")),
+      [class*="treatment-areas"],
+      [class*="service"] [class*="grid"]:has(> div:contains("Lips")),
+      [class*="service"] [class*="grid"]:has(> div:contains("Cheeks")) {
+        background: linear-gradient(135deg, #8B2635 0%, #A63A4A 100%) !important;
+      }
+      
+      /* Style treatment area cards */
+      [class*="service"] [class*="grid"] > div,
+      [class*="treatment"] [class*="grid"] > div,
+      [class*="area-card"],
+      a[href*="/areas/"] {
+        background: rgba(255, 255, 255, 0.15) !important;
+        backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 16px !important;
+      }
+    
+    /* ============================================================
+       CAIR SPA — MOBILE LAYOUT OVERRIDES
+       High-quality responsive design for all screen sizes
+    ============================================================ */
+
+    /* ── HERO: Fix order — text FIRST, form SECOND on mobile ── */
+    @media (max-width: 1023px) {
+      /* The hero grid */
+      .grid.lg\:grid-cols-2 {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto !important;
+        padding-top: 100px !important;
+        padding-bottom: 48px !important;
+        gap: 40px !important;
+      }
+
+      /* Text block: force it first */
+      .order-2.lg\:order-1 {
+        order: 1 !important;
+        text-align: center !important;
+      }
+
+      /* Form block: force it second */
+      .order-1.lg\:order-2 {
+        order: 2 !important;
+      }
+
+      /* Hero headline sizing */
+      .text-6xl { font-size: 3.2rem !important; line-height: 1.05 !important; }
+      .md\:text-7xl { font-size: 3.2rem !important; }
+      .text-3xl { font-size: 1.6rem !important; }
+      .md\:text-4xl { font-size: 1.6rem !important; }
+
+      /* Center the CTA buttons */
+      .flex.flex-wrap.gap-4 {
+        justify-content: center !important;
+      }
+
+      /* Form card full-width polish */
+      .bg-white\/10.backdrop-blur-xl {
+        padding: 28px 20px !important;
+        border-radius: 20px !important;
+      }
+    }
+
+    /* ── NAVIGATION: Premium mobile menu ── */
+    @media (max-width: 1023px) {
+      /* Header height tighter on mobile */
+      .h-20 { height: 64px !important; }
+
+      /* Logo text size */
+      .text-xl.tracking-wide { font-size: 1.1rem !important; }
+
+      /* Mobile menu items — bigger tap targets */
+      .lg\:hidden.bg-white.border-t > div a,
+      .lg\:hidden.bg-white.border-t > div .block {
+        padding: 14px 16px !important;
+        font-size: 15px !important;
+        border-radius: 12px !important;
+        margin-bottom: 2px !important;
+      }
+
+      /* Mobile menu — Book Now CTA button */
+      .lg\:hidden.bg-white.border-t > div > a:last-of-type,
+      .lg\:hidden .bg-\[\#8B1538\] {
+        background: #8B1538 !important;
+        color: white !important;
+        border-radius: 12px !important;
+        padding: 14px 20px !important;
+        text-align: center !important;
+        display: block !important;
+        margin-top: 8px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.03em !important;
+      }
+
+      /* Sub-menu labels */
+      .lg\:hidden .text-\[\#6B6661\] {
+        font-size: 11px !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        font-weight: 700 !important;
+        color: #8B1538 !important;
+        padding-left: 16px !important;
+      }
+
+      /* Sub-menu items indented nicely */
+      .lg\:hidden .pl-4 a {
+        padding: 10px 16px !important;
+        font-size: 14px !important;
+        border-radius: 8px !important;
+        color: #2D2926 !important;
+      }
+
+      /* Mobile menu container padding */
+      .lg\:hidden.bg-white.border-t > div {
+        padding: 16px !important;
+      }
+
+      /* Add gentle shadow to open menu */
+      .lg\:hidden.bg-white.border-t {
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+      }
+    }
+
+    /* ── GENERAL MOBILE POLISH ── */
+    @media (max-width: 767px) {
+
+      /* Tighten section padding */
+      section, .py-20, .py-24, .py-32 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+      }
+
+      .px-6 { padding-left: 20px !important; padding-right: 20px !important; }
+
+      /* Service/feature cards — single column */
+      .grid.md\:grid-cols-2,
+      .grid.md\:grid-cols-3,
+      .grid.lg\:grid-cols-3,
+      .grid.lg\:grid-cols-4 {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      /* Section headings */
+      h1 { font-size: 2.8rem !important; line-height: 1.05 !important; }
+      h2 { font-size: 2rem !important; line-height: 1.1 !important; }
+      h3 { font-size: 1.3rem !important; }
+
+      /* Buttons — full width on mobile */
+      .flex.flex-wrap.gap-4 > a,
+      .flex.flex-wrap.gap-4 > button {
+        flex: 1 1 100% !important;
+        justify-content: center !important;
+        padding: 16px 24px !important;
+        font-size: 13px !important;
+      }
+
+      /* Form inputs — better mobile sizing */
+      input, select, textarea {
+        font-size: 16px !important; /* prevents iOS zoom */
+        padding: 14px 16px !important;
+      }
+
+      /* Remove horizontal scroll */
+      body, html { overflow-x: hidden !important; }
+
+      /* Top info bar — hide on mobile for cleaner look */
+      .hidden.lg\:block.bg-\[\#8B1538\] { display: none !important; }
+
+      /* Stats/numbers section */
+      .grid.grid-cols-2.md\:grid-cols-4,
+      .grid.md\:grid-cols-4 {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* Testimonial cards */
+      .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Footer columns */
+      .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-5 {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+
+      /* "Where Ashes become Radiance" — center */
+      .text-xl.text-white\/80.italic {
+        text-align: center !important;
+        font-size: 1rem !important;
+      }
+
+      /* Card padding */
+      .p-8, .p-10, .md\:p-10 {
+        padding: 20px 16px !important;
+      }
+
+      /* Rounded cards on mobile */
+      .rounded-2xl, .rounded-3xl {
+        border-radius: 16px !important;
+      }
+    }
+
+    /* ── SMALL PHONES (< 400px) ── */
+    @media (max-width: 399px) {
+      h1 { font-size: 2.4rem !important; }
+      .text-6xl { font-size: 2.8rem !important; }
+      .grid.grid-cols-2 { grid-template-columns: 1fr !important; }
+    }
+
+    </style>
+    
+    <script type="module" crossorigin="" src="/assets/index-i-WX4XLI.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-BTwSc0Ro.css"/>
+<style id="global-footer-css">
+footer#react-footer-override,
+footer { background:#2D2926; color:white; }
+.footer-inner { max-width:1280px; margin:0 auto; padding:60px 24px 0; }
+.footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.footer-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:1rem; color:white; margin-bottom:16px; font-weight:600; }
+.footer-links { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.footer-links a { color:#9A9590; font-size:13px; text-decoration:none; transition:color 0.2s; }
+.footer-links a:hover { color:#C9A962; }
+.footer-links li { color:#9A9590; font-size:13px; }
+.footer-bottom { padding:24px 0; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; }
+.footer-bottom p { color:#9A9590; font-size:12px; margin:0; }
+.footer-bottom-links { display:flex; flex-wrap:wrap; gap:16px; }
+.footer-bottom-links a { color:#9A9590; font-size:12px; text-decoration:none; }
+.footer-bottom-links a:hover { color:#C9A962; }
+</style>
+<meta name="google-site-verification" content="REUzpJypZkitEfVpAUncu2uQx0I1p8LKmgHgoc_RDZo" />
+</head>
+  <body>
+    <div id="root"></div>
+  
+    <script>
+    // ── CAIR SPA: Patch React nav — fix mobile services + add all Areas ─
+    const ALL_SERVICES = [
+      { href: '/services/dermal-fillers',    label: 'Dermal Fillers' },
+      { href: '/services/hydrafacial',       label: 'HydraFacial' },
+      { href: '/services/rf-microneedling',  label: 'RF Microneedling' },
+      { href: '/services/thread-lift',       label: 'Thread Lift' },
+      { href: '/services/iv-infusion',       label: 'IV Infusions' },
+      { href: '/services/skin-rejuvenation', label: 'Skin Rejuvenation' },
+      { href: '/services/vein-treatment',    label: 'Vein Treatment' },
+      { href: '/services/weight-loss',       label: 'Weight Loss Injections' },
+      { href: '/services/exosome-therapy',   label: 'Exosome Therapy' },
+      { href: '/services/nad-therapy',       label: 'NAD+ Therapy' },
+      { href: '/services/hair-transplant',   label: 'Hair Transplant ARTAS' },
+    ];
+    const ALL_AREAS = [
+      { href: '/huntington-beach-medical-spa', label: 'Huntington Beach' },
+      { href: '/orange-county-medical-spa',    label: 'Orange County' },
+      { href: '/newport-beach-medical-spa',    label: 'Newport Beach' },
+      { href: '/costa-mesa-medical-spa',       label: 'Costa Mesa' },
+      { href: '/fountain-valley-medical-spa',  label: 'Fountain Valley' },
+      { href: '/seal-beach-medical-spa',       label: 'Seal Beach' },
+      { href: '/westminster-medical-spa',      label: 'Westminster' },
+      { href: '/garden-grove-medical-spa',     label: 'Garden Grove' },
+      { href: '/irvine-medical-spa',           label: 'Irvine' },
+      { href: '/long-beach-medical-spa',       label: 'Long Beach' },
+      { href: '/anaheim-medical-spa',          label: 'Anaheim' },
+      { href: '/santa-ana-medical-spa',        label: 'Santa Ana' },
+    ];
+
+    function makeNavLink(href, label, isMobile) {
+      const a = document.createElement('a');
+      a.href = href;
+      if (isMobile) {
+        a.className = 'block px-3 py-2 text-sm text-[#2D2926] hover:text-[#8B1538] transition-colors';
+        a.style.cssText = 'display:block;padding:10px 16px;font-size:14px;color:#2D2926;text-decoration:none;border-radius:8px;transition:all 0.2s;';
+      }
+      a.textContent = label;
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.history.pushState({}, '', href);
+        window.dispatchEvent(new PopStateEvent('popstate'));
+        const hamburger = document.querySelector('button.lg\\:hidden');
+        if (hamburger) hamburger.click();
+        window.scrollTo(0, 0);
+      });
+      return a;
+    }
+
+    function patchReactNav() {
+      // ── Mobile menu ──────────────────────────────────────────────────
+      const mobilePanel = document.querySelector('.lg\\:hidden.bg-white.border-t');
+      if (mobilePanel) {
+        const subs = mobilePanel.querySelectorAll('.pl-4.space-y-1');
+        
+        // Services sub (index 0)
+        if (subs[0] && !subs[0].dataset.patched) {
+          subs[0].dataset.patched = '1';
+          subs[0].innerHTML = '';
+          ALL_SERVICES.forEach(s => subs[0].appendChild(makeNavLink(s.href, s.label, true)));
+        }
+        
+        // Areas sub (index 1 — if it exists)
+        if (subs[1] && !subs[1].dataset.patched) {
+          subs[1].dataset.patched = '1';
+          subs[1].innerHTML = '';
+          ALL_AREAS.forEach(s => subs[1].appendChild(makeNavLink(s.href, s.label, true)));
+        }
+      }
+
+      // ── Desktop dropdown menus ───────────────────────────────────────
+      // Find all dropdown panels in the nav (they look like absolute-positioned divs)
+      const nav = document.querySelector('nav') || document.querySelector('header');
+      if (!nav || nav.dataset.navPatched) return false;
+      
+      // Look for dropdown links — if we find 'Huntington Beach' or 'Orange County' in a dropdown
+      const allDropdownLinks = nav.querySelectorAll('a[href="/huntington-beach-medical-spa"], a[href="/orange-county-medical-spa"]');
+      allDropdownLinks.forEach(link => {
+        const container = link.parentElement;
+        if (!container || container.dataset.areasPatched) return;
+        container.dataset.areasPatched = '1';
+        // Clear and re-fill with all areas
+        container.innerHTML = '';
+        ALL_AREAS.forEach(a => {
+          const el = link.cloneNode();
+          el.href = a.href;
+          el.textContent = a.label;
+          el.className = link.className;
+          container.appendChild(el);
+        });
+      });
+
+      nav.dataset.navPatched = '1';
+      return true;
+    }
+
+    const navObs = new MutationObserver(() => { patchReactNav(); });
+    function startNavPatch() {
+      patchReactNav();
+      const target = document.querySelector('header') || document.body;
+      navObs.observe(target, { childList: true, subtree: true });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startNavPatch);
+    } else {
+      startNavPatch();
+    }
+    // ── End nav patch ────────────────────────────────────────────────────
+    </script>
+
+    <script>
+    // ── CAIR SPA: Footer override — replace React-compiled footer ────────
+    const FOOTER_HTML = '<footer id="static-footer">\n  <div class="footer-inner">\n    <div class="footer-grid">\n      <div>\n        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">\n          <img src="/images/logo-phoenix-new.png" alt="CAIR SPA" style="width:34px;height:34px;object-fit:contain;"/>\n          <div>\n            <div style="font-family:\'Cormorant Garamond\',Georgia,serif;font-size:1.05rem;color:white;font-weight:600;">CAIR SPA</div>\n            <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#9A9590;">Medical Spa</div>\n          </div>\n        </div>\n        <p style="color:#9A9590;font-size:13px;line-height:1.75;margin-bottom:16px;">Comprehensive Aesthetic Integrative Regeneration Spa. Where Ashes Become Radiance.</p>\n        <p style="color:#9A9590;font-size:12px;line-height:1.7;">20951 Brookhurst St, Ste 115<br>Huntington Beach, CA 92646</p>\n        <p style="margin-top:8px;"><a href="tel:+19496885898" style="color:#9A9590;text-decoration:none;font-size:12px;">1 (949) 688-5898</a></p>\n        <div style="margin-top:20px;"><a href="/contact" style="display:inline-block;background:#8B1538;color:white;padding:11px 22px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;">Book a Consultation</a></div>\n      </div>\n      <div>\n        <h4 class="footer-title">Our Services</h4>\n        <ul class="footer-links">\n          <li><a href="/services/dermal-fillers">Dermal Fillers</a></li>\n          <li><a href="/services/hydrafacial">HydraFacial</a></li>\n          <li><a href="/services/rf-microneedling">RF Microneedling</a></li>\n          <li><a href="/services/thread-lift">Thread Lift</a></li>\n          <li><a href="/services/iv-infusion">IV Therapy</a></li>\n          <li><a href="/services/skin-rejuvenation">Skin Rejuvenation</a></li>\n          <li><a href="/services/vein-treatment">Vein Treatment</a></li>\n          <li><a href="/services/weight-loss">Weight Loss Injections</a></li>\n          <li><a href="/services/exosome-therapy">Exosome Therapy</a></li>\n          <li><a href="/services/nad-therapy">NAD+ Therapy</a></li>\n          <li><a href="/services/hair-transplant">Hair Transplant ARTAS</a></li>\n        </ul>\n      </div>\n      <div>\n        <h4 class="footer-title">Areas We Serve</h4>\n        <ul class="footer-links">\n          <li><a href="/huntington-beach-medical-spa">Huntington Beach</a></li>\n          <li><a href="/orange-county-medical-spa">Orange County</a></li>\n          <li><a href="/newport-beach-medical-spa">Newport Beach</a></li>\n          <li><a href="/costa-mesa-medical-spa">Costa Mesa</a></li>\n          <li><a href="/fountain-valley-medical-spa">Fountain Valley</a></li>\n          <li><a href="/seal-beach-medical-spa">Seal Beach</a></li>\n          <li><a href="/westminster-medical-spa">Westminster</a></li>\n          <li><a href="/garden-grove-medical-spa">Garden Grove</a></li>\n          <li><a href="/irvine-medical-spa">Irvine</a></li>\n          <li><a href="/long-beach-medical-spa">Long Beach</a></li>\n          <li><a href="/anaheim-medical-spa">Anaheim</a></li>\n          <li><a href="/santa-ana-medical-spa">Santa Ana</a></li>\n        </ul>\n      </div>\n      <div>\n        <h4 class="footer-title">Quick Links</h4>\n        <ul class="footer-links">\n          <li><a href="/">Home</a></li>\n          <li><a href="/about">About Us</a></li>\n          <li><a href="/faq">FAQ</a></li>\n          <li><a href="/blog">Blog</a></li>\n          <li><a href="/contact">Contact</a></li>\n        </ul>\n        <div style="margin-top:24px;">\n          <h4 class="footer-title">Contact</h4>\n          <ul class="footer-links">\n            <li><a href="tel:+19496885898">&#128222; 1 (949) 688-5898</a></li>\n            <li><a href="tel:+17145305888">&#128222; 1 (714) 530-5888</a></li>\n            <li><a href="mailto:CAIRmedspa@gmail.com">&#9993; CAIRmedspa@gmail.com</a></li>\n            <li style="color:#9A9590;font-size:13px;">Mon&ndash;Fri: 9:00 AM &ndash; 6:00 PM</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <div class="footer-bottom">\n      <p>&copy; 2025 CAIR SPA. All rights reserved. | Medical Spa Huntington Beach, CA</p>\n      <div class="footer-bottom-links">\n        <a href="/privacy-policy">Privacy Policy</a>\n        <a href="/terms-of-service">Terms of Service</a>\n        <a href="/faq">FAQ</a>\n        <a href="/about">About Us</a>\n        <a href="/huntington-beach-medical-spa">Huntington Beach</a>\n        <a href="/orange-county-medical-spa">Orange County</a>\n      </div>\n    </div>\n  </div>\n</footer>';
+
+    function patchFooter() {
+      const footer = document.querySelector('footer');
+      if (!footer || footer.dataset.patched) return false;
+      footer.dataset.patched = '1';
+      footer.outerHTML = FOOTER_HTML;
+      return true;
+    }
+
+    function startFooterObserver() {
+      if (patchFooter()) return;
+      const observer = new MutationObserver(() => {
+        if (patchFooter()) observer.disconnect();
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startFooterObserver);
+    } else {
+      startFooterObserver();
+    }
+    // ── End footer override ──────────────────────────────────────────────
+    </script>
+
+</body>
+</html>
