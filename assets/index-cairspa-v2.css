@@ -15,3 +15,34 @@ h1, h2, h3, .font-serif, .font-cursive {
 }
 
 /* All headings and serif elements use Playfair Display - clean non-italic */
+
+
+/* ===== CAIRSPA v2 FIXES ===== */
+
+/* Hero text — strong shadow for readability over any background */
+.hero-text-shadow, .drop-shadow-2xl { filter: drop-shadow(0 4px 24px rgba(0,0,0,0.9)); }
+
+/* Force text shadows on hero heading elements */
+h1.text-white, h2.text-white { text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 1px 6px rgba(0,0,0,0.9); }
+p.text-white, p.drop-shadow-lg { text-shadow: 0 1px 12px rgba(0,0,0,0.8); }
+
+/* Service card text — always readable */
+.group h3.text-white { text-shadow: 0 2px 12px rgba(0,0,0,0.9); }
+.group h4.text-white { text-shadow: 0 1px 8px rgba(0,0,0,0.9); }
+.group p.text-white\/70 { text-shadow: 0 1px 6px rgba(0,0,0,0.7); }
+
+/* Form inputs — ensure white text visible on glass bg */
+input::placeholder, textarea::placeholder, select { color: rgba(255,255,255,0.75) !important; }
+select option { background-color: #2D2926; color: white; }
+
+/* Form container — ensure backdrop-blur-2xl works cross browser */
+.backdrop-blur-2xl {
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+
+/* Logo image in nav — ensure no white bg bleeds */
+nav img[alt="CAIR SPA Logo"] {
+  background: transparent;
+  mix-blend-mode: multiply;
+}
