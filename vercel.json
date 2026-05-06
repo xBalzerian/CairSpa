@@ -1,24 +1,11 @@
 {
   "headers": [
     {
-      "source": "/(.*)\\.html",
+      "source": "/images/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        },
-        {
-          "key": "Surrogate-Control",
-          "value": "no-store"
-        }
-      ]
-    },
-    {
-      "source": "/",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
@@ -30,6 +17,134 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/admin/index.html"
+    },
+    {
+      "source": "/huntington-beach-medical-spa",
+      "destination": "/huntington-beach-medical-spa/index.html"
+    },
+    {
+      "source": "/orange-county-medical-spa",
+      "destination": "/orange-county-medical-spa/index.html"
+    },
+    {
+      "source": "/newport-beach-medical-spa",
+      "destination": "/newport-beach-medical-spa/index.html"
+    },
+    {
+      "source": "/costa-mesa-medical-spa",
+      "destination": "/costa-mesa-medical-spa/index.html"
+    },
+    {
+      "source": "/fountain-valley-medical-spa",
+      "destination": "/fountain-valley-medical-spa/index.html"
+    },
+    {
+      "source": "/seal-beach-medical-spa",
+      "destination": "/seal-beach-medical-spa/index.html"
+    },
+    {
+      "source": "/westminster-medical-spa",
+      "destination": "/westminster-medical-spa/index.html"
+    },
+    {
+      "source": "/garden-grove-medical-spa",
+      "destination": "/garden-grove-medical-spa/index.html"
+    },
+    {
+      "source": "/irvine-medical-spa",
+      "destination": "/irvine-medical-spa/index.html"
+    },
+    {
+      "source": "/long-beach-medical-spa",
+      "destination": "/long-beach-medical-spa/index.html"
+    },
+    {
+      "source": "/anaheim-medical-spa",
+      "destination": "/anaheim-medical-spa/index.html"
+    },
+    {
+      "source": "/santa-ana-medical-spa",
+      "destination": "/santa-ana-medical-spa/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq/index.html"
+    },
+    {
+      "source": "/services/botox",
+      "destination": "/services/botox/index.html"
+    },
+    {
+      "source": "/services/dermal-fillers",
+      "destination": "/services/dermal-fillers/index.html"
+    },
+    {
+      "source": "/services/hydrafacial",
+      "destination": "/services/hydrafacial/index.html"
+    },
+    {
+      "source": "/services/rf-microneedling",
+      "destination": "/services/rf-microneedling/index.html"
+    },
+    {
+      "source": "/services/iv-infusion",
+      "destination": "/services/iv-infusion/index.html"
+    },
+    {
+      "source": "/services/nad-therapy",
+      "destination": "/services/nad-therapy/index.html"
+    },
+    {
+      "source": "/services/weight-loss",
+      "destination": "/services/weight-loss/index.html"
+    },
+    {
+      "source": "/services/thread-lift",
+      "destination": "/services/thread-lift/index.html"
+    },
+    {
+      "source": "/services/skin-rejuvenation",
+      "destination": "/services/skin-rejuvenation/index.html"
+    },
+    {
+      "source": "/services/exosome-therapy",
+      "destination": "/services/exosome-therapy/index.html"
+    },
+    {
+      "source": "/services/hair-transplant",
+      "destination": "/services/hair-transplant/index.html"
+    },
+    {
+      "source": "/services/vein-treatment",
+      "destination": "/services/vein-treatment/index.html"
     }
   ]
 }
