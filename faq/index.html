@@ -159,6 +159,45 @@ nav#static-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:white
 .nav-mobile-sub a:hover{color:#b84342;}
 .nav-mobile-book{display:block;margin:14px 24px 0;background:#b84342;color:white!important;padding:12px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;}
 </style>
+<style id="cs-fix">
+/* Service card gradient: bottom-to-top so text at bottom is readable */
+a.group.block.relative div.absolute.inset-0{background:linear-gradient(to top,rgba(15,8,6,.93) 0%,rgba(15,8,6,.6) 35%,rgba(15,8,6,.1) 65%,transparent 100%)!important}
+a.group.block h3,a.group.block h4{color:#fff!important;text-shadow:0 1px 10px rgba(0,0,0,.9)!important;font-weight:600!important}
+a.group.block p{color:rgba(255,255,255,.9)!important;text-shadow:0 1px 6px rgba(0,0,0,.8)!important}
+a.group.block span.inline-flex{background:rgba(255,255,255,.15)!important;border:1px solid rgba(255,255,255,.5)!important;color:#fff!important;-webkit-backdrop-filter:blur(8px)!important;backdrop-filter:blur(8px)!important}
+/* Dark bg sections -> warm beige */
+section.bg-\[\#2D2926\],section.py-24.bg-\[\#2D2926\],section.py-32.bg-\[\#2D2926\]{background-color:#FAF7F4!important}
+section.bg-\[\#2D2926\] .text-white,section.py-24.bg-\[\#2D2926\] .text-white{color:#2D2926!important;text-shadow:none!important}
+section.bg-\[\#2D2926\] .text-white\/70,section.py-24.bg-\[\#2D2926\] .text-white\/70{color:rgba(45,41,38,.65)!important}
+section.bg-\[\#2D2926\] .text-\[\#C9A962\],section.py-24.bg-\[\#2D2926\] .text-\[\#C9A962\]{color:#b84342!important}
+/* Red sections -> warm beige */
+section.bg-\[\#b84342\],section.py-24.bg-\[\#b84342\],section.py-32.bg-\[\#b84342\]{background-color:#FAF7F4!important}
+section.bg-\[\#b84342\] .text-white,section.py-24.bg-\[\#b84342\] .text-white{color:#2D2926!important;text-shadow:none!important}
+section.bg-\[\#b84342\] .text-white\/70,section.py-24.bg-\[\#b84342\] .text-white\/70{color:rgba(45,41,38,.65)!important}
+/* Keep icon circles burgundy */
+.w-14.h-14.bg-\[\#b84342\],.w-12.h-12.bg-\[\#b84342\],.w-10.h-10.bg-\[\#b84342\],.w-6.h-6.bg-\[\#b84342\]{background-color:#b84342!important}
+/* Hero bg -> beige, remove black overlay */
+.absolute.inset-0.bg-cover.bg-center{background-image:none!important;background-color:#EDE0D4!important}
+.absolute.inset-0.bg-gradient-to-b.from-black\/60{display:none!important}
+/* Nav -> warm white */
+.sticky.top-0.z-50{background-color:#FAF7F4!important}
+/* Logo fix */
+.w-11.h-11.bg-\[\#b84342\]{background:transparent!important;box-shadow:none!important;border-radius:0!important;width:52px!important;height:52px!important}
+.w-11.h-11.bg-\[\#b84342\] span{display:none!important}
+.w-11.h-11.bg-\[\#b84342\]::before{content:'';display:block;width:52px;height:52px;background-image:url('/images/logo-phoenix-new.png');background-size:contain;background-repeat:no-repeat;background-position:center}
+/* Hero text */
+section.relative.min-h-screen h1.text-white{color:#b84342!important;text-shadow:none!important}
+section.relative.min-h-screen h2.text-white{color:#2D2926!important;text-shadow:none!important}
+section.relative.min-h-screen .text-white\/80{color:rgba(45,41,38,.75)!important;text-shadow:none!important}
+/* Form card */
+.bg-white\/10.backdrop-blur-xl{background:#FAF7F4!important;backdrop-filter:none!important;border:1px solid rgba(184,67,66,.2)!important;border-radius:20px!important}
+.bg-white\/10 .text-white{color:#2D2926!important;text-shadow:none!important}
+.bg-white\/10 input,.bg-white\/10 select,.bg-white\/10 textarea{background:#fff!important;border:1px solid rgba(184,67,66,.3)!important;color:#2D2926!important}
+.bg-white\/10 button[type=submit]{background:#b84342!important;color:#fff!important}
+/* Treatment area cards */
+section.py-24.bg-\[\#b84342\] .bg-white\/10,section.py-32.bg-\[\#b84342\] .bg-white\/10{background:#fff!important;border:1px solid rgba(184,67,66,.15)!important;border-radius:16px!important}
+section.py-24.bg-\[\#b84342\] .bg-white\/10 .text-white,section.py-32.bg-\[\#b84342\] .bg-white\/10 .text-white{color:#2D2926!important}
+</style>
 </head>
 <body>
 <nav id="static-nav">
