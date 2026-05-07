@@ -20,7 +20,7 @@ h1, h2, h3, .font-serif, .font-cursive {
 
 /* ============================================================
    CAIRSPA BRAND — Warm Beige + Burgundy
-   v5.1 — Definitive fix for service cards + treatment areas
+   v5.2 — ROOT CAUSE FIX: scoped hero gradient, card overlays restored
    ============================================================ */
 
 /* ===== GLOBAL ===== */
@@ -36,7 +36,8 @@ nav.bg-white\/95, header.bg-white\/95 {
 section.relative.min-h-screen {
   background: linear-gradient(135deg, #FAF7F4 0%, #EDE0D4 50%, #E8D5C4 100%) !important;
 }
-section.relative.min-h-screen .absolute.inset-0.bg-gradient-to-b {
+/* ONLY hide the hero dark overlay — NOT all gradients site-wide */
+section.relative.min-h-screen > .absolute.inset-0.bg-gradient-to-b {
   display: none !important;
 }
 section.relative.min-h-screen h1,
@@ -67,36 +68,31 @@ section.relative.min-h-screen a.border.border-white:hover { background: #2D2926 
 }
 
 /* =================================================================
-   SERVICE CARDS SECTION — bg-[#2D2926] dark background
-   Keep dark. Fix card gradient + text visibility.
+   SERVICE CARDS SECTION — "py-24 lg:py-32 bg-[#2D2926]"
+   Keep DARK charcoal background. Fix card gradient + text.
    ================================================================= */
-
-/* Keep this section DARK */
 section.py-24.bg-\[\#2D2926\],
 section.lg\:py-32.bg-\[\#2D2926\],
-section.py-32.bg-\[\#2D2926\] {
-  background-color: #2D2926 !important;
-}
+section.py-32.bg-\[\#2D2926\] { background-color: #2D2926 !important; }
 
-/* Section heading + subtitle (white on dark — looks good, just ensure) */
 section.py-24.bg-\[\#2D2926\] h2,
 section.lg\:py-32.bg-\[\#2D2926\] h2 { color: #FDFCFB !important; }
-section.py-24.bg-\[\#2D2926\] .text-white\/70,
-section.lg\:py-32.bg-\[\#2D2926\] .text-white\/70 { color: rgba(253,252,251,0.72) !important; }
+section.py-24.bg-\[\#2D2926\] p.text-white\/70,
+section.lg\:py-32.bg-\[\#2D2926\] p.text-white\/70 { color: rgba(253,252,251,0.72) !important; }
 
-/* SERVICE CARD IMAGE OVERLAY GRADIENT
-   Class in DOM: "absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-transparent"
-   Tailwind may not generate from-black/80 opacity variant → force it via CSS */
-.group a > div.absolute.inset-0,
-.group > a > div.absolute.inset-0,
-a.group > div.absolute.inset-0 {
+/* SERVICE CARD GRADIENT OVERLAY — ensure from-black/80 stops work.
+   The <a class="group ..."> contains a <div class="absolute inset-0 bg-gradient-to-b from-black/80 ...">
+   Since .bg-gradient-to-b is NOT globally hidden, Tailwind generates the gradient correctly.
+   But we REINFORCE it here for certainty: */
+.group.block.relative a > .absolute.inset-0,
+a.group.block.relative > .absolute.inset-0 {
   background: linear-gradient(to bottom,
-    rgba(0,0,0,0.75) 0%,
-    rgba(0,0,0,0.25) 40%,
+    rgba(0,0,0,0.8) 0%,
+    rgba(0,0,0,0.3) 45%,
     rgba(0,0,0,0.0) 100%) !important;
 }
 
-/* Card text inside .group (service cards) */
+/* Card text */
 .group h3.text-white,
 .group h4.text-white {
   color: #ffffff !important;
@@ -108,101 +104,57 @@ a.group > div.absolute.inset-0 {
   text-shadow: 0 1px 8px rgba(0,0,0,0.95) !important;
 }
 
-/* "Learn More" button on service cards */
-.group a.rounded-full.bg-white\/20,
-.group button.rounded-full.bg-white\/20 {
-  background: rgba(255,255,255,0.2) !important;
-  border: 1px solid rgba(255,255,255,0.45) !important;
-  color: #fff !important;
-  backdrop-filter: blur(4px) !important;
-}
-
 /* =================================================================
-   TREATMENT AREAS SECTION — bg-[#b84342] RED background
-   KEEP red. Make all text and cards visible on red.
+   TREATMENT AREAS SECTION — "py-24 lg:py-32 bg-[#b84342]"  
+   KEEP RED background. Fix text + card visibility.
    ================================================================= */
-
 section.py-24.bg-\[\#b84342\],
 section.lg\:py-32.bg-\[\#b84342\],
-section.py-32.bg-\[\#b84342\] {
-  background-color: #b84342 !important;
-}
+section.py-32.bg-\[\#b84342\] { background-color: #b84342 !important; }
 
-/* Section heading */
+/* Headings on red */
 section.py-24.bg-\[\#b84342\] h2,
-section.lg\:py-32.bg-\[\#b84342\] h2 {
-  color: #ffffff !important;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
-}
-/* "TREATMENT AREAS" label */
+section.lg\:py-32.bg-\[\#b84342\] h2 { color: #ffffff !important; }
+section.py-24.bg-\[\#b84342\] .text-white\/70,
+section.lg\:py-32.bg-\[\#b84342\] .text-white\/70 { color: rgba(255,255,255,0.88) !important; }
 section.py-24.bg-\[\#b84342\] span.text-\[\#C9A962\],
-section.lg\:py-32.bg-\[\#b84342\] span.text-\[\#C9A962\] {
-  color: rgba(255,255,255,0.8) !important;
-}
-/* Subtitle paragraph */
-section.py-24.bg-\[\#b84342\] p.text-white\/70,
-section.lg\:py-32.bg-\[\#b84342\] p.text-white\/70 {
-  color: rgba(255,255,255,0.88) !important;
-}
+section.lg\:py-32.bg-\[\#b84342\] span.text-\[\#C9A962\] { color: rgba(255,255,255,0.8) !important; }
 
-/* Treatment area CARDS — "group block bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8" */
+/* Treatment area card links: "bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8" */
 section.py-24.bg-\[\#b84342\] a.bg-white\/10,
 section.lg\:py-32.bg-\[\#b84342\] a.bg-white\/10 {
   background: rgba(255,255,255,0.18) !important;
-  border: 1.5px solid rgba(255,255,255,0.35) !important;
+  border: 1.5px solid rgba(255,255,255,0.4) !important;
   border-radius: 16px !important;
-  transition: all 0.25s ease !important;
 }
 section.py-24.bg-\[\#b84342\] a.bg-white\/10:hover,
 section.lg\:py-32.bg-\[\#b84342\] a.bg-white\/10:hover {
   background: rgba(255,255,255,0.30) !important;
-  border-color: rgba(255,255,255,0.6) !important;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.15) !important;
+  border-color: rgba(255,255,255,0.65) !important;
 }
-/* Card icon */
+/* Icon in card */
 section.py-24.bg-\[\#b84342\] a.bg-white\/10 .text-white\/70,
-section.lg\:py-32.bg-\[\#b84342\] a.bg-white\/10 .text-white\/70 {
-  color: rgba(255,255,255,0.9) !important;
-}
-/* Card name (h3) */
-section.py-24.bg-\[\#b84342\] a.bg-white\/10 h3.text-white,
-section.lg\:py-32.bg-\[\#b84342\] a.bg-white\/10 h3.text-white {
-  color: #ffffff !important;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.15) !important;
-  font-weight: 600 !important;
-}
-/* Card service count */
-section.py-24.bg-\[\#b84342\] a.bg-white\/10 p.text-white\/50,
-section.lg\:py-32.bg-\[\#b84342\] a.bg-white\/10 p.text-white\/50 {
-  color: rgba(255,255,255,0.8) !important;
-}
-/* Selected/active card (border-[#b84342] on red bg → use white border) */
-section.py-24.bg-\[\#b84342\] a.border-\[\#b84342\],
-section.lg\:py-32.bg-\[\#b84342\] a.border-\[\#b84342\] {
-  border-color: #ffffff !important;
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.4) !important;
-}
+section.lg\:py-32.bg-\[\#b84342\] a.bg-white\/10 .text-white\/70 { color: rgba(255,255,255,0.9) !important; }
+/* Name h3 */
+section.py-24.bg-\[\#b84342\] a.bg-white\/10 h3,
+section.lg\:py-32.bg-\[\#b84342\] a.bg-white\/10 h3 { color: #ffffff !important; font-weight: 600 !important; }
+/* Count */
+section.py-24.bg-\[\#b84342\] a.bg-white\/10 p,
+section.lg\:py-32.bg-\[\#b84342\] a.bg-white\/10 p { color: rgba(255,255,255,0.85) !important; }
 
 /* =================================================================
-   OTHER PAGES — service/treatment/contact page headers
-   bg-[#b84342] sections that aren't py-24/32
+   OTHER PAGE SECTIONS — service/contact/treatment page headers
    ================================================================= */
-section.relative.bg-\[\#b84342\] {
-  background-color: #b84342 !important;
-}
+section.relative.bg-\[\#b84342\] { background-color: #b84342 !important; }
 section.relative.bg-\[\#b84342\] .text-white,
 section.relative.bg-\[\#b84342\] h1,
 section.relative.bg-\[\#b84342\] h2 { color: #ffffff !important; }
 section.relative.bg-\[\#b84342\] .text-white\/70 { color: rgba(255,255,255,0.8) !important; }
 
 /* =================================================================
-   FOOTER — keep dark
+   FOOTER + SMALL ICONS
    ================================================================= */
 footer.bg-\[\#2D2926\] { background-color: #2D2926 !important; }
-
-/* =================================================================
-   SMALL ICON CIRCLES — keep burgundy
-   ================================================================= */
 .w-14.h-14.bg-\[\#b84342\],
 .w-12.h-12.bg-\[\#b84342\],
 .w-10.h-10.bg-\[\#b84342\],
