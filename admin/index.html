@@ -318,10 +318,10 @@ async function api(path,opts={}){
 }
 async function loadAll(){
   try{
-    const [a,l,b]=await Promise.all([api('/entities/Appointment/?limit=200&sort=-created_date'),api('/entities/LeadForm/?limit=200&sort=-created_date'),api('/entities/BlogPost/?limit=200&sort=-created_date')]);
-    S.appointments=a?.data||a||[];
-    S.leads=l?.data||l||[];
-    S.blog=b?.data||b||[];
+    const [a,l,b]=await Promise.all([api('/entities/Appointment?limit=200&sort=-created_date'),api('/entities/LeadForm?limit=200&sort=-created_date'),api('/entities/BlogPost?limit=200&sort=-created_date')]);
+    S.appointments=Array.isArray(a)?a:(a?.data||[]);
+    S.leads=Array.isArray(l)?l:(l?.data||[]);
+    S.blog=Array.isArray(b)?b:(b?.data||[]);
   }catch(e){console.error(e);}
 }
 
