@@ -421,7 +421,15 @@ function renderLeads(){
   const f=document.getElementById('leads-filter')?.value||'';
   const items=f?S.leads.filter(l=>getD(l).status===f):S.leads;
   document.getElementById('leads-count').textContent=items.length+' records';
-  document.getElementById('leads-table').innerHTML=items.length?`<table><thead><tr><th>Name</th><th>Service Interest</th><th>Contact</th><th>Message</th><th>Status</th><th></th></tr></thead><tbody>${items.map(l=>{const d=getD(l);return`<tr><td><div style="font-weight:600">${d.name||'—'}</div><div style="font-size:11px;color:var(--muted)">${ago(l.created_date)}</div></td><td>${d.service_interest||'General'}</td><td><div style="font-size:12px">${d.email||'—'}</div><div style="font-size:11px;color:var(--muted)">${d.phone||''}</div></td><td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;color:var(--muted)">${d.message||'—'}</td><td><span class="badge badge-${(d.status||'new').toLowerCase()}">${d.status||'New'}</span></td><td><button class="btn btn-outline btn-sm" onclick="leadDetail('${l.id}')">View</button></td></tr>`;}).join('')}</tbody></table>`:'<div class="empty">No leads found</div>';
+  document.getElementById('leads-table').innerHTML=items.length?`<table><thead><tr><th>Name</th><th>Service Interest</th><th>Contact</th><th>Message</th><th>Status</th><th></th></tr></thead><tbody>${items.map(l=>{const d=getD(l);return`<tr><td><div style="font-weight:600">${d.name||'—'}</div><div style="font-size:11px;color:var(--muted)">${ago(l.created_date)}</div></td><td>${d.service_interest||'General'}</td><td><div style="font-size:12px">${d.email||'—'}</div><div style="font-size:11px;color:var(--muted)">${d.phone||''}</div></td><td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;color:var(--muted)">${d.message||'—'}</td><td><span class="badge badge-${(d.status||'new').toLowerCase()}">${d.status||'New'}</span></td><td style="display:flex;gap:6px;align-items:center"><button class="btn btn-outline btn-sm" onclick="leadDetail('${l.id}')">View</button><button class="btn btn-sm" style="background:#fee2e2;color:#b91c1c;border:1px solid #fca5a5;padding:4px 10px;border-radius:6px;cursor:pointer;font-size:12px" onclick="deleteLead('${l.id}')">Delete</button></td></tr>`;}).join('')}</tbody></table>`:'<div class="empty">No leads found</div>';
+}
+async function deleteLead(id){
+  if(!confirm('Delete this lead? This cannot be undone.')) return;
+  await api('/entities/LeadForm/'+id, {method:'DELETE'});
+  S.leads=S.leads.filter(x=>x.id!==id);
+  renderLeads();
+  updateBadges();
+  renderDash();
 }
 function leadDetail(id){
   const l=S.leads.find(x=>x.id===id);if(!l)return;
