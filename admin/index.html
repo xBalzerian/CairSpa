@@ -273,8 +273,8 @@
 <div id="toast"></div>
 
 <script>
-const API = 'https://api.base44.com/api/apps/69b7cae883aa8d618e49d211';
-const API_KEY = '46f615e2544049cdb3ab55ff18e42f99';
+const API = 'https://base44.app/api/apps/69b7cae883aa8d618e49d211';
+const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxZGZiZTQ4ZC0xNWU3LTRjZjgtYjY1OC0zNDAzYjAxYjYzNDEiLCJjbGllbnRfaWQiOiIxZGZiZTQ4ZC0xNWU3LTRjZjgtYjY1OC0zNDAzYjAxYjYzNDEiLCJhcHBfaWQiOiI2OWI3Y2FlODgzYWE4ZDYxOGU0OWQyMTEiLCJhdWQiOiJiYXNlNDRfYXBpIiwic2NvcGUiOiJhcHAuYWNjZXNzIiwiZXhwIjoxNzc5NjczNjg1LCJpYXQiOjE3Nzk2NzAwODV9.IAlTMMGstoUAENdbaeW7V5JnJxDhDbQdl4bkpwyEBZ8';
 let S = { appointments:[], leads:[], blog:[], page:'dashboard', editId:null, calY:new Date().getFullYear(), calM:new Date().getMonth(), token:null };
 
 // ── AUTH ─────────────────────────────────────────────
@@ -310,7 +310,7 @@ async function boot(email){
 
 // ── API ──────────────────────────────────────────────
 async function api(path,opts={}){
-  const h={'Content-Type':'application/json','x-api-key':API_KEY,...(opts.headers||{})};
+  const h={'Content-Type':'application/json','Authorization':'Bearer '+API_KEY,...(opts.headers||{})};
   const r=await fetch(API+path,{...opts,headers:h});
   if(r.status===401){doLogout();return null;}
   if(r.status===204) return {ok:true};
