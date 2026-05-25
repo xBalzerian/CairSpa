@@ -442,20 +442,98 @@
     <script type="module" crossorigin="" src="/assets/cairspa-brand-v28.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/cairspa-brand-v28.css"/>
 <style id="global-footer-css">
-footer#react-footer-override,
-footer { background:#2D2926; color:white; }
-.footer-inner { max-width:1280px; margin:0 auto; padding:60px 24px 0; }
-.footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.08); }
-.footer-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:1rem; color:white; margin-bottom:16px; font-weight:600; }
-.footer-links { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
-.footer-links a { color:#9A9590; font-size:13px; text-decoration:none; transition:color 0.2s; }
-.footer-links a:hover { color:#C9A962; }
-.footer-links li { color:#9A9590; font-size:13px; }
-.footer-bottom { padding:24px 0; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; }
-.footer-bottom p { color:#9A9590; font-size:12px; margin:0; }
-.footer-bottom-links { display:flex; flex-wrap:wrap; gap:16px; }
-.footer-bottom-links a { color:#9A9590; font-size:12px; text-decoration:none; }
-.footer-bottom-links a:hover { color:#C9A962; }
+/* ── Footer base ─────────────────────────────── */
+footer { background:#2D2926 !important; color:white !important; }
+
+/* ── Footer main grid: 6 balanced columns on desktop ── */
+footer .max-w-7xl > .grid {
+  display: grid !important;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 2fr 1.4fr !important;
+  gap: 36px 28px !important;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  align-items: start;
+}
+
+/* ── Areas We Serve: already has md:col-span-2, keep it natural ── */
+footer .max-w-7xl > .grid > div:nth-child(5) {
+  grid-column: span 1 !important;
+}
+
+/* Tablet: 3-column layout */
+@media (max-width:1024px) {
+  footer .max-w-7xl > .grid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 32px 24px !important;
+  }
+  footer .max-w-7xl > .grid > div:nth-child(5) {
+    grid-column: span 2 !important;
+  }
+}
+
+/* Mobile: single column */
+@media (max-width:640px) {
+  footer .max-w-7xl > .grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  footer .max-w-7xl > .grid > div:nth-child(5) {
+    grid-column: span 1 !important;
+  }
+}
+
+/* ── Column headings ─────────────────────────── */
+footer h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.05rem !important;
+  color: #ffffff !important;
+  margin-bottom: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+}
+
+/* ── Links ───────────────────────────────────── */
+footer a {
+  color: #9A9590 !important;
+  font-size: 13px !important;
+  text-decoration: none !important;
+  transition: color 0.2s !important;
+}
+footer a:hover { color: #C9A962 !important; }
+
+/* ── Areas We Serve: 2-col grid of links ──────── */
+footer .max-w-7xl > .grid > div:nth-child(5) ul {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 6px 16px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ── Contact block ───────────────────────────── */
+footer li { color: #9A9590; font-size: 13px; line-height: 1.6; }
+
+/* ── Bottom bar ──────────────────────────────── */
+footer .border-t {
+  padding: 20px 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+footer .border-t p,
+footer .border-t a {
+  color: #9A9590 !important;
+  font-size: 12px !important;
+}
+footer .border-t a:hover { color: #C9A962 !important; }
+
+/* ── Brand column social icons ───────────────── */
+footer .bg-\[\#3D3936\] { background: #3D3936 !important; }
+footer .bg-\[\#3D3936\]:hover,
+footer a:hover .bg-\[\#3D3936\] { background: #b84342 !important; }
 </style>
 <meta name="google-site-verification" content="REUzpJypZkitEfVpAUncu2uQx0I1p8LKmgHgoc_RDZo" />
 <style id="cs-fix">
