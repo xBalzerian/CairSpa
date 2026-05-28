@@ -273,7 +273,7 @@
 <div id="toast"></div>
 
 <script>
-const PROXY = 'https://app.base44.com/api/apps/69b7cae883aa8d618e49d211/functions/adminProxy';
+const API_BASE = 'https://base44.app/api/apps/69b7cae883aa8d618e49d211';
 let S = { appointments:[], leads:[], blog:[], page:'dashboard', editId:null, calY:new Date().getFullYear(), calM:new Date().getMonth(), token:null };
 
 // ── AUTH ─────────────────────────────────────────────
@@ -303,46 +303,22 @@ async function boot(email){
   document.getElementById('topbar-user').textContent='👤 '+email.split('@')[0];
   document.getElementById('page-date').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   document.getElementById('s-today-sub').textContent=new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-  await loadAll();
+  try{ await loadAll(); }catch(e){ console.warn("loadAll failed:",e); }
   renderDash();
 }
 
 // ── API ──────────────────────────────────────────────
 async function api(path,opts={}){
-  // Route all entity calls through the adminProxy backend function
-  // which uses service-role credentials that never expire
-  let url;
-  const method = opts.method || 'GET';
-  
-  // Parse entity path: /entities/EntityName/optionalId
-  const entityMatch = path.match(/\/entities\/([A-Za-z]+)(?:\/([^?]+))?(.*)$/);
-  if(entityMatch){
-    const entity = entityMatch[1];
-    const id = entityMatch[2] || null;
-    const qs = entityMatch[3] || '';
-    // Extract limit and sort from query string
-    const limitMatch = qs.match(/limit=(\d+)/);
-    const sortMatch = qs.match(/sort=([^&]+)/);
-    const params = new URLSearchParams();
-    params.set('entity', entity);
-    if(id) params.set('id', id);
-    if(limitMatch) params.set('limit', limitMatch[1]);
-    if(sortMatch) params.set('sort', sortMatch[1]);
-    url = PROXY + '?' + params.toString();
-  } else {
-    // Fallback: use path as-is (shouldn't normally happen)
-    url = PROXY + '?path=' + encodeURIComponent(path);
-  }
-  
-  const h={'Content-Type':'application/json','Authorization':'Bearer '+S.token,...(opts.headers||{})};
-  const r=await fetch(url,{...opts,method,headers:h});
-  if(r.status===204) return {ok:true};
-  if(!r.ok){
-    const err=await r.json().catch(()=>({}));
-    console.error('API error',r.status,err);
+  try{
+    const h={'Content-Type':'application/json','Authorization':'Bearer '+S.token,...(opts.headers||{})};
+    const r=await fetch(API_BASE+path,{...opts,headers:h});
+    if(r.status===204) return {ok:true};
+    const data=await r.json().catch(()=>null);
+    return data;
+  }catch(e){
+    console.warn('API unavailable (non-fatal):',e.message);
     return null;
   }
-  return r.json();
 }
 async function loadAll(){
   try{
