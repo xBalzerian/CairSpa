@@ -436,7 +436,7 @@ function leadDetail(id){
   openModal();
 }
 async function saveLeadStatus(id){const s=document.getElementById('lst').value;await api('/entities/LeadForm/'+id,{method:'PUT',body:JSON.stringify({status:s})});const l=S.leads.find(x=>x.id===id);if(l){if(l.data)l.data.status=s;else l.status=s;}closeModal();renderLeads();renderDash();toast('Status updated ✓');}
-async async function delLead(id){if(!confirm('Delete this lead?'))return;await api('/entities/LeadForm/'+id,{method:'DELETE'});S.leads=S.leads.filter(x=>x.id!==id);closeModal();renderLeads();updateBadges();renderDash();toast('Deleted');}
+async function delLead(id){if(!confirm('Delete this lead?'))return;await api('/entities/LeadForm/'+id,{method:'DELETE'});S.leads=S.leads.filter(x=>x.id!==id);closeModal();renderLeads();updateBadges();renderDash();toast('Deleted');}
 
 // ── BLOG ──────────────────────────────────────────────
 function renderBlog(){
