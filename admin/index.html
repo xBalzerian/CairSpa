@@ -310,6 +310,21 @@ async function boot(email){
 // ── API ──────────────────────────────────────────────
 async function api(path,opts={}){
   try{
+    // Route ALL entity calls through adminProxy (uses service role — bypasses auth)
+    const em=path.match(/\/entities\/([^/?]+)\/?([^?]*)\??(.*)/);
+    if(em){
+      const entity=em[1];
+      const rid=(em[2]||'').replace(/\/$/, '');
+      const qs=em[3]||'';
+      let proxyUrl='https://base44.app/api/apps/69b7cae883aa8d618e49d211/functions/adminProxy?entity='+entity;
+      if(rid) proxyUrl+='&id='+rid;
+      if(qs) proxyUrl+='&'+qs;
+      const r=await fetch(proxyUrl,{...opts,headers:{'Content-Type':'application/json','Authorization':'Bearer '+S.token}});
+      if(r.status===204) return {ok:true};
+      const data=await r.json().catch(()=>null);
+      return data;
+    }
+    // Non-entity calls
     const h={'Content-Type':'application/json','Authorization':'Bearer '+S.token,...(opts.headers||{})};
     const r=await fetch(API_BASE+path,{...opts,headers:h});
     if(r.status===204) return {ok:true};
