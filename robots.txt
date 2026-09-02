@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /coming-soon.html
 
-# Sitemap location
 Sitemap: https://cairspa.com/sitemap.xml

@@ -114,10 +114,6 @@
       "destination": "/services/dermal-fillers/index.html"
     },
     {
-      "source": "/services/hydrafacial",
-      "destination": "/services/hydrafacial/index.html"
-    },
-    {
       "source": "/services/rf-microneedling",
       "destination": "/services/rf-microneedling/index.html"
     },
@@ -152,6 +148,40 @@
     {
       "source": "/services/vein-treatment",
       "destination": "/services/vein-treatment/index.html"
+    },
+    {
+      "source": "/treatment-areas/:area",
+      "destination": "/index.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.cairspa.com"
+        }
+      ],
+      "destination": "https://cairspa.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/services/hydrafacial",
+      "destination": "/services/facial",
+      "permanent": true
+    },
+    {
+      "source": "/index-backup.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
