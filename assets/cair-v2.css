@@ -16,7 +16,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--sans);font-size:16px;line-height:1.65;color:var(--ink);background:var(--ivory);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 img{display:block;max-width:100%;height:auto}
-sup{font-size:.42em;vertical-align:top;position:relative;top:.35em;line-height:0;margin-left:1px;font-family:var(--sans);font-weight:500}
+sup{font-size:.5em;vertical-align:super;line-height:0;margin-left:1px}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}

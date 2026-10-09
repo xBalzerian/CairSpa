@@ -2,20 +2,32 @@
   "slug": "dermal-fillers",
   "name": "Fillers & HA Injectables",
   "category": "injectables",
-  "menuBlurb": "HA fillers for lips, cheeks, jawline and skin boosters",
+  "menuBlurb": "HA fillers and injectables for lips, cheeks and skin",
   "metaTitle": "Dermal Fillers Huntington Beach | CAIR SPA",
-  "metaDescription": "Hyaluronic acid fillers in Huntington Beach for lips, cheeks, jawline, chin and under-eyes, plus HA skin boosters. Book your free consultation today.",
+  "metaDescription": "Hyaluronic acid fillers in Huntington Beach for lips, cheeks, jawline, chin and under-eyes, plus other HA injectables. Book your free consultation today.",
   "h1": "Dermal Fillers & HA Injectables in Huntington Beach",
-  "intro": "Hyaluronic acid (HA) fillers are injectable gels that restore lost volume, add shape and smooth folds in areas like the lips, cheeks, jawline, chin and under-eyes. HA skin boosters use the same ingredient in a lighter way to improve hydration and skin quality. They suit adults who want visible, natural-looking improvement without surgery.",
+  "intro": "Hyaluronic acid (HA) fillers are injectable gels that restore lost volume, add shape and smooth folds in areas like the lips, cheeks, jawline, chin and under-eyes. Other HA injectables use the same ingredient in a lighter way to improve hydration and skin quality. They suit adults who want visible, natural-looking improvement without surgery.",
   "quickFacts": [
-    {"label": "Treatment time", "value": "Typically 30–60 minutes"},
-    {"label": "Downtime", "value": "Minimal; some swelling or bruising for a few days is common"},
-    {"label": "Results", "value": "Visible right away, settling over about 2 weeks"},
-    {"label": "Sessions", "value": "Fillers often 1 session; skin boosters usually a short series"}
+    {
+      "label": "Treatment time",
+      "value": "Typically 30–60 minutes"
+    },
+    {
+      "label": "Downtime",
+      "value": "Minimal; some swelling or bruising for a few days is common"
+    },
+    {
+      "label": "Results",
+      "value": "Visible right away, settling over about 2 weeks"
+    },
+    {
+      "label": "Sessions",
+      "value": "Fillers often 1 session; other HA injectables usually a short series"
+    }
   ],
   "whatIs": [
     "Hyaluronic acid is a sugar molecule your body already makes, and it helps skin hold onto water. As we age, we naturally lose volume in the face from changes in fat, bone and collagen, which can lead to flatter cheeks, thinner lips, deeper folds and hollows under the eyes. HA fillers, which include product families such as Juvéderm® and Restylane®, are designed to replace some of that volume and support the structure of the face. Different HA gels vary in thickness and firmness, so a softer gel might be chosen for the lips and a firmer one for the jawline or chin.",
-    "HA skin boosters are placed in tiny amounts across the skin rather than in one spot, with the aim of improving hydration, smoothness and glow rather than changing shape. One advantage of HA products is that they can usually be dissolved with an enzyme called hyaluronidase if an adjustment is ever needed. At CAIR SPA in Huntington Beach, treatments are performed under the oversight of Tran Plastic Surgery and Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery."
+    "Other HA injectables are placed in tiny amounts across the skin rather than in one spot, with the aim of improving hydration, smoothness and glow rather than changing shape. One advantage of HA products is that they can usually be dissolved with an enzyme called hyaluronidase if an adjustment is ever needed. At CAIR SPA in Huntington Beach, treatments are performed under the oversight of Tran Plastic Surgery and Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery."
   ],
   "goodFor": [
     "Thin lips or uneven lip shape",
@@ -24,13 +36,22 @@
     "A recessed or weak-looking chin",
     "Under-eye hollows and tired-looking eyes",
     "Smile lines and marionette lines",
-    "Dull, dehydrated or crepey skin (skin boosters)",
-    "Fine lines and rough skin texture (skin boosters)"
+    "Dull, dehydrated or crepey skin (HA injectables)",
+    "Fine lines and rough skin texture (HA injectables)"
   ],
   "steps": [
-    {"title": "Consultation", "text": "We discuss what you would like to change, look at your facial proportions in different lighting and review your medical history. Together we decide which areas to treat and whether filler, a skin booster or another option fits your goals best."},
-    {"title": "Treatment", "text": "The area is cleansed and numbed. Many HA fillers also contain lidocaine for added comfort. The product is placed with a fine needle or a blunt cannula, and the result is shaped and checked as we go."},
-    {"title": "Follow-up", "text": "Swelling usually settles within about 2 weeks, which is when the final result is easiest to judge. A follow-up visit lets us review the outcome and, if needed, make small refinements."}
+    {
+      "title": "Consultation",
+      "text": "We discuss what you would like to change, look at your facial proportions in different lighting and review your medical history. Together we decide which areas to treat and whether filler, another HA injectable or another option fits your goals best."
+    },
+    {
+      "title": "Treatment",
+      "text": "The area is cleansed and numbed. Many HA fillers also contain lidocaine for added comfort. The product is placed with a fine needle or a blunt cannula, and the result is shaped and checked as we go."
+    },
+    {
+      "title": "Follow-up",
+      "text": "Swelling usually settles within about 2 weeks, which is when the final result is easiest to judge. A follow-up visit lets us review the outcome and, if needed, make small refinements."
+    }
   ],
   "expect": {
     "before": "If your doctor agrees, avoid alcohol and non-essential blood-thinning supplements or pain relievers for a few days beforehand to help reduce bruising. If you have an important event, plan treatment at least 2 weeks ahead. Tell us about any history of cold sores, especially if you are having lip filler.",
@@ -38,12 +59,34 @@
     "after": "Swelling, tenderness and bruising are common for a few days, especially in the lips and under-eyes. Cool compresses can help. You will usually be asked to avoid strenuous exercise, heat, alcohol and pressing on the area for about 24–48 hours, and to contact us right away if you notice unusual pain, skin color changes or vision changes."
   },
   "faqs": [
-    {"q": "How much do dermal fillers cost?", "a": "Price depends on your plan, including the areas treated and how much product is needed to reach your goals. Because every face is different, we provide an exact quote at your free consultation. You are never obligated to book treatment that day."},
-    {"q": "How much downtime is there after filler?", "a": "Most people return to work and normal routines right away. Swelling and bruising are common for a few days, particularly in the lips and under-eye area, and usually fade within about a week. Planning around important events is a good idea."},
-    {"q": "How long do HA fillers last?", "a": "Results often last anywhere from about 6 to 18 months, and sometimes longer, depending on the product, the area treated and your metabolism. Areas that move a lot, like the lips, tend to wear off sooner than the cheeks or chin. Skin boosters usually need maintenance sessions to keep their effect."},
-    {"q": "Does filler hurt?", "a": "Most people describe it as pressure and mild stinging. Topical numbing and the lidocaine contained in many HA fillers help keep you comfortable. The lips are usually the most sensitive area, but discomfort is brief."},
-    {"q": "Who is a good candidate for fillers or skin boosters?", "a": "Healthy adults with volume loss, lines, or skin dehydration who want a non-surgical improvement are often good candidates. Treatment is usually postponed during pregnancy or breastfeeding, or if there is an active skin infection in the area. Your provider will review your health history and expectations first."},
-    {"q": "Can filler be reversed if I don't like it?", "a": "HA fillers can usually be dissolved with an enzyme called hyaluronidase. This is one reason many people choose HA products, especially for their first treatment. Your provider will talk through this option during your consultation."}
+    {
+      "q": "How much do dermal fillers cost?",
+      "a": "Price depends on your plan, including the areas treated and how much product is needed to reach your goals. Because every face is different, we provide an exact quote at your free consultation. You are never obligated to book treatment that day."
+    },
+    {
+      "q": "How much downtime is there after filler?",
+      "a": "Most people return to work and normal routines right away. Swelling and bruising are common for a few days, particularly in the lips and under-eye area, and usually fade within about a week. Planning around important events is a good idea."
+    },
+    {
+      "q": "How long do HA fillers last?",
+      "a": "Results often last anywhere from about 6 to 18 months, and sometimes longer, depending on the product, the area treated and your metabolism. Areas that move a lot, like the lips, tend to wear off sooner than the cheeks or chin. Other HA injectables usually need maintenance sessions to keep their effect."
+    },
+    {
+      "q": "Does filler hurt?",
+      "a": "Most people describe it as pressure and mild stinging. Topical numbing and the lidocaine contained in many HA fillers help keep you comfortable. The lips are usually the most sensitive area, but discomfort is brief."
+    },
+    {
+      "q": "Who is a good candidate for fillers or HA injectables?",
+      "a": "Healthy adults with volume loss, lines, or skin dehydration who want a non-surgical improvement are often good candidates. Treatment is usually postponed during pregnancy or breastfeeding, or if there is an active skin infection in the area. Your provider will review your health history and expectations first."
+    },
+    {
+      "q": "Can filler be reversed if I don't like it?",
+      "a": "HA fillers can usually be dissolved with an enzyme called hyaluronidase. This is one reason many people choose HA products, especially for their first treatment. Your provider will talk through this option during your consultation."
+    }
   ],
-  "related": ["botox", "sculptra", "prf-under-eye"]
+  "related": [
+    "botox",
+    "sculptra",
+    "prf-under-eye"
+  ]
 }

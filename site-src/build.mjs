@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v1';
+const VERSION = 'v2';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -26,16 +26,16 @@ const SITE = {
 // Real photography (Unsplash licence). Models, not patients.
 const IMG = {
   hero: '1552693673-1bf958298935', consult: '1666886573531-48d2e3c2b684', why: '1761718210089-ba3bb5ccb54f',
-  injector: '1785861485926-93a13556d656',
-  cat_injectables: '1785861485926-93a13556d656', cat_skin: '1570172619644-dfd03ed5d881', cat_laser: '1598300195998-364bf445842c', cat_wellness: '1763310225009-50214e3c99d9',
-  botox: '1746708810803-722593e53772', 'dermal-fillers': '1746017062285-13c77e29fc25', sculptra: '1785861084191-3600dfc2a6d6',
+  injector: '1746708810803-722593e53772',
+  cat_injectables: '1746708810803-722593e53772', cat_skin: '1570172619644-dfd03ed5d881', cat_laser: '1598300195998-364bf445842c', cat_wellness: '1763310225009-50214e3c99d9',
+  botox: '1746708810803-722593e53772', 'dermal-fillers': '1731355771418-f10ab62c9f86', sculptra: '1785861084191-3600dfc2a6d6',
   'prp-hair-restoration': '1785860458107-5be1a99d4188', 'prf-under-eye': '1785861378703-1c991c4548ef',
-  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': '1713085085470-fba013d67e65', 'skin-rejuvenation': '1616394584738-fc6e612e71b9',
-  aerolase: '1598300195998-364bf445842c', 'laser-hair-removal': '1700760933574-9f0f4ea9aa3b', 'skin-tag-removal': '1728727217834-b190862837a3',
-  'vein-treatment': '1700760933941-3a06a28fbf47', 'acne-treatment': '1660646463659-df77c1580723', 'melasma-treatment': '1655026392641-bf283a5f12d4',
-  'pigmented-lesions': '1728727267814-792db55ce678',
-  'iv-infusion': '1763310225009-50214e3c99d9', 'nad-therapy': '1516574187841-cb9cc2ca948b', 'weight-loss': '1666886573531-48d2e3c2b684',
-  'thread-lift': '1761819922656-d1b77eef49c0', 'exosome-therapy': '1761718209835-c8586b7dcac0', 'hair-transplant': '1633179963355-44f57f194d54',
+  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': '1761819920857-7edc5e808fd3', 'skin-rejuvenation': '1741934023052-26baf5535088',
+  aerolase: '1598300195998-364bf445842c', 'laser-hair-removal': '1700760933574-9f0f4ea9aa3b', 'skin-tag-removal': '1746806942799-b4db209e9a6b',
+  'vein-treatment': '1700760933941-3a06a28fbf47', 'acne-treatment': '1660646463659-df77c1580723', 'melasma-treatment': '1785861775561-c6db7da314a0',
+  'pigmented-lesions': '1732993486279-9d0f3b91adb2',
+  'iv-infusion': '1763310225009-50214e3c99d9', 'nad-therapy': '1516574187841-cb9cc2ca948b', 'weight-loss': '1675270444770-1a6d1f69aefc',
+  'thread-lift': '1761819922656-d1b77eef49c0', 'exosome-therapy': '1761718209708-9ab9ba1c7252', 'hair-transplant': '1633179963355-44f57f194d54',
 };
 const img = (id, w = 1200, h) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}${h ? `&h=${h}` : ''}&q=78`;
 const pic = (id, alt, { w = 1200, ratio, eager = false, sizes = '100vw' } = {}) => {
