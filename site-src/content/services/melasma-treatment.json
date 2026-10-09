@@ -1,0 +1,91 @@
+{
+  "slug": "melasma-treatment",
+  "name": "Melasma Treatment",
+  "category": "laser",
+  "menuBlurb": "Conservative laser care to help manage melasma",
+  "metaTitle": "Melasma Treatment in Huntington Beach | CAIR SPA",
+  "metaDescription": "Melasma treatment in Huntington Beach using a conservative Aerolase laser plan with sun protection and skincare guidance. Book your free consultation.",
+  "h1": "Melasma Treatment in Huntington Beach",
+  "intro": "Melasma is a common, chronic skin condition that causes brown or gray-brown patches, usually on the cheeks, forehead, upper lip or chin. At CAIR SPA in Huntington Beach, we offer a conservative treatment approach using the Aerolase laser, combined with strict sun protection and supportive skincare, for adults who want to lighten melasma and manage it over time.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "Often 15 to 30 minutes"
+    },
+    {
+      "label": "Downtime",
+      "value": "Usually none; mild redness may last a few hours"
+    },
+    {
+      "label": "Results",
+      "value": "Gradual lightening; melasma can recur and needs ongoing care"
+    },
+    {
+      "label": "Sessions",
+      "value": "A series at gentle settings, then maintenance as needed"
+    }
+  ],
+  "whatIs": [
+    "Melasma is driven by overactive pigment cells. Sun and visible light exposure, heat, hormones (including pregnancy and birth control), genetics and some medications can all trigger or worsen it. It is more common in women and in people with medium to darker skin tones. Melasma is considered chronic: it can be improved and managed, but it is not cured, and it can return, especially after sun exposure.",
+    "Because aggressive heat can make melasma worse, laser treatment must be conservative. The Aerolase laser uses very short 650-microsecond pulses, and for melasma your provider uses gentle settings over a series of sessions, aiming to lighten pigment gradually while limiting irritation and heat in the skin. Progress is slow and steady by design.",
+    "Sun protection is essential. Daily broad-spectrum sunscreen, ideally a tinted mineral formula that also helps block visible light, along with a hat and shade, is the foundation of any melasma plan. Without consistent sun protection, results are unlikely to last. We may also recommend skincare products to use at home and will coordinate with your other providers if you use prescription treatments."
+  ],
+  "goodFor": [
+    "Brown or gray-brown patches on the cheeks",
+    "Melasma on the forehead or upper lip",
+    "Pigment that darkened with pregnancy or hormones",
+    "Uneven tone that worsens with sun exposure",
+    "People willing to commit to daily sun protection",
+    "Those looking for a gentle, gradual approach"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We confirm the pattern looks like melasma, review triggers such as hormones and sun exposure, discuss your skincare and set realistic expectations."
+    },
+    {
+      "title": "Conservative treatment",
+      "text": "Your provider treats the area with the Aerolase laser at gentle settings. Settings are adjusted carefully from session to session based on how your skin responds."
+    },
+    {
+      "title": "Maintenance and protection",
+      "text": "After the initial series, maintenance visits and strict daily sun protection help keep pigment from returning. We check in regularly and adjust your plan."
+    }
+  ],
+  "expect": {
+    "before": "Start daily broad-spectrum sunscreen right away and avoid tanning. Tell us if you are pregnant, breastfeeding, or using hormonal medications or prescription lightening creams.",
+    "during": "You will wear protective eyewear. Most people feel gentle warmth. Sessions are relatively quick.",
+    "after": "Mild redness may last a few hours. Avoid heat, saunas, hot yoga and sun exposure in the days after treatment, and reapply sunscreen throughout the day."
+  },
+  "faqs": [
+    {
+      "q": "How much does melasma treatment cost?",
+      "a": "Price depends on your treatment plan, including the number of sessions and any maintenance visits. We give you an exact quote at your free consultation."
+    },
+    {
+      "q": "Is there downtime after melasma treatment?",
+      "a": "Usually not. Mild redness can occur for a few hours. The most important part of aftercare is avoiding heat and sun exposure."
+    },
+    {
+      "q": "Does melasma laser treatment hurt?",
+      "a": "Most people describe it as a mild warm sensation. Because settings for melasma are gentle, treatments are generally comfortable."
+    },
+    {
+      "q": "Can melasma be cured?",
+      "a": "No. Melasma is a chronic condition that can be improved and managed but can return, especially with sun exposure, heat or hormonal changes. Ongoing sun protection and maintenance are part of long-term care."
+    },
+    {
+      "q": "How long do melasma results last?",
+      "a": "It varies a lot from person to person. With consistent sun protection and maintenance, many people keep their improvement, but flare-ups are common after unprotected sun exposure or hormonal shifts."
+    },
+    {
+      "q": "Who is a good candidate for melasma treatment?",
+      "a": "Adults with diagnosed or suspected melasma who are ready to commit to daily sun protection and a gradual plan are good candidates. People who are pregnant should wait, and any unusual or changing spot should be evaluated by a medical provider first."
+    }
+  ],
+  "related": [
+    "aerolase",
+    "pigmented-lesions",
+    "skin-rejuvenation"
+  ]
+}

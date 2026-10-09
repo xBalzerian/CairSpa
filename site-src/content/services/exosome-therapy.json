@@ -1,0 +1,93 @@
+{
+  "slug": "exosome-therapy",
+  "name": "Exosome Therapy",
+  "category": "wellness",
+  "menuBlurb": "Topical exosome add-on to support skin after treatments",
+  "metaTitle": "Exosome Therapy in Huntington Beach | CAIR SPA",
+  "metaDescription": "Exosome therapy at CAIR SPA is a cosmetic add-on often paired with microneedling. Learn what the evidence does and does not show. Book a free consultation.",
+  "h1": "Exosome Therapy in Huntington Beach",
+  "intro": "Exosome therapy is a cosmetic skin treatment that applies a product containing exosomes, tiny particles released by cells, to the skin, most often right after microneedling. It is aimed at adults who want to support their skin's recovery and overall appearance, but it is important to know that exosome products for skin are not FDA-approved as drugs and the scientific evidence is still emerging.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "Usually added to another treatment"
+    },
+    {
+      "label": "Downtime",
+      "value": "Depends on the paired treatment"
+    },
+    {
+      "label": "Results",
+      "value": "Vary; evidence is still emerging"
+    },
+    {
+      "label": "Sessions",
+      "value": "Discussed at consultation"
+    }
+  ],
+  "whatIs": [
+    "Exosomes are very small packages that cells use to send signals to one another. They can carry proteins, lipids and genetic material. In aesthetics, exosome products are typically lab-derived and are applied to the skin, often immediately after microneedling, when tiny channels in the skin are open. The idea is that these signals may help support skin healing and the look of texture and tone, but much of the research so far is early, small or laboratory-based, and results in people can vary widely.",
+    "We want to be clear and honest about what this treatment is. The U.S. Food and Drug Administration (FDA) has not approved any exosome product as a drug to treat any skin condition, and the FDA has issued public warnings about unapproved exosome products marketed for injection or to treat diseases. Cosmetic exosome products are not reviewed by the FDA for effectiveness in the same way as approved drugs. At CAIR SPA, exosome therapy is offered as an optional cosmetic add-on, not as a medical cure, under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon."
+  ],
+  "goodFor": [
+    "Adding to a microneedling session",
+    "Dull or tired-looking skin",
+    "Uneven texture",
+    "Supporting skin comfort after treatment",
+    "People who understand the evidence is still developing"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We discuss your skin goals, health history and expectations, explain what is and is not known about exosomes, and help you decide whether it makes sense for you."
+    },
+    {
+      "title": "Primary treatment",
+      "text": "Exosome therapy is typically paired with a treatment such as microneedling, which is performed first according to your plan."
+    },
+    {
+      "title": "Application",
+      "text": "The exosome product is applied topically to the treated skin and gently worked in."
+    },
+    {
+      "title": "Aftercare",
+      "text": "You follow the aftercare for your primary treatment, and we check how your skin responds at follow-up."
+    }
+  ],
+  "expect": {
+    "before": "Share your full medical history, allergies and any medications. Ask any questions you have about the product's source and the evidence behind it. We will answer them plainly before you decide.",
+    "during": "Applying the product itself is usually painless. Any sensation mostly comes from the treatment it is paired with, such as microneedling, which is done with numbing cream.",
+    "after": "Recovery generally follows the paired treatment, often 1–3 days of redness after microneedling. Keep skin clean, avoid makeup and heavy products for about a day, and wear sunscreen. Tell us if you notice unusual irritation or signs of a reaction."
+  },
+  "faqs": [
+    {
+      "q": "How much does exosome therapy cost?",
+      "a": "Price depends on your plan, including the treatment it is paired with and the number of sessions. We give you an exact quote at your free consultation."
+    },
+    {
+      "q": "Is exosome therapy FDA-approved?",
+      "a": "No. The FDA has not approved any exosome product as a drug for skin conditions, and it has warned the public about unapproved exosome products sold for injection or to treat diseases. At CAIR SPA we offer exosomes only as an optional cosmetic add-on and are open about the limits of current evidence."
+    },
+    {
+      "q": "Is there downtime?",
+      "a": "The exosome application itself does not add significant downtime. Your recovery depends mostly on the paired treatment, such as microneedling, which often causes 1–3 days of redness."
+    },
+    {
+      "q": "How long do results last?",
+      "a": "There is not yet strong evidence about how much exosomes add or how long any added benefit lasts. Results vary from person to person, and we do not promise specific outcomes."
+    },
+    {
+      "q": "Does exosome therapy hurt?",
+      "a": "Applying the product is generally painless. Any discomfort usually comes from the paired treatment, and we use numbing cream for microneedling to keep you comfortable."
+    },
+    {
+      "q": "Who is a good candidate for exosome therapy?",
+      "a": "Healthy adults who are already planning a treatment like microneedling and who understand that the evidence is still developing may consider it. It may not be appropriate during pregnancy or breastfeeding, with active skin infections, or with certain medical conditions, which we review at your consultation. If you are in Huntington Beach and curious, a free consultation is a no-pressure way to get your questions answered."
+    }
+  ],
+  "related": [
+    "rf-microneedling",
+    "skin-rejuvenation",
+    "facial"
+  ]
+}

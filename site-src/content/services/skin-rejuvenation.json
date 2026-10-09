@@ -1,0 +1,96 @@
+{
+  "slug": "skin-rejuvenation",
+  "name": "Skin Rejuvenation",
+  "category": "skin",
+  "menuBlurb": "A combined plan for tone, texture and glow",
+  "metaTitle": "Skin Rejuvenation in Huntington Beach | CAIR SPA",
+  "metaDescription": "Skin rejuvenation at CAIR SPA combines facials, microneedling, laser and injectables into one plan for tone, texture and glow. Book a free consultation.",
+  "h1": "Skin Rejuvenation in Huntington Beach",
+  "intro": "Skin rejuvenation at CAIR SPA is a personalized treatment plan, not a single procedure, that combines services such as facials, microneedling, Aerolase® laser and injectables to improve overall tone, texture and glow. It is designed for adults who have several concerns at once, such as dullness, uneven color, fine lines and loss of volume, and want one clear plan to address them.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "Varies by treatment, often 30–90 minutes per visit"
+    },
+    {
+      "label": "Downtime",
+      "value": "None to a few days, depending on the plan"
+    },
+    {
+      "label": "Results",
+      "value": "Build gradually over weeks to months"
+    },
+    {
+      "label": "Sessions",
+      "value": "A series planned over several months"
+    }
+  ],
+  "whatIs": [
+    "Most skin changes have more than one cause. Sun exposure can leave redness and spots, collagen loss softens texture and firmness, and volume changes affect the shape of the face. A single treatment usually targets only one of these. A skin rejuvenation plan looks at the whole picture and pairs the right tools in the right order, so each one supports the others.",
+    "A plan might start with a Customized Facial to clean and hydrate the skin, add microneedling or RF microneedling to stimulate collagen for texture and fine lines, use Aerolase® laser treatments for redness, pigment or acne concerns, and include injectables such as neurotoxins (for example Botox®, Dysport® or Xeomin®) or dermal fillers where movement lines or volume loss play a role. Every plan is built after an in-person assessment and carried out under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon."
+  ],
+  "goodFor": [
+    "Dull, tired-looking skin",
+    "Uneven tone and sun spots",
+    "Redness",
+    "Rough texture and enlarged pores",
+    "Fine lines and wrinkles",
+    "Acne scars",
+    "Mild volume loss",
+    "People who want one coordinated plan"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We discuss your goals, timeline, budget and lifestyle, review your skin history and examine your skin to understand what is driving each concern."
+    },
+    {
+      "title": "Personal plan",
+      "text": "We recommend a combination and sequence of treatments, explain what each one does, and set realistic expectations for results and downtime."
+    },
+    {
+      "title": "Treatment series",
+      "text": "Treatments are spaced over weeks or months so your skin has time to heal and respond between sessions."
+    },
+    {
+      "title": "Review and maintain",
+      "text": "We check your progress, adjust the plan as needed and suggest a simple maintenance schedule and home routine."
+    }
+  ],
+  "expect": {
+    "before": "Bring a list of your current skin products, medications and any recent treatments. If you have an event coming up, tell us the date so we can schedule treatments with downtime well ahead of it.",
+    "during": "Each visit depends on the treatment that day. Facials are relaxing, microneedling uses numbing cream, laser sessions are typically quick, and injectables take only a few minutes per area.",
+    "after": "Aftercare depends on the treatment, from no downtime after a facial to a few days of redness after microneedling. Daily sunscreen is essential throughout your plan to protect your progress, especially with the year-round sun in Huntington Beach."
+  },
+  "faqs": [
+    {
+      "q": "How much does a skin rejuvenation plan cost?",
+      "a": "Price depends on your plan, since it depends on which treatments you choose and how many sessions you need. We give you an exact quote at your free consultation, and we can tailor the plan to the budget you are comfortable with."
+    },
+    {
+      "q": "How much downtime is involved?",
+      "a": "It depends on the treatments in your plan. Facials and many laser sessions often have little to no downtime, while microneedling may cause 1–3 days of redness. We schedule things around your calendar."
+    },
+    {
+      "q": "How long do results last?",
+      "a": "Results vary by treatment and by person. Collagen-building treatments can provide improvements that develop and last for months, while neurotoxin results typically last about 3–4 months. Sun protection and maintenance help results last longer."
+    },
+    {
+      "q": "Do the treatments hurt?",
+      "a": "Most treatments are well tolerated. We use numbing cream for microneedling and many injectables, and laser sessions are often described as a warm, quick snapping sensation."
+    },
+    {
+      "q": "Who is a good candidate for skin rejuvenation?",
+      "a": "Healthy adults with more than one skin concern who prefer a coordinated plan over one-off treatments are often good candidates. Pregnancy, certain medications, active infections or some medical conditions can affect which options are safe, which we review at your consultation."
+    },
+    {
+      "q": "Do I have to do every treatment at once?",
+      "a": "No. Plans are spread out over time, and you can start with one treatment and add others later. Many people begin with the concern that bothers them most."
+    }
+  ],
+  "related": [
+    "facial",
+    "rf-microneedling",
+    "aerolase"
+  ]
+}

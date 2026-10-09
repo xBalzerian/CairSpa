@@ -1,0 +1,95 @@
+{
+  "slug": "rf-microneedling",
+  "name": "Microneedling",
+  "category": "skin",
+  "menuBlurb": "Microneedling and RF microneedling for texture and scars",
+  "metaTitle": "Microneedling & RF Microneedling Huntington Beach | CAIR SPA",
+  "metaDescription": "Microneedling and RF microneedling at CAIR SPA help improve texture, fine lines and acne scars by stimulating collagen. Book your free consultation.",
+  "h1": "Microneedling and RF Microneedling in Huntington Beach",
+  "intro": "Microneedling is a skin treatment that uses very fine needles to create controlled micro-injuries, prompting your skin to produce new collagen and elastin. RF microneedling adds radiofrequency energy delivered through the needles for a deeper tightening effect. Both are good options for adults who want to improve texture, fine lines, enlarged pores or acne scars with limited downtime.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "About 45–90 minutes, including numbing"
+    },
+    {
+      "label": "Downtime",
+      "value": "Often 1–3 days of redness"
+    },
+    {
+      "label": "Results",
+      "value": "Build gradually over 1–3 months"
+    },
+    {
+      "label": "Sessions",
+      "value": "Typically a series of 3, spaced 4–6 weeks apart"
+    }
+  ],
+  "whatIs": [
+    "Standard microneedling, sometimes called collagen induction therapy, uses a sterile device with tiny needles to make microscopic channels in the skin. Your body responds by repairing those channels, which can gradually lead to firmer, smoother and more even-looking skin. RF microneedling works on the same principle but also delivers controlled heat from radiofrequency energy beneath the surface, which can further encourage collagen remodeling and mild tightening.",
+    "Which option is right for you depends on your concerns, skin type and how much downtime you can plan for. Standard microneedling is often a good fit for overall texture and glow, while RF microneedling is commonly chosen for deeper lines, laxity or acne scarring. Treatments are performed under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon."
+  ],
+  "goodFor": [
+    "Acne scars",
+    "Fine lines and wrinkles",
+    "Enlarged pores",
+    "Rough or uneven texture",
+    "Mild skin laxity",
+    "Dullness and uneven tone",
+    "Some types of stretch marks"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We review your goals, skin history and medications, examine your skin and recommend standard or RF microneedling, along with a realistic number of sessions."
+    },
+    {
+      "title": "Prep and numbing",
+      "text": "Your skin is cleansed and a topical numbing cream is applied for comfort, usually for 20–30 minutes before treatment begins."
+    },
+    {
+      "title": "Treatment",
+      "text": "The provider moves the device across each treatment area in a careful pattern, adjusting needle depth, and energy for RF, to suit different parts of the face or body."
+    },
+    {
+      "title": "Aftercare",
+      "text": "Soothing products and sunscreen are applied, and you go home with clear instructions for the next several days."
+    }
+  ],
+  "expect": {
+    "before": "Avoid retinoids, exfoliating acids and other irritating products for several days before treatment, and avoid sunburn. Let us know if you have a history of cold sores, keloid scarring, active acne or are pregnant.",
+    "during": "With numbing cream, most people feel pressure, vibration or a light scratching sensation. RF microneedling can also feel warm. Bonier areas such as the forehead may be more noticeable.",
+    "after": "Expect redness similar to a sunburn and some tightness, often for 1–3 days, with RF sometimes causing a bit more swelling. Keep skin clean, skip makeup for about 24 hours, avoid workouts and heat the first day, and use sunscreen daily."
+  },
+  "faqs": [
+    {
+      "q": "How much does microneedling cost?",
+      "a": "Price depends on your plan, including whether you choose standard or RF microneedling, the areas treated and the number of sessions. You receive an exact quote at your free consultation."
+    },
+    {
+      "q": "How much downtime is there?",
+      "a": "Most people have redness and mild swelling for about 1–3 days, and some notice light flaking as skin heals. RF microneedling may involve slightly more recovery. Many return to normal activities quickly but prefer to plan treatments before a quiet weekend, and many Huntington Beach clients avoid the beach and direct sun for about a week afterward."
+    },
+    {
+      "q": "How long do microneedling results last?",
+      "a": "Because results come from your own new collagen, improvements often continue to develop for a few months after your last session and can last a long time. Skin keeps aging, so many people choose a maintenance session about once or twice a year. Results vary from person to person."
+    },
+    {
+      "q": "Does microneedling hurt?",
+      "a": "Numbing cream keeps most people comfortable. You may feel pressure, prickling or warmth, especially with RF, but the sensation is usually described as very tolerable."
+    },
+    {
+      "q": "Who is a good candidate for microneedling?",
+      "a": "Healthy adults with concerns like texture, fine lines, pores or acne scars are often good candidates. Microneedling may not be suitable during pregnancy, with active acne or skin infections, or with certain medical conditions, which we review at your consultation."
+    },
+    {
+      "q": "What is the difference between microneedling and RF microneedling?",
+      "a": "Both create tiny channels that trigger collagen production. RF microneedling adds radiofrequency heat beneath the surface, which can provide more tightening and is often chosen for deeper scars or laxity. We help you choose based on your goals and downtime."
+    }
+  ],
+  "related": [
+    "skin-rejuvenation",
+    "facial",
+    "exosome-therapy"
+  ]
+}

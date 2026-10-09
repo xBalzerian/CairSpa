@@ -1,0 +1,92 @@
+{
+  "slug": "aerolase",
+  "name": "Aerolase Laser",
+  "category": "laser",
+  "menuBlurb": "One gentle laser for hair, veins, acne and spots",
+  "metaTitle": "Aerolase Laser in Huntington Beach | CAIR SPA",
+  "metaDescription": "Aerolase laser treatments in Huntington Beach for hair removal, veins, acne, melasma, skin tags and sun spots, all skin tones. Book a free consultation.",
+  "h1": "Aerolase Laser Treatments in Huntington Beach",
+  "intro": "Aerolase is a medical laser that delivers energy in very short 650-microsecond pulses, which lets it treat a wide range of skin concerns with typically little discomfort and minimal downtime. At CAIR SPA in Huntington Beach, we use Aerolase for hair removal, skin tags, small veins, acne, melasma and pigmented spots, for adults of all skin types and tones.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "Often 10 to 45 minutes, depending on the concern and area"
+    },
+    {
+      "label": "Downtime",
+      "value": "Usually little to none; mild redness is common"
+    },
+    {
+      "label": "Results",
+      "value": "Vary by concern; most build gradually over a series"
+    },
+    {
+      "label": "Sessions",
+      "value": "Typically a series, planned at your consultation"
+    }
+  ],
+  "whatIs": [
+    "Aerolase is a medical-grade laser built around a very short pulse, about 650 microseconds. Because each pulse is so brief, energy reaches the target in the skin, such as a hair follicle, a small blood vessel or excess pigment, while limiting heat buildup in the surrounding tissue. The manufacturer describes the technology as designed for all skin types and tones, and many patients find treatment comfortable without numbing cream.",
+    "One of the main advantages of Aerolase is versatility. Instead of using a different device for every concern, a single platform can be adjusted to address unwanted hair, spider veins, active acne, discoloration and more. At CAIR SPA, your plan is built at a free consultation, and all services are performed under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon whose practice is in the same building.",
+    "Explore the concerns we treat with Aerolase: laser hair removal, skin tag removal, vein removal, acne treatment, melasma treatment and pigmented lesions such as sun spots and age spots. Each page explains what to expect, how many sessions are typical and who is a good candidate."
+  ],
+  "goodFor": [
+    "Unwanted hair on the face or body",
+    "Small benign skin tags",
+    "Spider veins and small facial or leg veins",
+    "Active acne and acne-related redness",
+    "Melasma, as part of a conservative plan",
+    "Sun spots, age spots and other benign pigmented lesions",
+    "People with lighter or darker skin tones looking for a gentle laser option"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We review your skin, health history, medications and goals, then recommend which Aerolase treatment fits your concern and how many sessions are likely."
+    },
+    {
+      "title": "Treatment",
+      "text": "Your provider moves the Aerolase handpiece over the area in a series of quick pulses. Most patients describe a warm, mild sensation, and many sessions take under an hour."
+    },
+    {
+      "title": "Follow-up",
+      "text": "We check your progress, adjust settings if needed and schedule the next session in your series, along with simple aftercare and sun protection guidance."
+    }
+  ],
+  "expect": {
+    "before": "Avoid tanning and heavy sun exposure for a couple of weeks beforehand, and let us know about any medications, recent skin treatments or history of cold sores. Arrive with clean skin and no makeup on the treatment area.",
+    "during": "You will wear protective eyewear while the handpiece delivers short pulses of light. The sensation is often described as warmth or a light snap, and topical numbing is usually not needed.",
+    "after": "Mild redness or warmth can occur and typically settles within hours. You can usually return to normal activities right away. Daily broad-spectrum sunscreen is important to protect your results."
+  },
+  "faqs": [
+    {
+      "q": "How much does Aerolase treatment cost?",
+      "a": "Price depends on your treatment plan, including the size of the area and the number of sessions you need. We give you an exact quote at your free consultation, so there are no surprises."
+    },
+    {
+      "q": "Is there downtime after Aerolase?",
+      "a": "Downtime is usually minimal. Some people have mild redness or slight swelling for a few hours, and most return to work or daily activities the same day. Your provider will tell you what to expect for your specific treatment."
+    },
+    {
+      "q": "Does Aerolase hurt?",
+      "a": "Most patients describe Aerolase as comfortable, with a feeling of warmth or a light snap. Because of the short pulse, numbing cream is often not needed, though sensitivity varies by person and area."
+    },
+    {
+      "q": "How long do Aerolase results last?",
+      "a": "It depends on the concern. Hair reduction is often long-lasting after a full series, while conditions like acne and melasma can return and may need maintenance. We will explain realistic expectations for your goals at your consultation."
+    },
+    {
+      "q": "Who is a good candidate for Aerolase?",
+      "a": "Adults with concerns such as unwanted hair, small veins, acne, skin tags or uneven pigment are often good candidates, across a wide range of skin tones. People who are pregnant, have a fresh tan, or have certain medical conditions may need to wait or choose another option."
+    },
+    {
+      "q": "Is Aerolase safe for darker skin tones?",
+      "a": "The manufacturer describes Aerolase as designed for all skin types and tones, and its short pulse limits heat in surrounding skin. Your provider will still select settings carefully for your skin and may recommend a test area."
+    }
+  ],
+  "related": [
+    "laser-hair-removal",
+    "acne-treatment",
+    "pigmented-lesions"
+  ]
+}

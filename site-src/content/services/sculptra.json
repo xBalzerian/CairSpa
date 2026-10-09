@@ -1,0 +1,48 @@
+{
+  "slug": "sculptra",
+  "name": "Sculptra",
+  "category": "injectables",
+  "menuBlurb": "Collagen stimulator for gradual, natural volume",
+  "metaTitle": "Sculptra® in Huntington Beach | CAIR SPA",
+  "metaDescription": "Sculptra® collagen-stimulating injections in Huntington Beach for gradual, natural-looking volume and firmer skin. Book your free consultation today.",
+  "h1": "Sculptra® Collagen Stimulator in Huntington Beach",
+  "intro": "Sculptra® is an injectable collagen stimulator made from poly-L-lactic acid that helps your body rebuild its own collagen over time. Rather than adding instant volume, it gradually restores fullness and firmness, making it a good fit for adults with age-related volume loss or thinning skin who prefer subtle, natural-looking change.",
+  "quickFacts": [
+    {"label": "Treatment time", "value": "Typically 30–45 minutes"},
+    {"label": "Downtime", "value": "Minimal; mild swelling or bruising for a few days"},
+    {"label": "Results", "value": "Develop gradually over a few months"},
+    {"label": "Sessions", "value": "Usually a series of 2–3 sessions, about 4–6 weeks apart"}
+  ],
+  "whatIs": [
+    "Collagen is the protein that keeps skin firm and supported. Starting in early adulthood, the body slowly produces less of it, and over the years this contributes to hollow temples, flatter cheeks, sagging contours and thinner skin. Sculptra® is a biostimulator: its poly-L-lactic acid particles are placed under the skin, where they prompt your body to produce new collagen in the treated area. Some fullness is visible right after treatment from the fluid it is mixed with, but that fades in a few days. The real result builds gradually as new collagen forms.",
+    "Because the change is slow and comes from your own tissue, results tend to look soft and natural, and they often last longer than many HA fillers, frequently up to about 2 years, though this varies. Sculptra® is different from HA filler and cannot be dissolved, so careful planning and an experienced injector matter. At CAIR SPA in Huntington Beach, treatments are performed under the oversight of Tran Plastic Surgery and Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery."
+  ],
+  "goodFor": [
+    "Overall facial volume loss with age",
+    "Hollow temples",
+    "Flattened cheeks or midface",
+    "Smile lines and deeper folds",
+    "Softening jawline definition",
+    "Thinning or less firm skin",
+    "People who prefer gradual, subtle change"
+  ],
+  "steps": [
+    {"title": "Consultation", "text": "We assess your facial structure, skin quality and goals, and review your medical history. We explain how collagen stimulation works and map out how many sessions you are likely to need for your desired result."},
+    {"title": "Treatment", "text": "The product is prepared ahead of time and mixed for smooth placement. After cleansing and numbing, it is injected with a fine needle or cannula across the treatment areas, often spreading it evenly rather than concentrating it in one spot."},
+    {"title": "Series and review", "text": "Most people return for additional sessions about 4–6 weeks apart. Because results build over months, we review your progress at each visit and adjust the plan as your collagen responds."}
+  ],
+  "expect": {
+    "before": "If your doctor agrees, avoid alcohol and non-essential blood thinners for a few days beforehand to reduce bruising. Let us know about any history of keloids, skin infections or autoimmune conditions. Plan to give yourself a few months to see the full result.",
+    "during": "Numbing helps keep you comfortable, and most people feel pressure and mild stinging. You may look fuller right after treatment, but this early fullness is temporary and fades within a few days.",
+    "after": "Swelling, tenderness and bruising are common for a few days. Your provider will likely ask you to massage the treated area for several days afterward, often described as 5 minutes, 5 times a day, for 5 days, to help the product distribute evenly. Follow your provider's specific aftercare instructions closely."
+  },
+  "faqs": [
+    {"q": "How much does Sculptra® cost?", "a": "Price depends on your plan, including how many areas are treated and how many sessions you need. Because Sculptra® is usually done as a series, we build a personalized plan and give you an exact quote at your free consultation."},
+    {"q": "Is there downtime after Sculptra®?", "a": "Downtime is typically minimal. Mild swelling, tenderness and bruising are common for a few days, and most people return to work quickly. You will need to do gentle at-home massage for several days after each session."},
+    {"q": "How long do Sculptra® results last?", "a": "Because Sculptra® helps your body build its own collagen, results often last up to about 2 years, and sometimes longer. Results vary with age, lifestyle and how your skin responds. Occasional maintenance sessions can help extend them."},
+    {"q": "Does Sculptra® hurt?", "a": "Most people feel pressure and mild stinging during injection. Topical numbing and local anesthetic mixed into the product help with comfort. Any tenderness afterward usually fades within a few days."},
+    {"q": "Who is a good candidate for Sculptra®?", "a": "Healthy adults with gradual volume loss or thinning skin who are comfortable waiting a few months for results are often good candidates. It is usually not recommended during pregnancy or breastfeeding, or for people prone to keloids or with active skin infections. Your provider will review your history first."},
+    {"q": "How is Sculptra® different from HA fillers?", "a": "HA fillers add volume right away by placing a gel under the skin, and they can usually be dissolved. Sculptra® works more slowly, stimulating your own collagen for gradual, longer-lasting change, and it cannot be dissolved. Some people benefit from a combination of both."}
+  ],
+  "related": ["dermal-fillers", "botox", "rf-microneedling"]
+}

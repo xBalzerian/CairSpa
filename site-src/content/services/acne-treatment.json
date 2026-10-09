@@ -1,0 +1,92 @@
+{
+  "slug": "acne-treatment",
+  "name": "Acne Treatment",
+  "category": "laser",
+  "menuBlurb": "Laser care for active acne and post-acne redness",
+  "metaTitle": "Laser Acne Treatment in Huntington Beach | CAIR SPA",
+  "metaDescription": "Laser acne treatment in Huntington Beach with Aerolase to calm active breakouts and redness, gentle for all skin tones. Book your free consultation.",
+  "h1": "Laser Acne Treatment in Huntington Beach",
+  "intro": "Laser acne treatment uses gentle light energy to calm active breakouts, reduce inflammation and fade the redness acne leaves behind. At CAIR SPA in Huntington Beach, we use the Aerolase laser for teens and adults with mild to moderate acne who want an option that works alongside their skincare routine.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "Often 15 to 30 minutes"
+    },
+    {
+      "label": "Downtime",
+      "value": "Usually none; mild redness may last a few hours"
+    },
+    {
+      "label": "Results",
+      "value": "Improvement often seen over several sessions"
+    },
+    {
+      "label": "Sessions",
+      "value": "Often a series of 3 to 6, then maintenance as needed"
+    }
+  ],
+  "whatIs": [
+    "Acne develops when pores become clogged with oil and dead skin cells, bacteria multiply, and the skin responds with inflammation. Hormones, genetics, stress and certain products can all play a role. Even after breakouts clear, they often leave red or dark marks behind.",
+    "The Aerolase laser delivers energy in very short 650-microsecond pulses. For acne, this energy gently heats the deeper layers of the skin, which is thought to help calm inflammation, reduce oil gland activity and target acne-causing bacteria. It can also reduce the redness of active and healing breakouts. Treatments are typically comfortable, with no need to stop your normal routine.",
+    "Acne is a chronic condition for many people, so laser treatment works best as part of a complete plan that includes a consistent skincare routine. It does not replace care from a medical provider for severe, cystic or scarring acne, and it can be used alongside treatments your doctor has prescribed when appropriate. We will talk through your current products and medications at your consultation."
+  ],
+  "goodFor": [
+    "Mild to moderate active acne",
+    "Inflamed red breakouts",
+    "Redness left behind after breakouts",
+    "Acne on the face, chest or back",
+    "Hormonal breakouts along the jawline",
+    "People of all skin tones looking for a gentle option",
+    "Those who want to complement their skincare routine"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We look at your skin, review your acne history, current products and any prescriptions, and recommend a treatment series and supportive skincare."
+    },
+    {
+      "title": "Treatment",
+      "text": "After cleansing, your provider passes the Aerolase handpiece over the affected areas in quick pulses. Sessions are short and you can usually return to your day right after."
+    },
+    {
+      "title": "Series and maintenance",
+      "text": "Sessions are spaced over several weeks. As breakouts calm, we may recommend periodic maintenance visits to help keep them under control."
+    }
+  ],
+  "expect": {
+    "before": "Let us know about any acne medications, especially oral isotretinoin, which typically needs to be stopped for a period before laser treatment. Avoid tanning and come with clean skin.",
+    "during": "You will wear protective eyewear. Most people feel gentle warmth. Numbing is usually not needed.",
+    "after": "Mild redness may last a few hours. You can typically wear makeup and return to normal activities the same day. Use non-comedogenic products and daily sunscreen."
+  },
+  "faqs": [
+    {
+      "q": "How much does laser acne treatment cost?",
+      "a": "Price depends on the areas treated and how many sessions your plan includes. We give you an exact quote at your free consultation."
+    },
+    {
+      "q": "Is there downtime after laser acne treatment?",
+      "a": "Usually not. Mild redness can last a few hours, and most people go back to work or school right away."
+    },
+    {
+      "q": "Does laser acne treatment hurt?",
+      "a": "Most people find it comfortable, describing a warm sensation on the skin. Numbing cream is usually not needed."
+    },
+    {
+      "q": "How long do results last?",
+      "a": "Results vary. Many people see calmer skin over a series of sessions, but acne can return because of hormones, stress and other factors. Maintenance treatments and a consistent skincare routine help keep breakouts under control."
+    },
+    {
+      "q": "Who is a good candidate for laser acne treatment?",
+      "a": "Teens and adults with mild to moderate active acne or post-acne redness are often good candidates, across a wide range of skin tones. Severe, cystic or scarring acne should also be managed by a medical provider, and people currently taking isotretinoin may need to wait."
+    },
+    {
+      "q": "Can I keep using my acne products?",
+      "a": "In many cases yes, but some products, such as retinoids or exfoliating acids, may need to be paused around treatment. We will review everything you use at your consultation."
+    }
+  ],
+  "related": [
+    "aerolase",
+    "facial",
+    "rf-microneedling"
+  ]
+}

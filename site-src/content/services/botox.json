@@ -1,0 +1,49 @@
+{
+  "slug": "botox",
+  "name": "Neurotoxin",
+  "category": "injectables",
+  "menuBlurb": "Soften frown lines, forehead lines and crow's feet",
+  "metaTitle": "Neurotoxin & Botox® Huntington Beach | CAIR SPA",
+  "metaDescription": "Neurotoxin injections in Huntington Beach to soften frown lines, forehead lines and crow's feet, with physician oversight. Book a free consultation.",
+  "h1": "Neurotoxin Injections (Botox®-Type) in Huntington Beach",
+  "intro": "Neurotoxin injections are a quick, non-surgical treatment that relaxes specific facial muscles to soften expression lines such as frown lines, forehead lines and crow's feet. They are a good fit for adults who want a smoother, refreshed look without surgery or real downtime, whether they are treating existing lines or hoping to slow the deepening of new ones.",
+  "quickFacts": [
+    {"label": "Treatment time", "value": "Typically 10–20 minutes"},
+    {"label": "Downtime", "value": "Little to none; most people return to normal activities the same day"},
+    {"label": "Results", "value": "Begin in about 3–5 days, with full effect around 2 weeks"},
+    {"label": "Sessions", "value": "One session; repeated about every 3–4 months to maintain"}
+  ],
+  "whatIs": [
+    "Neurotoxins, sometimes called botulinum toxin type A or simply \"tox,\" include well-known products such as Botox®, Dysport®, Xeomin® and Jeuveau®. When a very small amount is injected into a targeted muscle, it temporarily blocks the nerve signals that make that muscle contract. With less repeated movement, the overlying skin creases less, and lines caused by expressions like frowning, squinting or raising the brows look softer.",
+    "These are known as dynamic wrinkles, and they respond best to neurotoxin. Lines that are visible even when your face is completely relaxed may improve as well, though deeper static lines sometimes benefit from pairing neurotoxin with other treatments such as fillers or skin resurfacing. At CAIR SPA in Huntington Beach, all treatments are performed under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery. The goal is a natural result: you should still look like yourself, just more rested."
+  ],
+  "goodFor": [
+    "Frown lines between the brows (the \"11s\")",
+    "Horizontal forehead lines",
+    "Crow's feet around the eyes",
+    "Bunny lines on the sides of the nose",
+    "A subtle brow lift",
+    "Chin dimpling or an \"orange peel\" chin",
+    "Softening a gummy smile",
+    "Preventive treatment for early expression lines"
+  ],
+  "steps": [
+    {"title": "Consultation", "text": "We talk through your goals, review your medical history and medications, and watch how your face moves when you smile, frown and raise your brows. This helps us decide which areas to treat and how much product to use."},
+    {"title": "Treatment", "text": "Your skin is cleansed and the injection points are marked. A very fine needle is used to place small amounts of neurotoxin into the targeted muscles. Most appointments take only a few minutes of actual injecting."},
+    {"title": "Follow-up", "text": "Results develop gradually over about two weeks. If needed, we can check in after that point to review your results and make small adjustments so everything looks balanced."}
+  ],
+  "expect": {
+    "before": "For a few days before your visit, your provider may suggest avoiding alcohol and, if your doctor agrees, non-essential blood-thinning supplements or pain relievers to help reduce the chance of bruising. Arrive with a clean face if possible, and let us know if you are pregnant, breastfeeding or have a neuromuscular condition.",
+    "during": "Most people describe the injections as a quick pinch or sting. The needle is very fine, and ice or a topical numbing product can be used if you are sensitive. You can usually return to work or errands right after.",
+    "after": "Small bumps at the injection sites typically settle within an hour. You will usually be asked to stay upright for about 4 hours, avoid rubbing or massaging the treated areas, and skip strenuous exercise for the rest of the day. Minor redness or bruising is possible and usually fades within a few days."
+  },
+  "faqs": [
+    {"q": "How much do neurotoxin injections cost?", "a": "Price depends on your plan, including which areas are treated and how many units are needed. Every face is different, so we give you an exact quote at your free consultation. There is no obligation to book treatment that day."},
+    {"q": "Is there any downtime after neurotoxin injections?", "a": "There is typically little to no downtime. Most people go right back to their normal day, with only mild redness or small bumps that fade quickly. Some people notice minor bruising that lasts a few days and can be covered with makeup."},
+    {"q": "How long do neurotoxin results last?", "a": "Results often last about 3–4 months, though this varies from person to person. Factors like your metabolism, the strength of your muscles and the area treated all play a role. Many people schedule maintenance visits as movement starts to return."},
+    {"q": "Do neurotoxin injections hurt?", "a": "Most people find the discomfort mild and brief, similar to a quick pinch. A very fine needle is used, and the injecting itself usually takes only a few minutes. Ice or numbing cream can help if you are sensitive."},
+    {"q": "Who is a good candidate for neurotoxin injections?", "a": "Healthy adults who are bothered by expression lines and want a natural-looking improvement are often good candidates. Neurotoxin is generally not recommended during pregnancy or breastfeeding, or for people with certain neuromuscular conditions. Your provider will review your health history during your consultation."},
+    {"q": "Will I look frozen or unnatural?", "a": "A natural look is the goal. Doses are planned around your anatomy and preferences, so you can keep expression while softening the lines that bother you. If you are new to neurotoxin, a conservative first treatment with a follow-up check is a common approach."}
+  ],
+  "related": ["dermal-fillers", "sculptra", "skin-rejuvenation"]
+}

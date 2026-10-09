@@ -1,0 +1,47 @@
+{
+  "slug": "prf-under-eye",
+  "name": "PRF Under-Eye Rejuvenation",
+  "category": "injectables",
+  "menuBlurb": "Natural under-eye refresh using your own platelets",
+  "metaTitle": "PRF Under-Eye Treatment Huntington Beach | CAIR SPA",
+  "metaDescription": "PRF under-eye rejuvenation in Huntington Beach uses your own platelets to improve thin, crepey, tired-looking skin. Book your free consultation today.",
+  "h1": "PRF Under-Eye Rejuvenation in Huntington Beach",
+  "intro": "PRF under-eye rejuvenation uses platelet-rich fibrin, made from a small sample of your own blood, injected under the eyes to help improve thin, crepey or tired-looking skin. It suits adults with mild hollowness, fine lines or darkness from thin skin who want a natural, gradual improvement without synthetic filler.",
+  "quickFacts": [
+    {"label": "Treatment time", "value": "About 45–60 minutes, including the blood draw"},
+    {"label": "Downtime", "value": "Mild swelling or bruising for a few days"},
+    {"label": "Results", "value": "Gradual, often visible over several weeks"},
+    {"label": "Sessions", "value": "Commonly 2–3 sessions about 4–6 weeks apart"}
+  ],
+  "whatIs": [
+    "The skin under the eyes is some of the thinnest on the body, so it often shows fatigue and aging early. Fine lines, crepey texture, slight hollowness and a shadowed or bluish tone can all make you look more tired than you feel. PRF (platelet-rich fibrin) is prepared by drawing a small amount of your blood and spinning it in a centrifuge, typically at a lower speed and without an anticoagulant. This produces a platelet-rich concentrate within a fibrin network that may release growth factors gradually after injection.",
+    "When placed under the eyes, PRF is intended to support the skin's natural repair processes, which may help improve thickness, texture and tone over time. Because it comes from your own body, the risk of allergic reaction is low. Results are subtle and build gradually, and they vary from person to person. PRF is not designed to correct deep hollows or puffy under-eye bags, which may need a different approach. At CAIR SPA in Huntington Beach, treatments are performed under the oversight of Tran Plastic Surgery and Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery."
+  ],
+  "goodFor": [
+    "Thin or crepey under-eye skin",
+    "Fine lines below the eyes",
+    "Mild under-eye hollowness",
+    "Dark circles related to thin skin",
+    "A tired or dull look around the eyes",
+    "People who prefer a treatment made from their own blood"
+  ],
+  "steps": [
+    {"title": "Consultation", "text": "We look closely at the under-eye area, including skin quality, hollowness and any puffiness, and review your medical history. We explain whether PRF is likely to help or whether another option, such as HA filler or a skin treatment, may suit you better."},
+    {"title": "Blood draw and preparation", "text": "A small amount of blood is drawn, similar to a routine lab test, and processed in a centrifuge to create PRF. Because PRF begins to set fairly quickly, it is prepared right before injection."},
+    {"title": "Under-eye injections", "text": "After cleansing and numbing, the PRF is placed carefully under the eyes with a fine needle or cannula. You can usually return to most normal activities the same day."}
+  ],
+  "expect": {
+    "before": "Stay well hydrated and eat a normal meal before your visit. If your doctor agrees, avoid alcohol and non-essential blood-thinning supplements or pain relievers for a few days beforehand to reduce bruising. Come without eye makeup if possible.",
+    "during": "The blood draw feels like a standard lab test. With numbing, most people feel mild pressure or stinging during the under-eye injections. The appointment is calm and unhurried.",
+    "after": "Some swelling, puffiness or bruising under the eyes is common and usually settles within a few days. Cool compresses and sleeping with your head slightly elevated can help. Avoid rubbing the area, and skip strenuous exercise for about a day. Improvements tend to appear gradually over the following weeks."
+  },
+  "faqs": [
+    {"q": "How much does PRF under-eye treatment cost?", "a": "Price depends on your plan, including how many sessions are recommended for your goals. We assess your under-eye area and provide an exact quote at your free consultation."},
+    {"q": "What is the downtime after PRF under the eyes?", "a": "Mild swelling and possible bruising are common for a few days. Most people return to work quickly, and makeup can usually be worn after the first day if your skin is calm. Planning ahead of important events is a good idea."},
+    {"q": "How long do PRF under-eye results last?", "a": "Because PRF works by supporting your skin's own repair processes, results build gradually and can last many months, often around a year or more, though this varies. Many people schedule occasional maintenance sessions. Your provider will suggest a plan based on your response."},
+    {"q": "Does PRF under-eye treatment hurt?", "a": "Most people find it very manageable. Numbing is applied before treatment, and you may feel pressure or brief stinging. Tenderness afterward is usually mild."},
+    {"q": "Who is a good candidate for PRF under-eye rejuvenation?", "a": "Healthy adults with thin, crepey skin, fine lines or mild hollowness under the eyes are often good candidates. It is less suited to deep hollows or prominent under-eye bags. People with certain blood disorders, active infections or who take specific blood thinners may not be candidates."},
+    {"q": "Is PRF the same as under-eye filler?", "a": "No. HA under-eye filler adds volume right away with a gel, while PRF uses your own platelets to support gradual improvement in skin quality. Some people are better suited to one or the other, and your provider will help you decide."}
+  ],
+  "related": ["dermal-fillers", "prp-hair-restoration", "skin-rejuvenation"]
+}

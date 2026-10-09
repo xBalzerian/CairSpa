@@ -1,0 +1,92 @@
+{
+  "slug": "skin-tag-removal",
+  "name": "Skin Tag Removal",
+  "category": "laser",
+  "menuBlurb": "Quick laser removal of small benign skin tags",
+  "metaTitle": "Skin Tag Removal in Huntington Beach | CAIR SPA",
+  "metaDescription": "Skin tag removal in Huntington Beach with the Aerolase laser. Precise care for small benign skin tags with little downtime. Book a free consultation.",
+  "h1": "Skin Tag Removal in Huntington Beach",
+  "intro": "Skin tags are small, soft, harmless growths of skin that often appear on the neck, underarms, eyelids or in body folds. At CAIR SPA in Huntington Beach, we remove them with the Aerolase laser for adults who find skin tags bothersome, irritated by clothing or jewelry, or simply unwanted.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "Often 15 to 30 minutes, depending on the number of tags"
+    },
+    {
+      "label": "Downtime",
+      "value": "Minimal; small scabs typically heal within 1 to 2 weeks"
+    },
+    {
+      "label": "Results",
+      "value": "Treated tags usually do not return, though new ones can form"
+    },
+    {
+      "label": "Sessions",
+      "value": "Often 1; a touch-up is occasionally needed"
+    }
+  ],
+  "whatIs": [
+    "Skin tags, also called acrochordons, are common benign growths made of skin and small blood vessels. They tend to form where skin rubs against skin or clothing, and they become more common with age, weight changes, pregnancy and certain conditions such as insulin resistance. They are not dangerous, but they can catch on necklaces, collars or razors and become irritated.",
+    "With the Aerolase laser, your provider directs short 650-microsecond pulses of energy at the tag. The energy treats the tissue and its small blood supply, and the tag typically dries, darkens and falls off as the area heals. The short pulse helps limit heat in the surrounding skin, which can mean less irritation than some other methods.",
+    "Before any removal, your provider looks closely at each growth. Anything that does not look like a typical skin tag, has changed, bleeds or looks unusual should be evaluated by a medical provider before cosmetic treatment, and we may refer you for evaluation first."
+  ],
+  "goodFor": [
+    "Skin tags on the neck",
+    "Skin tags in the underarms",
+    "Tags under the breasts or in the groin folds",
+    "Small tags on the eyelid area, when appropriate",
+    "Tags that catch on jewelry, collars or straps",
+    "Tags that are irritated by shaving",
+    "People who want a quick, low-downtime option"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We examine each growth, confirm it looks like a benign skin tag, review your health history and decide which tags to treat."
+    },
+    {
+      "title": "Treatment",
+      "text": "Your provider cleanses the area and treats each tag with the Aerolase laser. Several tags can usually be treated in one visit."
+    },
+    {
+      "title": "Healing check",
+      "text": "Tags typically darken and flake off over the following days. We can check the area afterward and treat any small remaining tissue if needed."
+    }
+  ],
+  "expect": {
+    "before": "Point out every tag you want treated, and tell us about any blood thinners, history of poor wound healing or keloid scarring. Skip lotions and makeup on the area the day of treatment.",
+    "during": "You will wear protective eyewear. Each pulse feels like a quick warm snap. Treatment is fast, especially for a few small tags.",
+    "after": "The treated spots may look dark or form a small crust that falls off within one to two weeks. Keep the area clean, avoid picking, and use sunscreen on exposed areas while it heals."
+  },
+  "faqs": [
+    {
+      "q": "How much does skin tag removal cost?",
+      "a": "Price depends on how many tags you have and where they are. We give you an exact quote at your free consultation."
+    },
+    {
+      "q": "Is there downtime after skin tag removal?",
+      "a": "Downtime is minimal. Most people go back to normal activities right away, with small dark spots or scabs that typically heal within one to two weeks."
+    },
+    {
+      "q": "Does skin tag removal hurt?",
+      "a": "Most people feel a brief warm snap with each pulse. Small tags are usually treated quickly with little discomfort, and your provider can discuss comfort options for sensitive areas."
+    },
+    {
+      "q": "Will skin tags come back?",
+      "a": "A tag that has been fully treated usually does not return. However, people who are prone to skin tags may develop new ones over time in the same general areas."
+    },
+    {
+      "q": "Who is a good candidate for skin tag removal?",
+      "a": "Adults with small, benign skin tags that are bothersome or unwanted are often good candidates. Any growth that looks unusual, has changed or bleeds should be evaluated by a medical provider before cosmetic treatment."
+    },
+    {
+      "q": "Can skin tags near the eyes be treated?",
+      "a": "Some tags near the eyelid area can be treated with appropriate eye protection, but it depends on their exact location and size. Your provider will let you know at your consultation whether it is a safe option for you."
+    }
+  ],
+  "related": [
+    "aerolase",
+    "pigmented-lesions",
+    "vein-treatment"
+  ]
+}

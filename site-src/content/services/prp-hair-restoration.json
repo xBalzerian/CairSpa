@@ -1,0 +1,47 @@
+{
+  "slug": "prp-hair-restoration",
+  "name": "PRP / PRF Hair Restoration",
+  "category": "injectables",
+  "menuBlurb": "Platelet scalp injections for thinning hair",
+  "metaTitle": "PRP Hair Restoration Huntington Beach | CAIR SPA",
+  "metaDescription": "PRP and PRF hair restoration in Huntington Beach uses your own platelets to support thinning hair, with no surgery. Book your free consultation today.",
+  "h1": "PRP & PRF Hair Restoration in Huntington Beach",
+  "intro": "PRP and PRF hair restoration uses a concentrate of platelets from your own blood, injected into the scalp, to help support hair follicles in areas of thinning. It is best suited to men and women with early to moderate hair thinning who want a non-surgical option, and results develop gradually over several months.",
+  "quickFacts": [
+    {"label": "Treatment time", "value": "About 45–60 minutes, including the blood draw"},
+    {"label": "Downtime", "value": "Minimal; scalp tenderness for a day or two"},
+    {"label": "Results", "value": "Gradual, often noticed after about 3–6 months"},
+    {"label": "Sessions", "value": "Commonly 3–4 sessions about 4–6 weeks apart, then maintenance"}
+  ],
+  "whatIs": [
+    "Platelets are cells in your blood that release growth factors involved in healing and tissue repair. For PRP (platelet-rich plasma), a small amount of your blood is drawn and spun in a centrifuge to separate a platelet-rich layer. PRF (platelet-rich fibrin) is prepared in a similar way, usually at a lower spin speed and without an anticoagulant, which forms a fibrin network that may release growth factors more gradually. The concentrate is then injected into the areas of the scalp where hair is thinning, with the goal of supporting weakened follicles and encouraging thicker, healthier-looking hair.",
+    "Because it uses your own blood, the risk of allergic reaction is low. PRP and PRF for hair loss are still considered emerging treatments, and while many studies are encouraging, results vary and are not guaranteed. They tend to work best when follicles are still present, such as in early pattern thinning, and are often combined with other hair-loss care. At CAIR SPA in Huntington Beach, treatments are performed under the oversight of Tran Plastic Surgery and Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery."
+  ],
+  "goodFor": [
+    "Early to moderate pattern hair thinning in men",
+    "Diffuse thinning or a widening part in women",
+    "A receding hairline in its early stages",
+    "Hair that has become finer or weaker",
+    "Supporting results alongside other hair-loss treatments",
+    "People who prefer a non-surgical, low-downtime option"
+  ],
+  "steps": [
+    {"title": "Consultation", "text": "We discuss your hair-loss history, family history, health and medications, and look at the pattern of thinning. If an underlying medical cause seems possible, we may suggest checking with your physician first. We also help you decide whether PRP or PRF is the better fit."},
+    {"title": "Blood draw and preparation", "text": "A small sample of blood is drawn, much like a routine lab test. It is processed in a centrifuge to concentrate the platelets into PRP or PRF, which takes a short time."},
+    {"title": "Scalp injections", "text": "The scalp is cleansed and comfort measures are applied. The concentrate is injected in small amounts across the thinning areas. You can usually go home right after and return to most normal activities."}
+  ],
+  "expect": {
+    "before": "Drink plenty of water and eat a normal meal before your visit, which can make the blood draw easier. Arrive with clean, dry hair and no styling products. If your doctor agrees, you may be asked to avoid alcohol and certain anti-inflammatory medications for a few days beforehand.",
+    "during": "The blood draw feels like a standard lab test. Scalp injections can feel stingy or create pressure, and comfort measures such as numbing or cooling are used to keep it manageable. Most people find it very tolerable.",
+    "after": "The scalp may be tender, slightly swollen or a little red for a day or two. You will usually be asked to wait several hours before washing your hair and to avoid heavy exercise, saunas and harsh hair products for a short time. Improvements, if they occur, tend to appear gradually over several months."
+  },
+  "faqs": [
+    {"q": "How much does PRP or PRF hair restoration cost?", "a": "Price depends on your plan, including how many sessions are recommended and whether PRP or PRF is used. We give you an exact quote at your free consultation after assessing your hair and goals."},
+    {"q": "Is there downtime after PRP hair treatment?", "a": "Downtime is minimal. Most people have some scalp tenderness or mild swelling for a day or two and return to work right away. You will receive simple aftercare instructions about washing and exercise."},
+    {"q": "How long do PRP hair results last?", "a": "Results vary, and they are not permanent because hair loss is often ongoing. Many people who respond continue with maintenance sessions, often every 6–12 months, to help sustain improvements. Your provider will suggest a schedule based on your response."},
+    {"q": "Do PRP scalp injections hurt?", "a": "Most people feel stinging and pressure during the injections, and some areas of the scalp are more sensitive than others. Numbing and cooling measures help a great deal. The discomfort is short-lived."},
+    {"q": "Who is a good candidate for PRP or PRF hair restoration?", "a": "Healthy adults with early to moderate thinning, where follicles are still present, are often the best candidates. It may not be suitable for people with certain blood or platelet disorders, active scalp infections, or those taking specific blood thinners. Completely bald areas generally do not respond."},
+    {"q": "What is the difference between PRP and PRF?", "a": "Both are made from your own blood. PRF is typically spun at a lower speed without an anticoagulant, creating a fibrin network that may release growth factors more slowly. Your provider can explain which option makes sense for you."}
+  ],
+  "related": ["hair-transplant", "prf-under-eye", "exosome-therapy"]
+}

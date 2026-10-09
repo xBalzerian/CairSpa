@@ -1,0 +1,91 @@
+{
+  "slug": "vein-treatment",
+  "name": "Vein Removal",
+  "category": "laser",
+  "menuBlurb": "Laser treatment for spider and small facial veins",
+  "metaTitle": "Spider Vein Removal in Huntington Beach | CAIR SPA",
+  "metaDescription": "Spider vein removal in Huntington Beach with the Aerolase laser for small facial and leg veins. No needles and little downtime. Book a free consultation.",
+  "h1": "Spider Vein Removal in Huntington Beach",
+  "intro": "Laser vein removal uses focused light energy to fade spider veins and small visible blood vessels on the face and legs. At CAIR SPA in Huntington Beach, we treat these small veins with the Aerolase laser for adults who want clearer, more even-looking skin without needles.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "Often 15 to 30 minutes"
+    },
+    {
+      "label": "Downtime",
+      "value": "Minimal; mild redness or slight bruising can occur"
+    },
+    {
+      "label": "Results",
+      "value": "Veins typically fade over several weeks"
+    },
+    {
+      "label": "Sessions",
+      "value": "Often 1 to 3, spaced several weeks apart"
+    }
+  ],
+  "whatIs": [
+    "Spider veins, also called telangiectasias, are small, thin blood vessels close to the skin's surface. They often appear as red, blue or purple lines on the cheeks, nose, chin or legs. Genetics, sun exposure, hormones, aging and long periods of standing can all contribute.",
+    "The Aerolase laser delivers energy in short 650-microsecond pulses that are absorbed by the blood inside the small vessel. The vessel is gently heated and closes off, and over the following weeks the body naturally reabsorbs it. The short pulse helps protect the surrounding skin, so treatment is usually quick with little downtime.",
+    "Laser treatment is best suited to small, superficial veins. Larger, bulging varicose veins, leg swelling, aching or skin changes can be signs of an underlying circulation issue and should be evaluated by a medical provider. If we see signs like these at your consultation, we will recommend an appropriate evaluation rather than cosmetic treatment."
+  ],
+  "goodFor": [
+    "Spider veins on the legs",
+    "Small broken blood vessels on the face",
+    "Visible veins around the nose and cheeks",
+    "Diffuse facial redness from small vessels",
+    "Small red or purple vessels on the chin",
+    "People who prefer a needle-free option"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We examine the veins, review your health history and confirm they are small, superficial vessels that respond well to laser."
+    },
+    {
+      "title": "Treatment",
+      "text": "Your provider traces the vessels with the Aerolase handpiece in quick pulses. Many small veins can be treated in one visit."
+    },
+    {
+      "title": "Follow-up",
+      "text": "Veins fade gradually over several weeks. We review your progress and schedule another session if any vessels remain."
+    }
+  ],
+  "expect": {
+    "before": "Avoid tanning and heavy sun exposure for a couple of weeks before treatment. Tell us about any blood thinners or supplements that affect bruising, and come with clean skin.",
+    "during": "You will wear protective eyewear. Each pulse feels like a warm snap along the vein. Some veins may look lighter or disappear right away.",
+    "after": "Mild redness, swelling or slight bruising can occur and typically settles within a few days. Avoid hot tubs and intense exercise for a day or two, and protect the area from the sun."
+  },
+  "faqs": [
+    {
+      "q": "How much does vein removal cost?",
+      "a": "Price depends on the size of the area and how many sessions you need. We give you an exact quote at your free consultation."
+    },
+    {
+      "q": "Is there downtime after laser vein removal?",
+      "a": "Downtime is usually minimal. You may see some redness, mild swelling or light bruising for a few days, but most people return to normal activities right away."
+    },
+    {
+      "q": "Does laser vein treatment hurt?",
+      "a": "Most people feel a quick warm snap with each pulse, similar to a rubber band. Treatment is short, and numbing is usually not needed."
+    },
+    {
+      "q": "How long do results last?",
+      "a": "Treated vessels that close off generally do not come back. New spider veins can still form over time because of genetics, sun exposure or hormones, so occasional touch-ups may be helpful."
+    },
+    {
+      "q": "Who is a good candidate for laser vein removal?",
+      "a": "Adults with small spider veins or broken capillaries on the face or legs are often good candidates. Large varicose veins, leg swelling or pain should be evaluated by a medical provider first, and people who are pregnant should wait."
+    },
+    {
+      "q": "Can Aerolase treat large varicose veins?",
+      "a": "No. Laser treatment at CAIR SPA is for small, superficial vessels. Large or bulging varicose veins need evaluation by a medical provider, who can discuss appropriate treatment options."
+    }
+  ],
+  "related": [
+    "aerolase",
+    "skin-rejuvenation",
+    "pigmented-lesions"
+  ]
+}

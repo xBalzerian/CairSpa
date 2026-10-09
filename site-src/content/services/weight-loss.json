@@ -1,0 +1,48 @@
+{
+  "slug": "weight-loss",
+  "name": "Medical Weight Loss",
+  "category": "wellness",
+  "menuBlurb": "Medically supervised weight loss programs",
+  "metaTitle": "Medical Weight Loss in Huntington Beach | CAIR SPA",
+  "metaDescription": "Medically supervised weight loss at CAIR SPA in Huntington Beach, including GLP-1 options when appropriate. Book your free consultation to learn more.",
+  "h1": "Medical Weight Loss in Huntington Beach",
+  "intro": "Medical weight loss is a provider-supervised program that combines health screening, nutrition and lifestyle guidance and, when appropriate, prescription medications such as GLP-1 medications. It is designed for adults who have struggled to reach a healthier weight with diet and exercise alone and want medical support along the way. At CAIR SPA in Huntington Beach, every plan begins with a careful screening.",
+  "quickFacts": [
+    {"label": "Treatment time", "value": "Initial consultation, then regular check-ins"},
+    {"label": "Downtime", "value": "None"},
+    {"label": "Results", "value": "Vary by person and depend on the plan, consistency and health factors"},
+    {"label": "Sessions", "value": "Ongoing program with follow-up visits set by your provider"}
+  ],
+  "whatIs": [
+    "A medical weight loss program treats weight management as a health goal, not a quick fix. Your provider looks at your health history, current medications, eating patterns and activity level, then builds a plan that may include nutrition guidance, habit changes and regular progress check-ins. Some people do well with lifestyle support alone, while others may benefit from medication.",
+    "When appropriate, a program may include GLP-1 medications such as semaglutide or tirzepatide. These prescription medications work with the body's appetite and blood sugar signals and are usually given as a weekly injection. They are not right for everyone. Whether a medication is prescribed, and which one, is entirely at your provider's discretion after screening. All services at CAIR SPA are performed under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran."
+  ],
+  "goodFor": [
+    "Adults who have not reached their goals with diet and exercise alone",
+    "Weight-related health concerns your provider wants to address",
+    "People who want structured accountability and regular check-ins",
+    "Those interested in learning whether GLP-1 medications are appropriate for them",
+    "Support with nutrition and sustainable habit changes",
+    "Anyone who prefers a medically supervised approach over fad diets"
+  ],
+  "steps": [
+    {"title": "Consultation", "text": "We discuss your goals, weight history and what you have tried before. You will have time to ask questions about the program and about medication options."},
+    {"title": "Health screening", "text": "Your provider reviews your medical history, current medications and any relevant conditions, and may request lab work. This step determines whether medication is a safe option for you."},
+    {"title": "Personalized plan", "text": "You receive a plan that may include nutrition and lifestyle guidance and, if your provider decides it is appropriate, a prescription medication. We review possible side effects and how to take any medication correctly."},
+    {"title": "Ongoing check-ins", "text": "Regular follow-up visits let your provider track progress, adjust dosing if you are on medication, manage side effects and update your plan as you go."}
+  ],
+  "expect": {
+    "before": "Bring a list of your current medications, supplements and any recent lab results. Be ready to share your medical history openly, including any history of pancreatitis, gallbladder disease or thyroid cancer in you or your family, since these affect which options are safe.",
+    "during": "Your first visit focuses on screening and planning. If a GLP-1 medication is prescribed, your provider will explain how to take it and typically start at a low dose that may be increased gradually to help your body adjust.",
+    "after": "Progress is usually gradual. Common side effects of GLP-1 medications include nausea, vomiting, diarrhea, constipation and reduced appetite, which often ease over time. Less common but serious risks exist, so contact your provider promptly about severe or persistent symptoms such as intense abdominal pain."
+  },
+  "faqs": [
+    {"q": "How much does medical weight loss cost?", "a": "The price depends on the plan, including whether medication is part of your program and how often you check in. We give you an exact quote at your free consultation."},
+    {"q": "Is there downtime with medical weight loss?", "a": "There is no downtime. Some people starting a GLP-1 medication have digestive side effects such as nausea in the first weeks, especially after a dose increase. Your provider will help you manage these and adjust the plan if needed."},
+    {"q": "How long do medical weight loss results last?", "a": "It depends on the person and on the habits built during the program. Research shows some people regain weight after stopping GLP-1 medications, which is why we focus on nutrition and lifestyle changes alongside any prescription. Your provider will discuss a long-term plan with you."},
+    {"q": "Do the weight loss injections hurt?", "a": "GLP-1 medications are typically given with a very small needle under the skin, and most people feel only a brief pinch. Your provider will show you how to give the injection comfortably and rotate injection sites."},
+    {"q": "Who is a good candidate for medical weight loss?", "a": "Adults who want medically supervised help reaching a healthier weight are often good candidates. GLP-1 medications are generally not recommended for people who are pregnant or planning pregnancy, or who have a personal or family history of medullary thyroid carcinoma or MEN 2. Your provider will decide what is safe for you after screening."},
+    {"q": "Will I definitely be prescribed semaglutide or tirzepatide?", "a": "No. Prescription medication is offered only when your provider decides it is medically appropriate. Many programs at our Huntington Beach location start with screening and lifestyle guidance, and medication is one possible tool rather than a guarantee."}
+  ],
+  "related": ["iv-infusion", "nad-therapy", "skin-rejuvenation"]
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "facial",
+  "name": "Customized Facial",
+  "category": "skin",
+  "menuBlurb": "Deep cleanse, exfoliation and hydration for your skin",
+  "metaTitle": "Customized Facial in Huntington Beach | CAIR SPA",
+  "metaDescription": "A customized facial at CAIR SPA cleanses, exfoliates and hydrates for fresher, brighter skin with no downtime. Book your free consultation today.",
+  "h1": "Customized Facial in Huntington Beach",
+  "intro": "A Customized Facial is a professional skin treatment that cleanses, exfoliates, clears congested pores and deeply hydrates, with each step adjusted to your skin on the day of your visit. It suits almost anyone who wants a fresher, brighter complexion with no downtime, from first-time spa guests to people maintaining results between other treatments.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "About 45–60 minutes"
+    },
+    {
+      "label": "Downtime",
+      "value": "None for most people"
+    },
+    {
+      "label": "Results",
+      "value": "Glow is often visible right away"
+    },
+    {
+      "label": "Sessions",
+      "value": "Often monthly for maintenance"
+    }
+  ],
+  "whatIs": [
+    "Our Customized Facial combines several professional steps in one visit: a thorough cleanse, gentle exfoliation to lift dull surface cells, extractions to clear clogged pores, and an infusion of hydrating serums matched to your skin. Because no two complexions are the same, the products, strength of exfoliation and areas of focus are chosen after we look at your skin, not from a fixed script.",
+    "Facials do not change the deeper structure of the skin the way microneedling or lasers can, but they are an excellent foundation. Many people use them on their own for regular upkeep, and others pair them with more advanced treatments as part of a longer plan. Every service at CAIR SPA is performed under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon whose practice is in the same building. For many of our Huntington Beach clients, a facial is also a simple way to refresh skin after sun, salt air and daily stress."
+  ],
+  "goodFor": [
+    "Dull or tired-looking skin",
+    "Clogged pores and blackheads",
+    "Dry or dehydrated skin",
+    "Rough or uneven texture",
+    "Oily or congested areas",
+    "Prepping skin before an event",
+    "Maintenance between advanced treatments"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We talk about your goals, routine, sensitivities and any medications or recent treatments, then look closely at your skin to decide which steps and products make sense for you."
+    },
+    {
+      "title": "Cleanse and exfoliate",
+      "text": "Your skin is cleansed and gently exfoliated to remove buildup and dull surface cells, which helps the following steps work better."
+    },
+    {
+      "title": "Extract and hydrate",
+      "text": "Congested pores are cleared as needed, then hydrating and targeted serums are applied to leave skin soft, refreshed and comfortable."
+    },
+    {
+      "title": "Home care advice",
+      "text": "We finish with sun protection and simple, practical suggestions for your daily routine so your results last longer."
+    }
+  ],
+  "expect": {
+    "before": "Arrive with a clean face if you can. Let us know about retinoids, acne medications, recent peels, waxing or laser treatments, since we may adjust exfoliation to keep your skin comfortable.",
+    "during": "Most people find the treatment relaxing. You may feel light suction, cool serums or mild tingling during exfoliation. Extractions can feel a little tender but are brief.",
+    "after": "Skin often looks brighter and feels smoother right away. Some people have mild pinkness for a short time. Use sunscreen, keep your routine gentle for a day or two, and avoid heavy makeup the same day if possible."
+  },
+  "faqs": [
+    {
+      "q": "How much does a Customized Facial cost?",
+      "a": "Price depends on your plan, including how often you come in and whether you combine your facial with other treatments. We give you an exact quote at your free consultation, with no pressure to book."
+    },
+    {
+      "q": "Is there any downtime after a facial?",
+      "a": "Most people have no downtime and can go straight back to work or errands. Some notice light redness for a short time, especially after extractions, which typically fades within hours."
+    },
+    {
+      "q": "How long do the results last?",
+      "a": "The fresh, hydrated look is often most noticeable for several days to a couple of weeks. Because skin keeps renewing, many people choose regular facials, often about once a month, to maintain the benefits."
+    },
+    {
+      "q": "Does a facial hurt?",
+      "a": "A facial is generally comfortable and relaxing. Extractions may feel briefly tender, and we can adjust pressure or skip steps if your skin is sensitive."
+    },
+    {
+      "q": "Who is a good candidate for a Customized Facial?",
+      "a": "Most adults with healthy skin are good candidates, including those with dryness, dullness or congestion. If you have an active skin infection, a recent sunburn or are using strong prescription skin medications, we may adjust or postpone treatment."
+    },
+    {
+      "q": "Can I combine a facial with other treatments?",
+      "a": "Yes. Facials pair well with treatments such as microneedling, laser services or injectables, as long as they are timed correctly. We will help you plan the order and spacing at your consultation."
+    }
+  ],
+  "related": [
+    "rf-microneedling",
+    "skin-rejuvenation",
+    "acne-treatment"
+  ]
+}

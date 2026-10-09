@@ -1,0 +1,47 @@
+{
+  "slug": "nad-therapy",
+  "name": "NAD+ Therapy",
+  "category": "wellness",
+  "menuBlurb": "Supervised NAD+ infusions as part of a wellness plan",
+  "metaTitle": "NAD+ Therapy in Huntington Beach | CAIR SPA",
+  "metaDescription": "NAD+ therapy at CAIR SPA in Huntington Beach: medically supervised NAD+ infusions with honest guidance on what to expect. Book a free consultation.",
+  "h1": "NAD+ Therapy in Huntington Beach",
+  "intro": "NAD+ therapy delivers nicotinamide adenine dinucleotide (NAD+), a coenzyme your cells use in energy metabolism, usually through a slow IV infusion. It is typically chosen by adults who are interested in wellness and healthy aging support and want a medically supervised option. At CAIR SPA in Huntington Beach, we screen every guest first and are upfront that research on its wellness benefits is still developing.",
+  "quickFacts": [
+    {"label": "Treatment time", "value": "Often 1 to 3 hours, depending on dose and how you tolerate the infusion rate"},
+    {"label": "Downtime", "value": "None for most people"},
+    {"label": "Results", "value": "Vary widely from person to person and are not guaranteed"},
+    {"label": "Sessions", "value": "Determined with your provider based on your goals and response"}
+  ],
+  "whatIs": [
+    "NAD+ is a molecule found in every living cell. It helps the body turn food into usable energy and plays a role in many routine cellular processes, including DNA repair. Studies show that NAD+ levels tend to decline with age, which has led to strong scientific interest in whether raising NAD+ can support healthy aging.",
+    "That interest is real, but the evidence is still early. Much of the research has been done in laboratory and animal studies, and human studies of IV NAD+ for general wellness are limited. NAD+ therapy is not a treatment for any disease, and we do not promise specific outcomes such as more energy, better focus or anti-aging effects. Some guests report feeling well after sessions, while others notice little change. If you are curious and understand the current evidence, a supervised infusion is a careful way to try it. All services at CAIR SPA are performed under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran."
+  ],
+  "goodFor": [
+    "Adults curious about NAD+ as part of a wellness routine",
+    "Interest in healthy aging support",
+    "People who prefer a medically supervised setting for IV wellness treatments",
+    "Guests who already use other wellness services and want to explore NAD+",
+    "Those who want honest, evidence-aware guidance before trying a new therapy"
+  ],
+  "steps": [
+    {"title": "Consultation", "text": "We review your health history, medications and goals, and talk openly about what current research does and does not show. This is the time to ask questions and decide whether NAD+ therapy makes sense for you."},
+    {"title": "Screening and plan", "text": "Your provider confirms you are a suitable candidate and recommends a dose and infusion plan. Vital signs are checked before you begin."},
+    {"title": "Infusion", "text": "NAD+ is given slowly through an IV while you relax. Staff monitor you and adjust the drip rate if you feel any discomfort."},
+    {"title": "Follow-up", "text": "After your session we check in on how you felt, note any side effects and decide together whether additional sessions are worthwhile."}
+  ],
+  "expect": {
+    "before": "Eat a light meal and drink water beforehand. Plan for a longer appointment than a standard IV drip, and bring something to read or listen to. Share all medications and supplements you take, including any NAD+ precursors such as NR or NMN.",
+    "during": "NAD+ is infused slowly because a faster rate can cause temporary effects such as flushing, nausea, stomach cramping, headache or a feeling of pressure in the chest. These usually ease quickly when the drip is slowed, so tell staff right away if you notice them.",
+    "after": "Most people return to normal activities the same day. Some feel tired or mildly lightheaded for a short time afterward. Bruising at the IV site may occur and typically fades within a few days."
+  },
+  "faqs": [
+    {"q": "How much does NAD+ therapy cost?", "a": "The price depends on the plan, including the dose and number of sessions your provider recommends. We give you an exact quote at your free consultation."},
+    {"q": "Is there downtime after NAD+ therapy?", "a": "Most people have no downtime and can resume normal activities the same day. Because the infusion is long, some guests feel a bit tired afterward, so plan an easy rest of the day if you can."},
+    {"q": "How long do the effects of NAD+ therapy last?", "a": "There is no reliable answer yet. Responses vary from person to person, and research on how long any effects last in healthy adults is limited. Your provider will help you decide on a schedule based on how you respond."},
+    {"q": "Does NAD+ therapy hurt?", "a": "Placing the IV feels like a quick pinch. During the infusion, some people feel flushing, nausea or cramping if the rate is too fast. We infuse slowly and adjust as needed to keep you comfortable."},
+    {"q": "Who is a good candidate for NAD+ therapy?", "a": "Generally healthy adults who are interested in wellness support and understand that the evidence is still developing are typical candidates. People who are pregnant or breastfeeding, or who have certain medical conditions, may not be good candidates. Your provider will review your history before recommending treatment."},
+    {"q": "Can NAD+ therapy treat a medical condition?", "a": "NAD+ therapy at our Huntington Beach spa is offered as a wellness service, not as a treatment for any disease or condition. If you have health concerns, please talk with your primary care physician or specialist. We are happy to work alongside your existing care."}
+  ],
+  "related": ["iv-infusion", "exosome-therapy", "weight-loss"]
+}

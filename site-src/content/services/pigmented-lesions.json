@@ -1,0 +1,91 @@
+{
+  "slug": "pigmented-lesions",
+  "name": "Pigmented Lesions",
+  "category": "laser",
+  "menuBlurb": "Fade sun spots and age spots with Aerolase",
+  "metaTitle": "Sun Spot Removal in Huntington Beach | CAIR SPA",
+  "metaDescription": "Sun spot and age spot treatment in Huntington Beach with the Aerolase laser to fade benign spots for a more even skin tone. Book a free consultation.",
+  "h1": "Sun Spot and Age Spot Removal in Huntington Beach",
+  "intro": "Pigmented lesions such as sun spots and age spots are flat, brown areas of extra pigment caused mostly by years of sun exposure. At CAIR SPA in Huntington Beach, we fade benign spots with the Aerolase laser for adults who want a clearer, more even skin tone on the face, hands, chest or shoulders.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "Often 15 to 30 minutes"
+    },
+    {
+      "label": "Downtime",
+      "value": "Minimal; spots may darken and flake off within 1 to 2 weeks"
+    },
+    {
+      "label": "Results",
+      "value": "Spots typically fade over a few weeks"
+    },
+    {
+      "label": "Sessions",
+      "value": "Often 1 to 3, depending on the spots"
+    }
+  ],
+  "whatIs": [
+    "Sun spots, also called age spots, liver spots or solar lentigines, are flat areas of extra pigment that develop on skin that has had a lot of sun over the years. They are most common on the face, backs of the hands, chest, shoulders and arms. Freckles and other benign brown spots are also part of this group.",
+    "The Aerolase laser delivers energy in short 650-microsecond pulses that are absorbed by the excess pigment. The pigment breaks down, and the treated spot usually darkens slightly and then flakes off as the skin renews, leaving a lighter, more even tone. The short pulse helps limit heat in the surrounding skin.",
+    "Safety comes first. Any spot that is new, changing, irregular in shape or color, raised, itchy, bleeding or otherwise suspicious should be evaluated by a medical provider before any cosmetic treatment. Lasers should never be used on a spot that has not been confirmed as benign. If something looks unusual at your consultation, we will recommend a medical evaluation first. After treatment, daily sunscreen helps prevent new spots from forming."
+  ],
+  "goodFor": [
+    "Sun spots on the face",
+    "Age spots on the backs of the hands",
+    "Brown spots on the chest and shoulders",
+    "Freckles you would like to lighten",
+    "Uneven tone from past sun exposure",
+    "Benign spots confirmed by a provider"
+  ],
+  "steps": [
+    {
+      "title": "Consultation and screening",
+      "text": "We examine each spot. Anything new, changing or unusual is referred for evaluation by a medical provider before any cosmetic treatment."
+    },
+    {
+      "title": "Treatment",
+      "text": "Your provider treats each benign spot with the Aerolase laser in quick pulses. Several spots can usually be treated in one visit."
+    },
+    {
+      "title": "Healing and follow-up",
+      "text": "Spots typically darken and flake off over one to two weeks. We review the results and treat any remaining pigment at a follow-up visit if needed."
+    }
+  ],
+  "expect": {
+    "before": "Avoid tanning and heavy sun exposure for a couple of weeks before treatment. Point out any spots that have changed recently, and tell us about medications that increase light sensitivity.",
+    "during": "You will wear protective eyewear. Each pulse feels like a quick warm snap. Treatment is usually quick.",
+    "after": "Treated spots may look darker for several days before flaking off. Do not pick at them. Use broad-spectrum sunscreen daily to protect results and prevent new spots."
+  },
+  "faqs": [
+    {
+      "q": "How much does sun spot removal cost?",
+      "a": "Price depends on the number and size of the spots and how many sessions you need. We give you an exact quote at your free consultation."
+    },
+    {
+      "q": "Is there downtime after pigmented lesion treatment?",
+      "a": "Downtime is minimal. Spots often look darker for several days and then flake off within one to two weeks. Most people return to normal activities right away."
+    },
+    {
+      "q": "Does sun spot treatment hurt?",
+      "a": "Most people feel a brief warm snap with each pulse. Treatment is quick and usually well tolerated without numbing."
+    },
+    {
+      "q": "How long do results last?",
+      "a": "Treated spots often stay faded, but new spots can form with ongoing sun exposure. Daily sunscreen and sun-smart habits are the best way to maintain your results."
+    },
+    {
+      "q": "Who is a good candidate for pigmented lesion treatment?",
+      "a": "Adults with benign sun spots, age spots or freckles are often good candidates. Any suspicious, changing or irregular spot must be evaluated by a medical provider before cosmetic treatment."
+    },
+    {
+      "q": "Can every brown spot be treated with a laser?",
+      "a": "No. Some spots are not suitable for laser, and any spot that has not been confirmed as benign should not be treated cosmetically. Melasma also behaves differently and needs a more conservative approach."
+    }
+  ],
+  "related": [
+    "aerolase",
+    "melasma-treatment",
+    "skin-rejuvenation"
+  ]
+}

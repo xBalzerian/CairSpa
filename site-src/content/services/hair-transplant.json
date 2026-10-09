@@ -1,0 +1,50 @@
+{
+  "slug": "hair-transplant",
+  "name": "ARTAS Hair Restoration",
+  "category": "wellness",
+  "menuBlurb": "Robotic-assisted FUE hair transplant procedure",
+  "metaTitle": "ARTAS Hair Restoration in Huntington Beach | CAIR SPA",
+  "metaDescription": "ARTAS® robotic-assisted FUE hair restoration at CAIR SPA in Huntington Beach, with no linear donor scar. Book your free consultation to learn more.",
+  "h1": "ARTAS® Hair Restoration in Huntington Beach",
+  "intro": "ARTAS® hair restoration is a hair transplant procedure that uses a robotic-assisted system to help harvest individual hair follicles from the back and sides of the scalp, a technique called follicular unit extraction (FUE). It is typically a fit for men and women with pattern hair loss who have enough healthy donor hair. At CAIR SPA in Huntington Beach, it starts with a free consultation to see if you are a candidate.",
+  "quickFacts": [
+    {"label": "Treatment time", "value": "Often several hours to a full day, depending on the number of grafts"},
+    {"label": "Downtime", "value": "Many people return to light activity within a few days"},
+    {"label": "Results", "value": "New growth often begins around 3 to 4 months, with fuller results typically by 12 to 18 months"},
+    {"label": "Sessions", "value": "Usually one procedure, though some people choose a second session later"}
+  ],
+  "whatIs": [
+    "In a follicular unit extraction (FUE) transplant, small groups of one to four hairs, called follicular units, are removed one at a time from a donor area where hair is naturally more resistant to thinning. These grafts are then placed into areas of thinning or balding. Because there is no strip of scalp removed, FUE does not leave a long linear scar, though it does leave tiny dot-like scars that are usually hidden by surrounding hair.",
+    "The ARTAS® system uses digital imaging to map the donor area and guide a robotic arm as it helps select and harvest follicular units. The robot assists the medical team; it does not replace their judgment. Your hairline design, graft placement and overall plan are set by your provider, and results depend on your donor hair, the pattern of your hair loss and how your body heals. A transplant moves existing hair rather than creating new follicles, and it does not stop future hair loss in untreated areas. All services at CAIR SPA are performed under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran."
+  ],
+  "goodFor": [
+    "Receding hairline",
+    "Thinning at the crown",
+    "Male pattern hair loss with stable, healthy donor hair",
+    "Some cases of female pattern hair loss, after evaluation",
+    "People who prefer to avoid a linear donor scar",
+    "Those who want to wear their hair shorter in back",
+    "Restoring density in areas where hair loss has stabilized"
+  ],
+  "steps": [
+    {"title": "Consultation", "text": "Your provider examines your scalp, reviews your hair loss history and health, and evaluates your donor area. You will discuss realistic goals, hairline design and whether ARTAS® FUE is a good fit."},
+    {"title": "Preparation", "text": "On procedure day the donor area is trimmed short and the scalp is numbed with local anesthesia. Your recipient area and hairline are marked according to your plan."},
+    {"title": "Robotic-assisted harvesting", "text": "The ARTAS® system images the donor area and assists in harvesting follicular units one at a time, while the medical team monitors and directs the process."},
+    {"title": "Graft placement", "text": "The team creates small recipient sites and places the grafts at angles designed to look natural with your existing hair."},
+    {"title": "Recovery and follow-up", "text": "You go home with aftercare instructions, and follow-up visits track healing and growth over the coming months."}
+  ],
+  "expect": {
+    "before": "Your provider will give you specific instructions, which may include pausing certain medications or supplements, avoiding alcohol and not smoking before your procedure. Plan for a long appointment, wear a button-up shirt and arrange a ride home.",
+    "during": "Local anesthesia numbs the scalp, so most people feel pressure rather than pain after the initial numbing injections. You will be awake and can typically rest, listen to music or watch something during breaks.",
+    "after": "Mild swelling, redness, tenderness and small scabs are common for the first one to two weeks. It is normal for transplanted hairs to shed within the first several weeks before new growth begins. Follow your aftercare instructions for washing, sleeping position and activity to support healing."
+  },
+  "faqs": [
+    {"q": "How much does ARTAS hair restoration cost?", "a": "The price depends on the plan, mainly the number of grafts needed for your goals. We give you an exact quote at your free consultation after evaluating your scalp and donor hair."},
+    {"q": "What is the downtime after an ARTAS® procedure?", "a": "Many people return to desk work and light activity within a few days, though swelling and scabbing may be visible for about a week or two. Strenuous exercise is usually limited for a short period. Your provider will give you a timeline based on your procedure."},
+    {"q": "How long do hair transplant results last?", "a": "Transplanted follicles are taken from areas that are typically resistant to thinning, so they often continue to grow long term. However, untreated hair around the transplant can keep thinning over time, which is why some people pair a transplant with other hair loss treatments. Results vary by person."},
+    {"q": "Does ARTAS® hair restoration hurt?", "a": "The numbing injections at the start cause some brief discomfort. After that, most people feel pressure rather than pain during the procedure. Soreness afterward is usually mild and managed with the medication your provider recommends."},
+    {"q": "Who is a good candidate for ARTAS® hair restoration?", "a": "Good candidates usually have pattern hair loss that has stabilized and enough healthy donor hair at the back and sides of the scalp. People with very limited donor hair, certain scalp conditions or some types of hair loss may not be good candidates. Your provider will assess this at your consultation."},
+    {"q": "Will there be a scar?", "a": "FUE does not leave a long linear scar like strip harvesting does. It leaves very small dot-like scars in the donor area that are typically hard to see once hair grows back, although they may be noticeable with a very close shave. At our Huntington Beach spa, your provider will discuss what to expect for your hair type."}
+  ],
+  "related": ["prp-hair-restoration", "exosome-therapy", "nad-therapy"]
+}

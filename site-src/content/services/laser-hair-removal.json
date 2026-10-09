@@ -1,0 +1,92 @@
+{
+  "slug": "laser-hair-removal",
+  "name": "Laser Hair Removal",
+  "category": "laser",
+  "menuBlurb": "Long-term hair reduction for all skin tones",
+  "metaTitle": "Laser Hair Removal Huntington Beach | CAIR SPA",
+  "metaDescription": "Laser hair removal in Huntington Beach with the Aerolase laser, designed for all skin tones. Smoother skin with less shaving. Book a free consultation.",
+  "h1": "Laser Hair Removal in Huntington Beach",
+  "intro": "Laser hair removal uses light energy to damage hair follicles so they grow back finer, lighter and less often over a series of sessions. At CAIR SPA in Huntington Beach, we perform it with the Aerolase laser, which is designed for all skin tones, for anyone tired of shaving, waxing or ingrown hairs.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "About 10 to 45 minutes, depending on the area"
+    },
+    {
+      "label": "Downtime",
+      "value": "Usually none; mild redness may last a few hours"
+    },
+    {
+      "label": "Results",
+      "value": "Gradual, long-term hair reduction after a full series"
+    },
+    {
+      "label": "Sessions",
+      "value": "Often 6 to 8, spaced several weeks apart"
+    }
+  ],
+  "whatIs": [
+    "Laser hair removal works by sending light energy into the hair follicle, where the pigment in the hair absorbs it and turns it into heat. That heat damages the follicle's ability to grow new hair. Because hair grows in cycles and only actively growing hairs respond well, a series of sessions is needed to reach most follicles.",
+    "We use the Aerolase laser, which delivers energy in very short 650-microsecond pulses. This short pulse helps limit heat in the surrounding skin, which is why the manufacturer describes it as designed for all skin types and tones. Many patients find it more comfortable than they expected, often without numbing cream.",
+    "Laser hair removal is best described as long-term hair reduction rather than permanent removal. Most people see a significant decrease in hair, and the hair that remains is often finer and lighter. Occasional maintenance sessions may be helpful, especially with hormonal changes. Very light blonde, gray, white or red hair typically responds poorly to any laser because it lacks enough pigment."
+  ],
+  "goodFor": [
+    "Underarms",
+    "Bikini line",
+    "Legs and arms",
+    "Upper lip, chin and face",
+    "Back and chest",
+    "Ingrown hairs and razor bumps",
+    "People who want to shave or wax less often"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We review your hair color, skin type, health history and goals, confirm you are a good candidate, and map out the areas and number of sessions."
+    },
+    {
+      "title": "Treatment",
+      "text": "The area is shaved beforehand, then your provider glides the Aerolase handpiece over the skin in quick pulses. Small areas take minutes, larger areas take longer."
+    },
+    {
+      "title": "Series and maintenance",
+      "text": "You return every several weeks to catch hairs in their growth phase. After the series, we review your results and discuss whether occasional touch-ups make sense."
+    }
+  ],
+  "expect": {
+    "before": "Shave the area a day before your visit. Avoid waxing, plucking or threading for several weeks so the follicle stays intact, and avoid tanning and self-tanner. Let us know about any medications that increase light sensitivity.",
+    "during": "You will wear protective eyewear. Most people feel warmth or a light snapping sensation with each pulse. Aerolase treatments are often comfortable without numbing.",
+    "after": "Mild redness or small bumps around follicles are common and usually fade within hours. Treated hairs may shed over the next one to three weeks. Use sunscreen and avoid tanning between sessions."
+  },
+  "faqs": [
+    {
+      "q": "How much does laser hair removal cost?",
+      "a": "Price depends on the areas treated and the number of sessions in your plan. We give you an exact quote at your free consultation."
+    },
+    {
+      "q": "Is there downtime after laser hair removal?",
+      "a": "Usually not. Some redness or slight swelling around the follicles can appear and typically fades within a few hours. Most people return to normal activities right away, though you should skip intense sun exposure."
+    },
+    {
+      "q": "Does laser hair removal hurt?",
+      "a": "Most people describe a warm sensation or a light snap. With Aerolase's short pulse, many patients are comfortable without numbing cream, though sensitive areas like the bikini line or upper lip may feel more intense."
+    },
+    {
+      "q": "Is laser hair removal permanent?",
+      "a": "It is considered long-term hair reduction. Most people see a large reduction in hair after a full series, and the remaining hair is often finer. Hormonal changes can trigger some regrowth, so occasional maintenance sessions may help."
+    },
+    {
+      "q": "Who is a good candidate for laser hair removal?",
+      "a": "Adults with darker hair than their skin tone tend to respond best, and Aerolase is designed for a wide range of skin tones. Very light blonde, gray, white or red hair usually does not respond well to laser. People who are pregnant or have a fresh tan should wait."
+    },
+    {
+      "q": "How many sessions will I need?",
+      "a": "Many people need around 6 to 8 sessions spaced several weeks apart, though this varies with the area, hair thickness and hormones. We will recommend a plan for you at your consultation."
+    }
+  ],
+  "related": [
+    "aerolase",
+    "acne-treatment",
+    "skin-rejuvenation"
+  ]
+}
