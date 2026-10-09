@@ -22,7 +22,7 @@ const CATALOG = [
  {
   "slug": "dermal-fillers",
   "name": "Fillers & HA Injectables",
-  "blurb": "HA fillers for lips, cheeks, jawline and skin boosters",
+  "blurb": "HA fillers and injectables for lips, cheeks and skin",
   "goodFor": [
    "Thin lips or uneven lip shape",
    "Flattened or hollow cheeks",
@@ -30,8 +30,8 @@ const CATALOG = [
    "A recessed or weak-looking chin",
    "Under-eye hollows and tired-looking eyes",
    "Smile lines and marionette lines",
-   "Dull, dehydrated or crepey skin (skin boosters)",
-   "Fine lines and rough skin texture (skin boosters)"
+   "Dull, dehydrated or crepey skin (HA injectables)",
+   "Fine lines and rough skin texture (HA injectables)"
   ]
  },
  {
@@ -109,7 +109,6 @@ const CATALOG = [
   "goodFor": [
    "Dull, tired-looking skin",
    "Uneven tone and sun spots",
-   "Redness",
    "Rough texture and enlarged pores",
    "Fine lines and wrinkles",
    "Acne scars",
@@ -167,7 +166,6 @@ const CATALOG = [
    "Spider veins on the legs",
    "Small broken blood vessels on the face",
    "Visible veins around the nose and cheeks",
-   "Diffuse facial redness from small vessels",
    "Small red or purple vessels on the chin",
    "People who prefer a needle-free option"
   ]
@@ -277,8 +275,8 @@ const CATALOG = [
  },
  {
   "slug": "hair-transplant",
-  "name": "ARTAS Hair Restoration",
-  "blurb": "Robotic-assisted FUE hair transplant procedure",
+  "name": "FUE Hair Transplant",
+  "blurb": "Follicle-by-follicle transplant for thinning hair",
   "goodFor": [
    "Receding hairline",
    "Thinning at the crown",
