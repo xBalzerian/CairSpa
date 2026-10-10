@@ -75,6 +75,34 @@ const CATALOG = [
   ]
  },
  {
+  "slug": "rf-microneedling",
+  "name": "RF Microneedling with Morpheus8",
+  "blurb": "Collagen remodeling and tightening with radiofrequency",
+  "goodFor": [
+   "Rough or uneven texture",
+   "Acne scars",
+   "Fine lines and wrinkles",
+   "Enlarged pores",
+   "Mild skin laxity on the face, jawline or neck",
+   "Crepey skin on the body",
+   "Some types of stretch marks"
+  ]
+ },
+ {
+  "slug": "microneedling",
+  "name": "Microneedling",
+  "blurb": "Collagen induction for smoother, fresher-looking skin",
+  "goodFor": [
+   "Rough or uneven texture",
+   "Dullness and uneven tone",
+   "Enlarged pores",
+   "Fine lines",
+   "Mild acne scars",
+   "Early signs of aging",
+   "Some types of stretch marks"
+  ]
+ },
+ {
   "slug": "facial",
   "name": "Customized Facial",
   "blurb": "Deep cleanse, exfoliation and hydration for your skin",
@@ -89,17 +117,17 @@ const CATALOG = [
   ]
  },
  {
-  "slug": "rf-microneedling",
-  "name": "Microneedling",
-  "blurb": "Microneedling and RF microneedling for texture and scars",
+  "slug": "ombre-powder-brows",
+  "name": "Ombre Powder Brows",
+  "blurb": "Soft, shaded semi-permanent brows that last",
   "goodFor": [
-   "Acne scars",
-   "Fine lines and wrinkles",
-   "Enlarged pores",
-   "Rough or uneven texture",
-   "Mild skin laxity",
-   "Dullness and uneven tone",
-   "Some types of stretch marks"
+   "Sparse or thin brows",
+   "Uneven or asymmetrical brows",
+   "Brows overplucked in the past",
+   "Oily or combination skin",
+   "People who fill in their brows daily",
+   "Active lifestyles, workouts and beach days",
+   "Faded microblading that needs a refresh"
   ]
  },
  {
@@ -274,6 +302,20 @@ const CATALOG = [
   ]
  },
  {
+  "slug": "lymphatic-buccal-facial-massage",
+  "name": "Lymphatic Buccal Facial Massage",
+  "blurb": "Facial massage to ease tension and refresh contours",
+  "goodFor": [
+   "Facial tension and tight jaw muscles",
+   "Temporary morning or travel puffiness",
+   "A more sculpted, defined look",
+   "Tired or dull-looking skin",
+   "Stress relief and relaxation",
+   "Refreshing your face before an event",
+   "A needle-free addition to your routine"
+  ]
+ },
+ {
   "slug": "hair-transplant",
   "name": "FUE Hair Transplant",
   "blurb": "Follicle-by-follicle transplant for thinning hair",
@@ -304,7 +346,7 @@ export default async function handler(req, res) {
 
   const payload = {
     model: 'jev-latest',
-    state: { visitor_message: concern, clinic: 'CAIR SPA, a medical spa in Huntington Beach, CA' },
+    state: { visitor_message: concern, clinic: 'CAIR SPA, a wellness and beauty spa in Huntington Beach, CA' },
     questions: {
       treatment: {
         type: 'choice',

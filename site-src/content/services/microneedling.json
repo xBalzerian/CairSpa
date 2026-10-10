@@ -1,0 +1,95 @@
+{
+  "slug": "microneedling",
+  "name": "Microneedling",
+  "category": "skin",
+  "menuBlurb": "Collagen induction for smoother, fresher-looking skin",
+  "metaTitle": "Microneedling in Huntington Beach | CAIR SPA",
+  "metaDescription": "Microneedling at CAIR SPA stimulates collagen to improve texture, fine lines, pores and mild acne scars with little downtime. Book a free consultation.",
+  "h1": "Microneedling in Huntington Beach",
+  "intro": "Microneedling, also called collagen induction therapy, is a skin treatment that uses very fine needles to create tiny controlled channels, prompting your skin to make new collagen and elastin. It is a good fit for adults who want smoother texture, a fresher glow, smaller-looking pores, softer fine lines or improved mild acne scars with little downtime.",
+  "quickFacts": [
+    {
+      "label": "Treatment time",
+      "value": "About 45–60 minutes, including numbing"
+    },
+    {
+      "label": "Downtime",
+      "value": "Often 1–3 days of redness"
+    },
+    {
+      "label": "Results",
+      "value": "Build gradually over 1–3 months"
+    },
+    {
+      "label": "Sessions",
+      "value": "Usually a series of about 3, spaced 4–6 weeks apart"
+    }
+  ],
+  "whatIs": [
+    "Standard microneedling uses a sterile device with tiny needles to make microscopic channels in the outer layers of the skin. Your body responds by repairing those channels, which can gradually lead to smoother, firmer and more even-looking skin. No radiofrequency or heat is used, so the treatment is gentler and recovery is usually quicker.",
+    "Microneedling differs from RF microneedling with Morpheus8, which adds radiofrequency energy through the needles to heat deeper layers for more remodeling and tightening, with a bit more downtime. Standard microneedling is often a good choice for overall texture, glow and early signs of aging, while Morpheus8 is commonly chosen for deeper scarring or laxity. A consultation decides which fits your skin and goals. All services are performed under Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon."
+  ],
+  "goodFor": [
+    "Rough or uneven texture",
+    "Dullness and uneven tone",
+    "Enlarged pores",
+    "Fine lines",
+    "Mild acne scars",
+    "Early signs of aging",
+    "Some types of stretch marks"
+  ],
+  "steps": [
+    {
+      "title": "Consultation",
+      "text": "We review your goals, skin history and medications, examine your skin and recommend standard microneedling or Morpheus8, along with a realistic number of sessions."
+    },
+    {
+      "title": "Prep and numbing",
+      "text": "Your skin is cleansed and a topical numbing cream is applied for comfort, usually for about 20–30 minutes before treatment begins."
+    },
+    {
+      "title": "Treatment",
+      "text": "The provider glides the device across each area in a careful pattern, adjusting needle depth to suit thinner and thicker areas of skin."
+    },
+    {
+      "title": "Aftercare",
+      "text": "Soothing products are applied, and you go home with clear instructions on gentle cleansing, sun protection and when to restart your usual skincare."
+    }
+  ],
+  "expect": {
+    "before": "Avoid retinoids, exfoliating acids and other irritating products for several days before treatment, and avoid sunburn. Let us know if you are pregnant, have active acne or a skin infection, have a history of cold sores or keloid scarring, or have taken isotretinoin recently.",
+    "during": "With numbing cream, most people feel light pressure, vibration or a gentle scratching sensation. Bonier areas such as the forehead may feel a little more noticeable.",
+    "after": "Expect redness similar to a mild sunburn and some tightness, often for 1–3 days, sometimes followed by light flaking. Keep skin clean, skip makeup for about 24 hours, avoid workouts and heat the first day, and wear sunscreen daily."
+  },
+  "faqs": [
+    {
+      "q": "How much does microneedling cost?",
+      "a": "Price depends on your plan, including the areas treated and the number of sessions. You receive an exact quote at your free consultation."
+    },
+    {
+      "q": "How much downtime is there after microneedling?",
+      "a": "Most people have redness and mild tightness for about 1–3 days, and some notice light flaking as skin heals. Many return to normal activities the next day. Because sun protection matters afterward, many Huntington Beach clients plan to avoid the beach and direct sun for about a week."
+    },
+    {
+      "q": "How long do microneedling results last?",
+      "a": "Results come from your own new collagen, so they often keep developing for a few months after your last session and can last a long time. Skin keeps aging, so many people choose periodic maintenance sessions. Results vary from person to person."
+    },
+    {
+      "q": "Does microneedling hurt?",
+      "a": "Numbing cream keeps most people comfortable. You may feel pressure or a light prickling sensation, which is usually described as very tolerable."
+    },
+    {
+      "q": "Who is a good candidate for microneedling?",
+      "a": "Healthy adults with concerns like dull texture, pores, fine lines or mild acne scars are often good candidates. Microneedling may not be suitable during pregnancy, with active acne or skin infections, after recent isotretinoin use or with a tendency to form keloids. Your provider reviews this at your consultation."
+    },
+    {
+      "q": "Should I choose microneedling or Morpheus8?",
+      "a": "Standard microneedling is gentler with less downtime and is often chosen for overall texture and glow. Morpheus8 adds radiofrequency energy for deeper remodeling and tightening, which can suit deeper scars or mild laxity. A free consultation helps decide which treatment fits your goals."
+    }
+  ],
+  "related": [
+    "rf-microneedling",
+    "facial",
+    "skin-rejuvenation"
+  ]
+}

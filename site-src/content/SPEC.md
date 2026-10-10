@@ -1,7 +1,7 @@
 # Service page content spec — CAIR SPA (cairspa.com)
 
 Business facts (only use these; never invent others):
-- CAIR SPA (Comprehensive Aesthetic Integrative Regeneration Spa), medical spa
+- CAIR SPA (Comprehensive Aesthetic Integrative Regeneration Spa), a WELLNESS AND BEAUTY SPA. It is NOT a medical spa: never call it a "medical spa", "med spa" or "medspa".
 - 20951 Brookhurst St, Ste 115, Huntington Beach, CA 92646. Phone (949) 688-5898. Mon–Fri 9 AM–6 PM.
 - All services are performed under Tran Plastic Surgery (Dr. Tuan Tran, triple board-certified in plastic, reconstructive and hand surgery; practice at Suite 107 in the same building). You may mention this oversight; do NOT invent other staff names, credentials, years in business, client counts, awards, ratings or statistics.
 - Free consultation. NO PRICES anywhere. Cost questions are answered as: price depends on the plan, exact quote given at a free consultation.
@@ -21,7 +21,7 @@ Output: one JSON file per service at site-src/content/services/<slug>.json, vali
 {
   "slug": "botox",
   "name": "Neurotoxin",                      // menu/card name
-  "category": "injectables" | "skin" | "laser" | "wellness",
+  "category": "injectables" | "skin" | "laser" | "wellness" | "hair",
   "menuBlurb": "max 60 chars",
   "metaTitle": "max 60 chars, include 'Huntington Beach' and 'CAIR SPA'",
   "metaDescription": "140–155 chars, ends with free consultation CTA",
@@ -38,8 +38,9 @@ Output: one JSON file per service at site-src/content/services/<slug>.json, vali
 
 Full slug list (use for "related"):
 injectables: botox, dermal-fillers, sculptra, prp-hair-restoration, prf-under-eye
-skin: facial, rf-microneedling, skin-rejuvenation
+skin: rf-microneedling (Morpheus8), microneedling, facial, ombre-powder-brows, skin-rejuvenation
 laser: aerolase, laser-hair-removal, skin-tag-removal, vein-treatment, acne-treatment, melasma-treatment, pigmented-lesions
-wellness: iv-infusion, nad-therapy, weight-loss, thread-lift, exosome-therapy, hair-transplant
+wellness: iv-infusion, nad-therapy, weight-loss, thread-lift, exosome-therapy, lymphatic-buccal-facial-massage
+hair: hair-transplant (FUE Hair Transplant; never mention ARTAS)
 
 Existing (old) pages for reference only are at services/<slug>/index.html in the repo root. They contain unverified marketing claims; do not copy claims, stats or reviews from them.

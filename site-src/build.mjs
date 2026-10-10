@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v2';
+const VERSION = 'v3';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -30,7 +30,7 @@ const IMG = {
   cat_injectables: '1746708810803-722593e53772', cat_skin: '1570172619644-dfd03ed5d881', cat_laser: '1598300195998-364bf445842c', cat_wellness: '1763310225009-50214e3c99d9',
   botox: '1746708810803-722593e53772', 'dermal-fillers': '1731355771418-f10ab62c9f86', sculptra: '1785861084191-3600dfc2a6d6',
   'prp-hair-restoration': '1785860458107-5be1a99d4188', 'prf-under-eye': '1785861378703-1c991c4548ef',
-  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': '1761819920857-7edc5e808fd3', 'skin-rejuvenation': '1741934023052-26baf5535088',
+  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': '1689103229376-3fbfe1257242', microneedling: '1761819920857-7edc5e808fd3', 'ombre-powder-brows': '1785860945533-918a531bcdeb', 'lymphatic-buccal-facial-massage': '1706795034830-de41aee06afa', 'skin-rejuvenation': '1741934023052-26baf5535088',
   aerolase: '1598300195998-364bf445842c', 'laser-hair-removal': '1700760933574-9f0f4ea9aa3b', 'skin-tag-removal': '1746806942799-b4db209e9a6b',
   'vein-treatment': '1700760933941-3a06a28fbf47', 'acne-treatment': '1660646463659-df77c1580723', 'melasma-treatment': '1785861775561-c6db7da314a0',
   'pigmented-lesions': '1732993486279-9d0f3b91adb2',
@@ -46,11 +46,12 @@ const pic = (id, alt, { w = 1200, ratio, eager = false, sizes = '100vw' } = {}) 
 
 const CATS = [
   { id: 'injectables', name: 'Injectables', blurb: 'Neurotoxin, fillers, Sculptra® and PRF/PRP for natural-looking refreshment.' },
-  { id: 'skin', name: 'Skin', blurb: 'Customized facials and microneedling for tone, texture and glow.' },
+  { id: 'skin', name: 'Skin', blurb: 'Morpheus8 RF microneedling, microneedling, customized facials and ombre powder brows.' },
   { id: 'laser', name: 'Aerolase Laser', blurb: 'One gentle medical laser for hair, veins, acne, melasma, spots and skin tags.' },
-  { id: 'wellness', name: 'Wellness & More', blurb: 'IV and NAD+ therapy, medical weight loss, thread lifts and hair restoration.' },
+  { id: 'wellness', name: 'Wellness & More', blurb: 'IV and NAD+ therapy, weight loss, thread lifts, exosomes and lymphatic buccal facial massage.' },
+  { id: 'hair', name: 'Hair', blurb: 'FUE hair transplant for a receding hairline or thinning crown.' },
 ];
-const ORDER = ['botox', 'dermal-fillers', 'sculptra', 'prp-hair-restoration', 'prf-under-eye', 'facial', 'rf-microneedling', 'skin-rejuvenation', 'aerolase', 'laser-hair-removal', 'skin-tag-removal', 'vein-treatment', 'acne-treatment', 'melasma-treatment', 'pigmented-lesions', 'iv-infusion', 'nad-therapy', 'weight-loss', 'thread-lift', 'exosome-therapy', 'hair-transplant'];
+const ORDER = ['botox', 'dermal-fillers', 'sculptra', 'prp-hair-restoration', 'prf-under-eye', 'rf-microneedling', 'microneedling', 'facial', 'ombre-powder-brows', 'skin-rejuvenation', 'aerolase', 'laser-hair-removal', 'skin-tag-removal', 'vein-treatment', 'acne-treatment', 'melasma-treatment', 'pigmented-lesions', 'iv-infusion', 'nad-therapy', 'weight-loss', 'thread-lift', 'exosome-therapy', 'lymphatic-buccal-facial-massage', 'hair-transplant'];
 
 const services = ORDER.map((slug) => JSON.parse(fs.readFileSync(path.join(SRC, 'content/services', `${slug}.json`), 'utf8')));
 const bySlug = Object.fromEntries(services.map((s) => [s.slug, s]));
@@ -77,16 +78,18 @@ const I = {
 
 // ---------- shared chrome ----------
 function megaMenu() {
-  const cols = CATS.map((c) => `<div class="mega-col"><h4><a href="/services/#${c.id}">${esc(c.name)}</a></h4><ul>${inCat(c.id).map((s) => `<li><a href="/services/${s.slug}"><strong>${reg(s.name)}</strong><small>${reg(s.menuBlurb)}</small></a></li>`).join('')}</ul></div>`).join('');
+  const group = (c) => `<h4><a href="/services/#${c.id}">${esc(c.name)}</a></h4><ul>${inCat(c.id).map((s) => `<li><a href="/services/${s.slug}"><strong>${reg(s.name)}</strong><small>${reg(s.menuBlurb)}</small></a></li>`).join('')}</ul>`;
+  const byId = Object.fromEntries(CATS.map((c) => [c.id, c]));
+  const cols = [['injectables'], ['skin'], ['laser'], ['wellness', 'hair']].map((ids) => `<div class="mega-col">${ids.map((id) => group(byId[id])).join('')}</div>`).join('');
   return `<div class="mega" role="region" aria-label="Treatments"><div class="mega-inner">${cols}<a class="mega-feature" href="/#match">${pic(IMG.injector, 'Provider performing a cosmetic injection', { w: 600, ratio: 0.85, sizes: '300px' })}<div><b>Not sure where to start?</b><span>Describe your concern in your own words and we’ll suggest a treatment →</span></div></a></div><div class="mega-foot"><div class="wrap"><span>Every treatment starts with a free, no-pressure consultation.</span><a class="link-arrow" href="/services/">View all treatments</a></div></div></div>`;
 }
 
 function header(current) {
   const cur = (k) => (current === k ? ' aria-current="page"' : '');
   return `<a class="skip" href="#main">Skip to content</a>
-<div class="topbar"><div class="wrap"><div class="tb-left"><span>${I.clock}${SITE.hours}</span><span>${I.pin}${SITE.street}, ${SITE.city}</span></div><div class="tb-right"><span>Medical oversight by Tran Plastic Surgery</span><a href="tel:${SITE.tel}">${I.phone}${SITE.phone}</a></div></div></div>
+<div class="topbar"><div class="wrap"><div class="tb-left"><span>${I.clock}${SITE.hours}</span><span>${I.pin}${SITE.street}, ${SITE.city}</span></div><div class="tb-right"><span>Services performed under Tran Plastic Surgery</span><a href="tel:${SITE.tel}">${I.phone}${SITE.phone}</a></div></div></div>
 <header class="site-header"><div class="wrap nav">
-  <a class="brand" href="/" aria-label="CAIR SPA home"><img src="/images/logo-phoenix-new.png" alt="" width="46" height="46"><span><span class="brand-name">CAIR SPA</span><span class="brand-sub">MEDICAL SPA</span></span></a>
+  <a class="brand" href="/" aria-label="CAIR SPA home"><img src="/images/logo-phoenix-new.png" alt="" width="46" height="46"><span><span class="brand-name">CAIR SPA</span><span class="brand-sub">WELLNESS &amp; BEAUTY SPA</span></span></a>
   <nav aria-label="Main"><ul class="menu">
     <li class="has-mega"><button type="button" aria-expanded="false">Treatments${I.chev}</button>${megaMenu()}</li>
     <li class="has-drop"><button type="button" aria-expanded="false">Areas We Serve${I.chev}</button><ul class="drop">${AREAS.map(([n, h]) => `<li><a href="${h}">${n}</a></li>`).join('')}</ul></li>
@@ -110,12 +113,12 @@ function footer() {
   return `<section class="cta-band"><div class="wrap"><div><h2>Begin with a free consultation.</h2><p>Tell us what you’d like to change. We’ll recommend a personalized plan and give you an exact quote before anything begins.</p></div><div class="ctas"><a class="btn btn-white" href="/contact/#book">${I.cal}Book free consultation</a><a class="btn btn-ghost" href="tel:${SITE.tel}">${I.phone}${SITE.phone}</a></div></div></section>
 <footer class="site-footer"><div class="wrap">
   <div class="foot-top">
-    <div class="foot-brand"><a class="brand" href="/"><img src="/images/logo-phoenix-new.png" alt="" width="46" height="46"><span><span class="brand-name">CAIR SPA</span><span class="brand-sub">MEDICAL SPA</span></span></a>
-      <p>${SITE.long}. A medical spa in Huntington Beach for injectables, skin, Aerolase laser and wellness care.</p>
+    <div class="foot-brand"><a class="brand" href="/"><img src="/images/logo-phoenix-new.png" alt="" width="46" height="46"><span><span class="brand-name">CAIR SPA</span><span class="brand-sub">WELLNESS &amp; BEAUTY SPA</span></span></a>
+      <p>${SITE.long}. A wellness and beauty spa in Huntington Beach for injectables, skin, Aerolase laser, hair and wellness care.</p>
       <div class="foot-contact"><a href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}<span>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</span></a><a href="tel:${SITE.tel}">${I.phone}${SITE.phone}</a><a href="mailto:${SITE.email}">${I.mail}${SITE.email}</a><span>${I.clock}${SITE.hours}</span></div></div>
     <div><h5>Injectables</h5><ul>${list('injectables')}</ul></div>
     <div><h5>Skin & Laser</h5><ul>${list('skin')}${list('laser')}</ul></div>
-    <div><h5>Wellness & More</h5><ul>${list('wellness')}</ul></div>
+    <div><h5>Wellness & More</h5><ul>${list('wellness')}</ul><h5 style="margin-top:28px">Hair</h5><ul>${list('hair')}</ul></div>
     <div><h5>Clinic</h5><ul><li><a href="/about/">About CAIR SPA</a></li><li><a href="/services/">All treatments</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact & booking</a></li><li><a href="${SITE.reviews}" target="_blank" rel="noopener">Google reviews</a></li><li><a href="/privacy-policy.html">Privacy policy</a></li><li><a href="/terms-of-service.html">Terms of service</a></li></ul></div>
   </div>
   <div class="foot-areas"><b>Serving</b>${AREAS.map(([n, h]) => `<a href="${h}">${n}</a>`).join('')}</div>
@@ -125,15 +128,15 @@ function footer() {
 }
 
 const BUSINESS = {
-  '@context': 'https://schema.org', '@type': 'MedicalBusiness', '@id': `${ORIGIN}/#business`,
+  '@context': 'https://schema.org', '@type': 'HealthAndBeautyBusiness', '@id': `${ORIGIN}/#business`,
   name: SITE.name, alternateName: SITE.long, url: `${ORIGIN}/`, telephone: '+1-949-688-5898', email: SITE.email,
   image: `${ORIGIN}/images/logo-phoenix-new.png`, logo: `${ORIGIN}/images/logo-phoenix-new.png`,
-  description: `Medical spa in Huntington Beach, CA offering neurotoxin, fillers, Sculptra, PRF/PRP, microneedling, customized facials, Aerolase laser treatments and wellness services. ${SITE.oversight}`,
+  description: `Wellness and beauty spa in Huntington Beach, CA offering neurotoxin, fillers, Sculptra, PRF/PRP, microneedling, customized facials, Aerolase laser treatments and wellness services. ${SITE.oversight}`,
   address: { '@type': 'PostalAddress', streetAddress: SITE.street, addressLocality: SITE.city, addressRegion: SITE.region, postalCode: SITE.zip, addressCountry: 'US' },
   geo: { '@type': 'GeoCoordinates', latitude: 33.6784, longitude: -117.9988 },
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '18:00' }],
   areaServed: AREAS.map(([n]) => ({ '@type': 'City', name: n })),
-  availableService: services.map((s) => ({ '@type': 'MedicalProcedure', name: s.name.replace(/®/g, ''), url: `${ORIGIN}/services/${s.slug}` })),
+  makesOffer: services.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name.replace(/®/g, ''), url: `${ORIGIN}/services/${s.slug}` } })),
 };
 
 function layout({ title, description, canonical, body, current, schema = [], ogImage = IMG.hero, catalog = false }) {
@@ -197,7 +200,7 @@ function faqBlock(faqs, { title = 'Frequently asked questions', intro = 'Can’t
 }
 const faqSchema = (faqs) => ({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
 const crumbSchema = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: `${ORIGIN}${u}` })) });
-const oversightBand = () => `<div class="oversight reveal"><div class="ic">${I.shield}</div><div><h3>Medical oversight you can trust</h3><p>${SITE.oversight} Tran Plastic Surgery is led by Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery, and is located in our building at 20951 Brookhurst St.</p></div><a class="link-arrow" href="/about/">About our care</a></div>`;
+const oversightBand = () => `<div class="oversight reveal"><div class="ic">${I.shield}</div><div><h3>Expert oversight you can trust</h3><p>${SITE.oversight} Tran Plastic Surgery is led by Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery, and is located in our building at 20951 Brookhurst St.</p></div><a class="link-arrow" href="/about/">About our care</a></div>`;
 const visitBlock = () => `<div class="visit"><div><span class="eyebrow">Visit us</span><h2 style="margin-top:14px">Find us in Huntington Beach</h2><dl class="info-list"><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: Closed</dd></div></dl><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}Get directions</a><a class="btn btn-outline" href="/contact/#book">Book a visit</a></div></div><div class="map"><iframe title="Map showing CAIR SPA location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${SITE.mapEmbed}"></iframe></div></div>`;
 
 const GENERAL_FAQS = [
@@ -214,20 +217,20 @@ function homePage() {
   const body = `
 <section class="hero"><div class="wrap hero-grid">
   <div class="reveal in">
-    <span class="eyebrow">Medical spa · Huntington Beach, CA</span>
+    <span class="eyebrow">Wellness &amp; beauty spa · Huntington Beach, CA</span>
     <h1>Natural-looking results, <em class="accent">medically guided.</em></h1>
-    <p class="lead">Neurotoxin, fillers, Sculptra<sup>®</sup>, PRF/PRP, customized facials, microneedling and Aerolase laser care in Huntington Beach. Every plan starts with a free, no-pressure consultation.</p>
+    <p class="lead">Neurotoxin, fillers, Sculptra<sup>®</sup>, Morpheus8 RF microneedling, customized facials, ombre powder brows, Aerolase laser care and FUE hair transplants in Huntington Beach. Every plan starts with a free, no-pressure consultation.</p>
     <div class="ctas"><a class="btn btn-primary" href="#book">${I.cal}Book your free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a></div>
     <div class="trust-row"><span>${I.check}Free consultation</span><span>${I.check}Performed under Tran Plastic Surgery</span><span>${I.check}Open Mon–Fri, 9–6</span></div>
   </div>
   <div class="hero-media">
     <div class="hero-photo">${pic(IMG.hero, 'Client receiving a professional facial treatment', { w: 1100, ratio: 0.8, eager: true, sizes: '(max-width:1024px) 100vw, 50vw' })}</div>
-    <div class="hero-badge"><span class="ic">${I.shield}</span><span><b>Medical oversight</b><small>by Tran Plastic Surgery</small></span></div>
+    <div class="hero-badge"><span class="ic">${I.shield}</span><span><b>Performed under</b><small>Tran Plastic Surgery</small></span></div>
     ${leadForm({ title: 'Get a call back', note: 'Leave your number and we’ll call to book your free consultation.', source: 'Homepage Callback' })}
   </div>
 </div></section>
 
-<section class="glance"><div class="wrap"><span class="eyebrow">At a glance</span><p><strong>CAIR SPA</strong> (${SITE.long}) is a medical spa at ${SITE.street} in Huntington Beach, CA. It offers neurotoxin, HA fillers, Sculptra, PRF/PRP for hair and under-eyes, customized facials, microneedling and Aerolase laser treatments for hair removal, skin tags, veins, acne, melasma and pigmented lesions, plus IV and NAD+ therapy, medical weight loss and thread lifts. ${SITE.oversight} Consultations are free, Monday to Friday, 9 AM to 6 PM.</p></div></section>
+<section class="glance"><div class="wrap"><span class="eyebrow">At a glance</span><p><strong>CAIR SPA</strong> (${SITE.long}) is a wellness and beauty spa at ${SITE.street} in Huntington Beach, CA. It offers neurotoxin, HA fillers, Sculptra, PRF/PRP for hair and under-eyes, Morpheus8 radiofrequency microneedling, microneedling, customized facials, ombre powder brows and Aerolase laser treatments for hair removal, skin tags, veins, acne, melasma and pigmented lesions, plus IV and NAD+ therapy, weight loss, thread lifts, exosome therapy, lymphatic buccal facial massage and FUE hair transplants. ${SITE.oversight} Consultations are free, Monday to Friday, 9 AM to 6 PM.</p></div></section>
 
 <section class="sec" id="treatments"><div class="wrap">
   <div class="sec-head reveal"><div><span class="eyebrow">Treatments</span><h2>Care for face, skin, hair and body</h2></div><p>Every treatment has its own page with what to expect, downtime and answers to common questions. Not sure which is right for you? That’s what the free consultation is for.</p></div>
@@ -254,8 +257,8 @@ function homePage() {
 
 <section class="sec bg-white"><div class="wrap split">
   <div class="split-photo reveal">${pic(IMG.why, 'Calm treatment room with skincare products', { w: 1000, ratio: 1 / 1.05, sizes: '(max-width:1024px) 100vw, 50vw' })}</div>
-  <div class="reveal"><span class="eyebrow">Why CAIR SPA</span><h2 style="margin:14px 0 18px">Medical standards, spa-level comfort</h2><p class="lead">We pair clinical care with a calm, unhurried experience, so you leave looking like yourself on your best day.</p>
-    <ul class="ticks"><li><b>Medical oversight</b><span>${SITE.oversight}</span></li><li><b>Natural-looking results</b><span>A conservative approach tailored to your features.</span></li><li><b>Personalized plans</b><span>Treatments matched to your goals, skin and budget.</span></li><li><b>Clear, upfront quotes</b><span>You know the exact cost before any treatment.</span></li></ul>
+  <div class="reveal"><span class="eyebrow">Why CAIR SPA</span><h2 style="margin:14px 0 18px">Expert care, spa-level comfort</h2><p class="lead">We pair expert care with a calm, unhurried experience, so you leave looking like yourself on your best day.</p>
+    <ul class="ticks"><li><b>Expert oversight</b><span>${SITE.oversight}</span></li><li><b>Natural-looking results</b><span>A conservative approach tailored to your features.</span></li><li><b>Personalized plans</b><span>Treatments matched to your goals, skin and budget.</span></li><li><b>Clear, upfront quotes</b><span>You know the exact cost before any treatment.</span></li></ul>
     <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="#book">Book free consultation</a><a class="btn btn-outline" href="/about/">About CAIR SPA</a></div></div>
 </div></section>
 
@@ -270,8 +273,8 @@ function homePage() {
 
 <section class="sec"><div class="wrap">${visitBlock()}</div></section>`;
   return layout({
-    title: 'Medical Spa in Huntington Beach, CA | CAIR SPA',
-    description: 'CAIR SPA is a Huntington Beach medical spa for neurotoxin, fillers, Sculptra, PRF/PRP, facials, microneedling and Aerolase laser. Book a free consultation.',
+    title: 'Wellness & Beauty Spa in Huntington Beach, CA | CAIR SPA',
+    description: 'CAIR SPA is a Huntington Beach wellness and beauty spa for neurotoxin, fillers, Sculptra, PRF/PRP, facials, microneedling and Aerolase laser. Book a free consultation.',
     canonical: '/', body, current: 'home', catalog: true, schema: [faqSchema(GENERAL_FAQS), { '@context': 'https://schema.org', '@type': 'WebSite', name: 'CAIR SPA', url: `${ORIGIN}/` }],
   });
 }
@@ -320,7 +323,7 @@ function servicePage(s) {
   return layout({
     title: s.metaTitle, description: s.metaDescription, canonical: `/services/${s.slug}`, body, current: 'services', ogImage: IMG[s.slug],
     schema: [
-      { '@context': 'https://schema.org', '@type': 'MedicalProcedure', name: s.name.replace(/®/g, ''), description: s.intro, url: `${ORIGIN}/services/${s.slug}`, image: img(IMG[s.slug], 1200), provider: { '@id': `${ORIGIN}/#business` } },
+      { '@context': 'https://schema.org', '@type': 'Service', name: s.name.replace(/®/g, ''), description: s.intro, url: `${ORIGIN}/services/${s.slug}`, image: img(IMG[s.slug], 1200), provider: { '@id': `${ORIGIN}/#business` } },
       faqSchema(s.faqs), crumbSchema([['Home', '/'], ['Treatments', '/services/'], [s.name.replace(/®/g, ''), `/services/${s.slug}`]]),
     ],
   });
@@ -329,23 +332,23 @@ function servicePage(s) {
 function servicesHub() {
   const body = `
 <section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Treatments</span></nav>
-  <div class="page-hero-grid"><div><span class="eyebrow">All treatments</span><h1>Treatments at our Huntington Beach medical spa</h1><p class="lead">Explore injectables, skin treatments, Aerolase laser care and wellness services at CAIR SPA. ${SITE.oversight}</p><div class="ctas"><a class="btn btn-primary" href="/contact/#book">${I.cal}Book free consultation</a><a class="btn btn-outline" href="/#match">Help me choose</a></div></div>
+  <div class="page-hero-grid"><div><span class="eyebrow">All treatments</span><h1>Treatments at our Huntington Beach wellness &amp; beauty spa</h1><p class="lead">Explore injectables, skin treatments, Aerolase laser care and wellness services at CAIR SPA. ${SITE.oversight}</p><div class="ctas"><a class="btn btn-primary" href="/contact/#book">${I.cal}Book free consultation</a><a class="btn btn-outline" href="/#match">Help me choose</a></div></div>
   <div class="page-hero-photo">${pic(IMG.injector, 'Provider performing a cosmetic injection', { w: 1100, ratio: 5 / 4.4, eager: true, sizes: '(max-width:1024px) 100vw, 46vw' })}</div></div></div></section>
 <section class="sec"><div class="wrap">${treatmentsBlock()}</div></section>`;
-  return layout({ title: 'Treatments | Medical Spa Huntington Beach | CAIR SPA', description: 'Explore every treatment at CAIR SPA in Huntington Beach: neurotoxin, fillers, Sculptra, PRF/PRP, facials, microneedling, Aerolase laser and wellness. Free consultation.', canonical: '/services/', body, current: 'services', schema: [crumbSchema([['Home', '/'], ['Treatments', '/services/']])] });
+  return layout({ title: 'Treatments | Wellness & Beauty Spa Huntington Beach | CAIR SPA', description: 'Explore every treatment at CAIR SPA in Huntington Beach: neurotoxin, fillers, Sculptra, PRF/PRP, facials, microneedling, Aerolase laser and wellness. Free consultation.', canonical: '/services/', body, current: 'services', schema: [crumbSchema([['Home', '/'], ['Treatments', '/services/']])] });
 }
 
 function aboutPage() {
   const body = `
 <section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>About</span></nav>
-  <div class="page-hero-grid"><div><span class="eyebrow">About CAIR SPA</span><h1>A Huntington Beach medical spa built on careful, natural results</h1><p class="lead">CAIR stands for ${SITE.long}. We bring medical aesthetics, skin care and wellness together under one roof on Brookhurst Street, with a calm experience and a conservative, personalized approach.</p></div>
-  <div class="page-hero-photo">${pic(IMG.why, 'Treatment room at a medical spa', { w: 1100, ratio: 5 / 4.4, eager: true, sizes: '(max-width:1024px) 100vw, 46vw' })}</div></div></div></section>
+  <div class="page-hero-grid"><div><span class="eyebrow">About CAIR SPA</span><h1>A Huntington Beach wellness &amp; beauty spa built on careful, natural results</h1><p class="lead">CAIR stands for ${SITE.long}. We bring medical aesthetics, skin care and wellness together under one roof on Brookhurst Street, with a calm experience and a conservative, personalized approach.</p></div>
+  <div class="page-hero-photo">${pic(IMG.why, 'Treatment room at a beauty spa', { w: 1100, ratio: 5 / 4.4, eager: true, sizes: '(max-width:1024px) 100vw, 46vw' })}</div></div></div></section>
 <section class="sec"><div class="wrap">${oversightBand()}</div></section>
 <section class="sec bg-white"><div class="wrap split"><div class="reveal"><span class="eyebrow">Our approach</span><h2 style="margin:14px 0 18px">Look like yourself, refreshed</h2><div class="prose"><p>Good aesthetic care starts with listening. At your free consultation we talk through what you want to change, assess your skin and features, and recommend only what makes sense for you.</p><p>You’ll leave with a clear plan, realistic expectations and an exact quote. There is no pressure to book on the spot.</p></div>
-  <ul class="ticks"><li><b>Free consultations</b><span>No obligation, ever.</span></li><li><b>Under one roof</b><span>Injectables, skin, laser and wellness.</span></li><li><b>Medical oversight</b><span>Performed under Tran Plastic Surgery.</span></li><li><b>Convenient location</b><span>${SITE.street}, Huntington Beach.</span></li></ul></div>
+  <ul class="ticks"><li><b>Free consultations</b><span>No obligation, ever.</span></li><li><b>Under one roof</b><span>Injectables, skin, laser and wellness.</span></li><li><b>Expert oversight</b><span>Performed under Tran Plastic Surgery.</span></li><li><b>Convenient location</b><span>${SITE.street}, Huntington Beach.</span></li></ul></div>
   <div class="split-photo reveal">${pic(IMG.consult, 'Provider discussing a treatment plan with a client', { w: 1000, ratio: 1 / 1.05, sizes: '(max-width:1024px) 100vw, 50vw' })}</div></div></section>
 <section class="sec"><div class="wrap">${visitBlock()}</div></section>`;
-  return layout({ title: 'About CAIR SPA | Medical Spa in Huntington Beach', description: 'Learn about CAIR SPA, a Huntington Beach medical spa offering injectables, skin, Aerolase laser and wellness care performed under Tran Plastic Surgery.', canonical: '/about/', body, current: 'about', schema: [crumbSchema([['Home', '/'], ['About', '/about/']])] });
+  return layout({ title: 'About CAIR SPA | Wellness & Beauty Spa in Huntington Beach', description: 'Learn about CAIR SPA, a Huntington Beach wellness and beauty spa offering injectables, skin, Aerolase laser and wellness care performed under Tran Plastic Surgery.', canonical: '/about/', body, current: 'about', schema: [crumbSchema([['Home', '/'], ['About', '/about/']])] });
 }
 
 function contactPage() {
@@ -355,7 +358,7 @@ function contactPage() {
     <dl class="info-list"><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM</dd></div></dl></div>
   <div>${leadForm({ title: 'Request an appointment', note: 'We’ll call you to confirm a time that works.', source: 'Contact Page', full: true })}</div></div></div></section>
 <section class="sec"><div class="wrap">${visitBlock()}</div></section>`;
-  return layout({ title: 'Contact & Book | CAIR SPA Medical Spa Huntington Beach', description: 'Book a free consultation at CAIR SPA, 20951 Brookhurst St Ste 115, Huntington Beach. Call (949) 688-5898 or request a call back online.', canonical: '/contact/', body, current: 'contact', schema: [crumbSchema([['Home', '/'], ['Contact', '/contact/']])] });
+  return layout({ title: 'Contact & Book | CAIR SPA Huntington Beach', description: 'Book a free consultation at CAIR SPA, 20951 Brookhurst St Ste 115, Huntington Beach. Call (949) 688-5898 or request a call back online.', canonical: '/contact/', body, current: 'contact', schema: [crumbSchema([['Home', '/'], ['Contact', '/contact/']])] });
 }
 
 function faqPage() {
@@ -364,7 +367,7 @@ function faqPage() {
 <section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>FAQ</span></nav><span class="eyebrow">FAQ</span><h1>Frequently asked questions</h1><p class="lead">Answers about consultations, pricing, downtime and each treatment at CAIR SPA in Huntington Beach.</p></div></section>
 <section class="sec bg-white"><div class="wrap">${faqBlock(GENERAL_FAQS, { title: 'General questions' })}</div></section>
 <section class="sec"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">By treatment</span><h2>Treatment questions</h2></div><p>Each treatment page answers the most common questions about results, downtime, comfort and candidacy.</p></div>${sections}</div></section>`;
-  return layout({ title: 'FAQ | CAIR SPA Medical Spa Huntington Beach', description: 'Answers to common questions about CAIR SPA in Huntington Beach: free consultations, pricing, downtime, hours and every treatment we offer.', canonical: '/faq/', body, current: 'faq', schema: [faqSchema(GENERAL_FAQS), crumbSchema([['Home', '/'], ['FAQ', '/faq/']])] });
+  return layout({ title: 'FAQ | CAIR SPA Wellness & Beauty Spa Huntington Beach', description: 'Answers to common questions about CAIR SPA in Huntington Beach: free consultations, pricing, downtime, hours and every treatment we offer.', canonical: '/faq/', body, current: 'faq', schema: [faqSchema(GENERAL_FAQS), crumbSchema([['Home', '/'], ['FAQ', '/faq/']])] });
 }
 
 // ---------- write ----------

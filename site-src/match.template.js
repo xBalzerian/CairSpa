@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 
   const payload = {
     model: 'jev-latest',
-    state: { visitor_message: concern, clinic: 'CAIR SPA, a medical spa in Huntington Beach, CA' },
+    state: { visitor_message: concern, clinic: 'CAIR SPA, a wellness and beauty spa in Huntington Beach, CA' },
     questions: {
       treatment: {
         type: 'choice',
