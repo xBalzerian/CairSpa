@@ -77,15 +77,15 @@ const CATALOG = [
  {
   "slug": "rf-microneedling",
   "name": "RF Microneedling with Morpheus8",
-  "blurb": "Collagen remodeling and tightening with radiofrequency",
+  "blurb": "Morpheus8 Burst RF microneedling for face and body",
   "goodFor": [
-   "Rough or uneven texture",
-   "Acne scars",
+   "Loose or crepey skin on the lower face, jawline and neck",
+   "Uneven skin texture and enlarged pores",
    "Fine lines and wrinkles",
-   "Enlarged pores",
-   "Mild skin laxity on the face, jawline or neck",
-   "Crepey skin on the body",
-   "Some types of stretch marks"
+   "The appearance of acne scars",
+   "Loose skin on the abdomen, arms, knees or thighs (Burst Deep)",
+   "People who want a non-surgical option with no incisions or stitches",
+   "Adults who can plan around a few days of visible healing"
   ]
  },
  {

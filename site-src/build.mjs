@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v3';
+const VERSION = 'v4';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -43,6 +43,11 @@ const pic = (id, alt, { w = 1200, ratio, eager = false, sizes = '100vw' } = {}) 
   const h = (x) => (ratio ? Math.round(x / ratio) : undefined);
   return `<img src="${img(id, w, h(w))}" srcset="${ws.map((x) => `${img(id, x, h(x))} ${x}w`).join(', ')}" sizes="${sizes}" alt="${esc(alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"${ratio ? ` width="${w}" height="${h(w)}"` : ''}>`;
 };
+
+// Local images (official InMode assets) served from /images/inmode as WebP with JPEG fallback
+const lpic = (name, alt, { eager = false, cls = '', w, h } = {}) => `<picture${cls ? ` class="${cls}"` : ''}><source type="image/webp" srcset="/images/inmode/${name}.webp"><img src="/images/inmode/${name}.jpg" alt="${esc(alt)}"${w ? ` width="${w}" height="${h}"` : ''}${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"></picture>`;
+const thumb = (s, opts) => (s.feature ? lpic(s.feature.video.poster, s.name, { w: 1280, h: 720 }) : pic(IMG[s.slug], s.name, opts));
+const fmtT = (t) => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
 
 const CATS = [
   { id: 'injectables', name: 'Injectables', blurb: 'Neurotoxin, fillers, Sculptra® and PRF/PRP for natural-looking refreshment.' },
@@ -81,7 +86,7 @@ function megaMenu() {
   const group = (c) => `<h4><a href="/services/#${c.id}">${esc(c.name)}</a></h4><ul>${inCat(c.id).map((s) => `<li><a href="/services/${s.slug}"><strong>${reg(s.name)}</strong><small>${reg(s.menuBlurb)}</small></a></li>`).join('')}</ul>`;
   const byId = Object.fromEntries(CATS.map((c) => [c.id, c]));
   const cols = [['injectables'], ['skin'], ['laser'], ['wellness', 'hair']].map((ids) => `<div class="mega-col">${ids.map((id) => group(byId[id])).join('')}</div>`).join('');
-  return `<div class="mega" role="region" aria-label="Treatments"><div class="mega-inner">${cols}<a class="mega-feature" href="/#match">${pic(IMG.injector, 'Provider performing a cosmetic injection', { w: 600, ratio: 0.85, sizes: '300px' })}<div><b>Not sure where to start?</b><span>Describe your concern in your own words and we’ll suggest a treatment →</span></div></a></div><div class="mega-foot"><div class="wrap"><span>Every treatment starts with a free, no-pressure consultation.</span><a class="link-arrow" href="/services/">View all treatments</a></div></div></div>`;
+  return `<div class="mega" role="region" aria-label="Treatments"><div class="mega-inner">${cols}<a class="mega-feature" href="/services/rf-microneedling">${lpic('m8-video-poster', 'Morpheus8 Burst radiofrequency microneedling')}<div><span class="mf-tag">Featured</span><b>Morpheus8 Burst</b><span>InMode RF microneedling for face and body. See how it works →</span></div></a></div><div class="mega-foot"><div class="wrap"><span>Every treatment starts with a free, no-pressure consultation.</span><a class="link-arrow" href="/services/">View all treatments</a></div></div></div>`;
 }
 
 function header(current) {
@@ -184,7 +189,7 @@ function leadForm({ id = 'book', title = 'Request a call back', note = 'We’ll 
   <button class="btn btn-primary" type="submit">Request my free consultation</button>
   <p class="form-note">No obligation. We never share your information.</p></form>`;
 }
-const card = (s) => `<a class="card" href="/services/${s.slug}"><div class="card-img">${pic(IMG[s.slug], s.name, { w: 640, ratio: 4 / 3, sizes: '(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw' })}</div><div class="card-body"><h3>${reg(s.name)}</h3><p>${reg(s.menuBlurb)}</p><span class="link-arrow">Learn more</span></div></a>`;
+const card = (s) => `<a class="card${s.feature ? ' card-featured' : ''}" href="/services/${s.slug}"><div class="card-img">${s.feature ? '<span class="card-badge">Featured</span>' : ''}${thumb(s, { w: 640, ratio: 4 / 3, sizes: '(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw' })}</div><div class="card-body"><h3>${reg(s.name)}</h3><p>${reg(s.menuBlurb)}</p><span class="link-arrow">Learn more</span></div></a>`;
 function treatmentsBlock() {
   const block = (c) => {
     if (c.id === 'laser') {
@@ -229,6 +234,21 @@ function homePage() {
     ${leadForm({ title: 'Get a call back', note: 'Leave your number and we’ll call to book your free consultation.', source: 'Homepage Callback' })}
   </div>
 </div></section>
+
+<section class="m8-band"><div class="wrap m8-band-grid">
+  <div class="m8-band-copy reveal in">
+    <span class="eyebrow">Featured treatment</span>
+    <h2>Morpheus8 Burst <em class="accent">RF microneedling</em></h2>
+    <p>InMode’s Morpheus8 Burst and Burst Deep deliver radiofrequency energy through fine microneedles at several depths in a single pulse, to contract tissue and support your skin’s natural renewal on the face, neck and body. No incisions, no stitches.</p>
+    <ul class="m8-points"><li>Face, neck and body treatment areas</li><li>Energy at multiple depths in one pulse</li><li>Genuine InMode IgniteRF technology</li><li>Performed under Tran Plastic Surgery</li></ul>
+    <div class="ctas"><a class="btn btn-white" href="/services/rf-microneedling">Explore Morpheus8</a><a class="btn btn-ghost" href="/services/rf-microneedling#how-it-works">▶ Watch how it works</a></div>
+  </div>
+  <a class="m8-band-media reveal in" href="/services/rf-microneedling#how-it-works" aria-label="Watch how Morpheus8 Burst works">
+    ${lpic('m8-video-poster', 'Morpheus8 Burst microneedles delivering radiofrequency energy beneath the skin (InMode animation)', { w: 1280, h: 720 })}
+    <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+    <span class="m8-devices">${lpic('m8-burst-24pin-angled', 'Morpheus8 Burst handpiece')}${lpic('m8-burstdeep-40pin-angled', 'Morpheus8 Burst Deep handpiece')}</span>
+  </a>
+</div><p class="wrap m8-credit">Animation still and product images courtesy of InMode. Results vary.</p></section>
 
 <section class="glance"><div class="wrap"><span class="eyebrow">At a glance</span><p><strong>CAIR SPA</strong> (${SITE.long}) is a wellness and beauty spa at ${SITE.street} in Huntington Beach, CA. It offers neurotoxin, HA fillers, Sculptra, PRF/PRP for hair and under-eyes, Morpheus8 radiofrequency microneedling, microneedling, customized facials, ombre powder brows and Aerolase laser treatments for hair removal, skin tags, veins, acne, melasma and pigmented lesions, plus IV and NAD+ therapy, weight loss, thread lifts, exosome therapy, lymphatic buccal facial massage and FUE hair transplants. ${SITE.oversight} Consultations are free, Monday to Friday, 9 AM to 6 PM.</p></div></section>
 
@@ -279,6 +299,29 @@ function homePage() {
   });
 }
 
+function featureSections(s) {
+  const f = s.feature, v = f.video;
+  return `
+<section class="sec bg-dark m8-video" id="how-it-works"><div class="wrap">
+  <div class="center-head reveal"><span class="eyebrow">See how it works</span><h2>${esc(v.title)}</h2><p style="color:#d9c4c0">${esc(v.description)} No incisions, no stitches: the needles create microscopic channels that heal on their own.</p></div>
+  <div class="m8-player">
+    <div class="m8-frame"><video id="m8-video" controls preload="none" playsinline poster="/images/inmode/${v.poster}.jpg" width="1280" height="720"><source src="${v.src}" type="video/mp4"><track kind="chapters" srclang="en" label="Chapters" src="/videos/morpheus8-burst-chapters.vtt">Your browser does not support video.</video></div>
+    <ol class="m8-chapters" aria-label="Video chapters">${v.chapters.map((c) => `<li><button type="button" data-seek="${c.t}"><span class="t">${fmtT(c.t)}</span><span><b>${esc(c.title)}</b><small>${esc(c.text)}</small></span></button></li>`).join('')}</ol>
+  </div>
+  <p class="m8-credit">${esc(v.credit)}</p>
+</div></section>
+
+<section class="sec bg-white"><div class="wrap">
+  <div class="sec-head reveal"><div><span class="eyebrow">${esc(f.eyebrow)}</span><h2>The InMode technology we use</h2></div><p>CAIR SPA treats with genuine InMode Morpheus8 Burst handpieces on the IgniteRF platform, chosen by your provider for each area.</p></div>
+  <div class="devices">${f.devices.map((d) => `<div class="device reveal"><div class="device-img">${lpic(d.img, d.name)}</div><h3>${esc(d.name)}</h3><p>${esc(d.text)}</p></div>`).join('')}</div>
+</div></section>`;
+}
+const videoSchema = (s) => {
+  const v = s.feature.video, ch = v.chapters, url = `${ORIGIN}/services/${s.slug}`;
+  return { '@context': 'https://schema.org', '@type': 'VideoObject', name: v.title, description: v.description, thumbnailUrl: `${ORIGIN}/images/inmode/${v.poster}.jpg`, contentUrl: `${ORIGIN}${v.src}`, uploadDate: v.uploadDate, duration: v.duration,
+    hasPart: ch.map((c, i) => ({ '@type': 'Clip', name: c.title, startOffset: c.t, endOffset: i < ch.length - 1 ? ch[i + 1].t : 125, url: `${url}#t=${c.t}` })) };
+};
+
 function servicePage(s) {
   const cat = CATS.find((c) => c.id === s.category);
   const related = s.related.map((r) => bySlug[r]).filter(Boolean).slice(0, 3);
@@ -288,10 +331,11 @@ function servicePage(s) {
   <div class="page-hero-grid">
     <div><span class="eyebrow">${esc(cat.name)}</span><h1>${reg(s.h1)}</h1><p class="lead">${reg(s.intro)}</p>
       <div class="ctas"><a class="btn btn-primary" href="#book">${I.cal}Book free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}${SITE.phone}</a></div></div>
-    <div class="page-hero-photo">${pic(IMG[s.slug], s.name, { w: 1100, ratio: 5 / 4.4, eager: true, sizes: '(max-width:1024px) 100vw, 46vw' })}</div>
+    <div class="page-hero-photo${s.feature ? ' is-video' : ''}">${s.feature ? lpic(s.feature.hero || s.feature.video.poster, 'Morpheus8 Burst needles delivering radiofrequency energy at multiple depths (InMode animation)', { eager: true, w: 1280, h: 720 }) : pic(IMG[s.slug], s.name, { w: 1100, ratio: 5 / 4.4, eager: true, sizes: '(max-width:1024px) 100vw, 46vw' })}</div>
   </div>
 </div></section>
 <div class="wrap"><div class="facts">${s.quickFacts.map((f) => `<div><small>${esc(f.label)}</small><b>${reg(f.value)}</b></div>`).join('')}</div></div>
+${s.feature ? featureSections(s) : ''}
 
 <section class="sec"><div class="wrap content-grid">
   <div>
@@ -325,6 +369,7 @@ function servicePage(s) {
     schema: [
       { '@context': 'https://schema.org', '@type': 'Service', name: s.name.replace(/®/g, ''), description: s.intro, url: `${ORIGIN}/services/${s.slug}`, image: img(IMG[s.slug], 1200), provider: { '@id': `${ORIGIN}/#business` } },
       faqSchema(s.faqs), crumbSchema([['Home', '/'], ['Treatments', '/services/'], [s.name.replace(/®/g, ''), `/services/${s.slug}`]]),
+      ...(s.feature ? [videoSchema(s)] : []),
     ],
   });
 }
@@ -390,4 +435,9 @@ const urls = ['/', '/services/', ...services.map((s) => `/services/${s.slug}`), 
 const existing = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8').match(/<loc>[^<]+<\/loc>/g)?.map((l) => l.replace(/<\/?loc>/g, '').replace(ORIGIN, '')) || [];
 const keep = existing.filter((u) => /-medical-spa$/.test(u) && !urls.includes(u));
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...urls, ...keep].map((u) => `  <url><loc>${ORIGIN}${u}</loc><lastmod>${TODAY}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+// WebVTT chapters for featured videos
+services.filter((x) => x.feature).forEach((x) => {
+  const ch = x.feature.video.chapters, ts = (t) => `00:${String(Math.floor(t / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}.000`;
+  write('videos/morpheus8-burst-chapters.vtt', 'WEBVTT\n\n' + ch.map((c, i) => `${i + 1}\n${ts(c.t)} --> ${ts(i < ch.length - 1 ? ch[i + 1].t : 125)}\n${c.title}\n`).join('\n'));
+});
 console.log(`Built ${services.length + 5} pages + sitemap (${urls.length + keep.length} URLs).`);

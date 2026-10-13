@@ -101,6 +101,20 @@
     });
   }
 
+
+  // Video chapters: click to seek, highlight current chapter
+  var vid = document.getElementById('m8-video');
+  if (vid) {
+    var btns = [].slice.call(document.querySelectorAll('[data-seek]'));
+    btns.forEach(function (b) { b.addEventListener('click', function () { vid.currentTime = +b.getAttribute('data-seek'); vid.play(); vid.scrollIntoView({ behavior: 'smooth', block: 'center' }); }); });
+    vid.addEventListener('timeupdate', function () {
+      var cur = 0; btns.forEach(function (b, i) { if (vid.currentTime >= +b.getAttribute('data-seek')) cur = i; });
+      btns.forEach(function (b, i) { b.classList.toggle('active', i === cur); });
+    });
+    var m = location.hash.match(/t=(\d+)/); if (m) { vid.currentTime = +m[1]; }
+    if (window.gtag) vid.addEventListener('play', function () { window.gtag('event', 'video_start', { video_title: 'Morpheus8 Burst animation' }); }, { once: true });
+  }
+
   // Reveal on scroll
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
