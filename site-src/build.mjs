@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v4';
+const VERSION = 'v5';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -14,6 +14,7 @@ const SITE = {
   name: 'CAIR SPA',
   long: 'Comprehensive Aesthetic Integrative Regeneration Spa',
   phone: '(949) 688-5898', tel: '+19496885898',
+  cell: '(949) 948-9399', cellTel: '+19499489399',
   email: 'CAIRmedspa@gmail.com',
   street: '20951 Brookhurst St, Ste 115', city: 'Huntington Beach', region: 'CA', zip: '92646',
   hours: 'Mon–Fri · 9:00 AM – 6:00 PM',
@@ -92,7 +93,7 @@ function megaMenu() {
 function header(current) {
   const cur = (k) => (current === k ? ' aria-current="page"' : '');
   return `<a class="skip" href="#main">Skip to content</a>
-<div class="topbar"><div class="wrap"><div class="tb-left"><span>${I.clock}${SITE.hours}</span><span>${I.pin}${SITE.street}, ${SITE.city}</span></div><div class="tb-right"><span>Services performed under Tran Plastic Surgery</span><a href="tel:${SITE.tel}">${I.phone}${SITE.phone}</a></div></div></div>
+<div class="topbar"><div class="wrap"><div class="tb-left"><span>${I.clock}${SITE.hours}</span><span>${I.pin}${SITE.street}, ${SITE.city}</span></div><div class="tb-right"><span>Services performed under Tran Plastic Surgery</span><a href="tel:${SITE.tel}">${I.phone}${SITE.phone}</a><a href="tel:${SITE.cellTel}">Cell ${SITE.cell}</a></div></div></div>
 <header class="site-header"><div class="wrap nav">
   <a class="brand" href="/" aria-label="CAIR SPA home"><img src="/images/logo-phoenix-new.png" alt="" width="46" height="46"><span><span class="brand-name">CAIR SPA</span><span class="brand-sub">WELLNESS &amp; BEAUTY SPA</span></span></a>
   <nav aria-label="Main"><ul class="menu">
@@ -109,7 +110,7 @@ function header(current) {
   <div class="drawer-body">${CATS.map((c) => `<details><summary>${esc(c.name)}</summary><ul>${inCat(c.id).map((s) => `<li><a href="/services/${s.slug}">${reg(s.name)}</a></li>`).join('')}</ul></details>`).join('')}
     <details><summary>Areas We Serve</summary><ul>${AREAS.map(([n, h]) => `<li><a href="${h}">${n}</a></li>`).join('')}</ul></details>
     <a class="d-link" href="/services/">All treatments</a><a class="d-link" href="/about/">About</a><a class="d-link" href="/faq/">FAQ</a><a class="d-link" href="/contact/">Contact</a></div>
-  <div class="drawer-foot"><a class="btn btn-primary" href="/contact/#book">Book free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a></div>
+  <div class="drawer-foot"><a class="btn btn-primary" href="/contact/#book">Book free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a><a class="d-cell" href="tel:${SITE.cellTel}">Cell: ${SITE.cell}</a></div>
 </div></div>`;
 }
 
@@ -120,7 +121,7 @@ function footer() {
   <div class="foot-top">
     <div class="foot-brand"><a class="brand" href="/"><img src="/images/logo-phoenix-new.png" alt="" width="46" height="46"><span><span class="brand-name">CAIR SPA</span><span class="brand-sub">WELLNESS &amp; BEAUTY SPA</span></span></a>
       <p>${SITE.long}. A wellness and beauty spa in Huntington Beach for injectables, skin, Aerolase laser, hair and wellness care.</p>
-      <div class="foot-contact"><a href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}<span>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</span></a><a href="tel:${SITE.tel}">${I.phone}${SITE.phone}</a><a href="mailto:${SITE.email}">${I.mail}${SITE.email}</a><span>${I.clock}${SITE.hours}</span></div></div>
+      <div class="foot-contact"><a href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}<span>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</span></a><a href="tel:${SITE.tel}">${I.phone}${SITE.phone} (main)</a><a href="tel:${SITE.cellTel}">${I.phone}${SITE.cell} (cell)</a><a href="mailto:${SITE.email}">${I.mail}${SITE.email}</a><span>${I.clock}${SITE.hours}</span></div></div>
     <div><h5>Injectables</h5><ul>${list('injectables')}</ul></div>
     <div><h5>Skin & Laser</h5><ul>${list('skin')}${list('laser')}</ul></div>
     <div><h5>Wellness & More</h5><ul>${list('wellness')}</ul><h5 style="margin-top:28px">Hair</h5><ul>${list('hair')}</ul></div>
@@ -135,6 +136,7 @@ function footer() {
 const BUSINESS = {
   '@context': 'https://schema.org', '@type': 'HealthAndBeautyBusiness', '@id': `${ORIGIN}/#business`,
   name: SITE.name, alternateName: SITE.long, url: `${ORIGIN}/`, telephone: '+1-949-688-5898', email: SITE.email,
+  contactPoint: [{ '@type': 'ContactPoint', telephone: '+1-949-688-5898', contactType: 'customer service', areaServed: 'US', availableLanguage: 'English' }, { '@type': 'ContactPoint', telephone: '+1-949-948-9399', contactType: 'customer service', areaServed: 'US' }],
   image: `${ORIGIN}/images/logo-phoenix-new.png`, logo: `${ORIGIN}/images/logo-phoenix-new.png`,
   description: `Wellness and beauty spa in Huntington Beach, CA offering neurotoxin, fillers, Sculptra, PRF/PRP, microneedling, customized facials, Aerolase laser treatments and wellness services. ${SITE.oversight}`,
   address: { '@type': 'PostalAddress', streetAddress: SITE.street, addressLocality: SITE.city, addressRegion: SITE.region, postalCode: SITE.zip, addressCountry: 'US' },
@@ -206,7 +208,7 @@ function faqBlock(faqs, { title = 'Frequently asked questions', intro = 'Can’t
 const faqSchema = (faqs) => ({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
 const crumbSchema = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: `${ORIGIN}${u}` })) });
 const oversightBand = () => `<div class="oversight reveal"><div class="ic">${I.shield}</div><div><h3>Expert oversight you can trust</h3><p>${SITE.oversight} Tran Plastic Surgery is led by Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery, and is located in our building at 20951 Brookhurst St.</p></div><a class="link-arrow" href="/about/">About our care</a></div>`;
-const visitBlock = () => `<div class="visit"><div><span class="eyebrow">Visit us</span><h2 style="margin-top:14px">Find us in Huntington Beach</h2><dl class="info-list"><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: Closed</dd></div></dl><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}Get directions</a><a class="btn btn-outline" href="/contact/#book">Book a visit</a></div></div><div class="map"><iframe title="Map showing CAIR SPA location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${SITE.mapEmbed}"></iframe></div></div>`;
+const visitBlock = () => `<div class="visit"><div><span class="eyebrow">Visit us</span><h2 style="margin-top:14px">Find us in Huntington Beach</h2><dl class="info-list"><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a> <span class="muted">(main)</span><br><a href="tel:${SITE.cellTel}">${SITE.cell}</a> <span class="muted">(cell)</span></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: Closed</dd></div></dl><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}Get directions</a><a class="btn btn-outline" href="/contact/#book">Book a visit</a></div></div><div class="map"><iframe title="Map showing CAIR SPA location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${SITE.mapEmbed}"></iframe></div></div>`;
 
 const GENERAL_FAQS = [
   { q: 'Is the consultation really free?', a: 'Yes. Your first consultation at CAIR SPA is free and has no obligation. We listen to your goals, assess your skin and recommend a personalized plan with an exact quote before any treatment begins.' },
@@ -400,7 +402,7 @@ function contactPage() {
   const body = `
 <section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Contact</span></nav>
   <div class="page-hero-grid"><div><span class="eyebrow">Contact & booking</span><h1>Book your free consultation</h1><p class="lead">Call us, or send a request and our team will call you back to schedule. Consultations are free and there’s no obligation.</p>
-    <dl class="info-list"><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM</dd></div></dl></div>
+    <dl class="info-list"><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a> <span class="muted">(main)</span><br><a href="tel:${SITE.cellTel}">${SITE.cell}</a> <span class="muted">(cell)</span></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM</dd></div></dl></div>
   <div>${leadForm({ title: 'Request an appointment', note: 'We’ll call you to confirm a time that works.', source: 'Contact Page', full: true })}</div></div></div></section>
 <section class="sec"><div class="wrap">${visitBlock()}</div></section>`;
   return layout({ title: 'Contact & Book | CAIR SPA Huntington Beach', description: 'Book a free consultation at CAIR SPA, 20951 Brookhurst St Ste 115, Huntington Beach. Call (949) 688-5898 or request a call back online.', canonical: '/contact/', body, current: 'contact', schema: [crumbSchema([['Home', '/'], ['Contact', '/contact/']])] });
