@@ -1,5 +1,7 @@
 (function () {
   var LEADS_URL = 'https://base44.app/api/apps/69b7cae883aa8d618e49d211/functions/submitForm';
+  // Every request is also emailed to the clinic inbox (FormSubmit, activated once from that inbox)
+  var EMAIL_URL = 'https://formsubmit.co/ajax/Cairmedspa@gmail.com';
 
   // Sticky header shadow
   var header = document.querySelector('.site-header');
@@ -32,19 +34,28 @@
   document.querySelectorAll('[data-close-drawer]').forEach(function (b) { b.addEventListener('click', closeDrawer); });
   if (drawer) drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
 
-  // Lead forms -> Base44 (same endpoint as the previous site)
+  // Lead forms -> Base44 dashboard + email to Cairmedspa@gmail.com
   document.querySelectorAll('form[data-lead]').forEach(function (form) {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]'), label = btn.textContent;
       var get = function (n) { var el = form.elements[n]; return el ? el.value.trim() : ''; };
       btn.disabled = true; btn.textContent = 'Sending…';
+      var lead = { name: get('name'), email: get('email'), phone: get('phone'), service: get('service'), message: get('message'), form_type: form.getAttribute('data-lead') };
+      var mail = {
+        _subject: 'New CAIR SPA request: ' + (lead.service || 'Consultation') + ' - ' + lead.name,
+        _template: 'table', _captcha: 'false',
+        Name: lead.name, Phone: lead.phone, Email: lead.email || '(not provided)', Treatment: lead.service || '(not selected)',
+        Message: lead.message || '(none)', Form: lead.form_type, Page: location.href, Submitted: new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }) + ' PT'
+      };
+      if (lead.email) mail._replyto = lead.email;
       try {
-        var res = await fetch(LEADS_URL, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ type: 'lead', name: get('name'), email: get('email'), phone: get('phone'), service: get('service'), service_interest: get('service'), message: get('message'), form_type: form.getAttribute('data-lead') })
-        });
-        if (!res.ok) throw new Error(res.status);
+        var results = await Promise.allSettled([
+          fetch(LEADS_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({ type: 'lead', service_interest: lead.service }, lead)) }),
+          fetch(EMAIL_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(mail) })
+        ]);
+        var ok = results.some(function (r) { return r.status === 'fulfilled' && r.value.ok; });
+        if (!ok) throw new Error('lead not delivered');
         form.reset();
         btn.textContent = 'Thank you! We’ll call you shortly.';
         if (window.gtag) window.gtag('event', 'generate_lead', { form: form.getAttribute('data-lead') });
