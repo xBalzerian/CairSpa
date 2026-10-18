@@ -1,7 +1,7 @@
 (function () {
   var LEADS_URL = 'https://base44.app/api/apps/69b7cae883aa8d618e49d211/functions/submitForm';
-  // Every request is also emailed to the clinic inbox (FormSubmit, activated once from that inbox)
-  var EMAIL_URL = 'https://formsubmit.co/ajax/Cairmedspa@gmail.com';
+  // Every request is also emailed: to jjbalz1994@gmail.com with the clinic inbox Cairmedspa@gmail.com in CC (FormSubmit)
+  var EMAIL_URL = 'https://formsubmit.co/ajax/jjbalz1994@gmail.com';
 
   // Sticky header shadow
   var header = document.querySelector('.site-header');
@@ -44,7 +44,7 @@
       var lead = { name: get('name'), email: get('email'), phone: get('phone'), service: get('service'), message: get('message'), form_type: form.getAttribute('data-lead') };
       var mail = {
         _subject: 'New CAIR SPA request: ' + (lead.service || 'Consultation') + ' - ' + lead.name,
-        _template: 'table', _captcha: 'false', _cc: 'jjbalz1994@gmail.com',
+        _template: 'table', _captcha: 'false', _cc: 'Cairmedspa@gmail.com',
         Name: lead.name, Phone: lead.phone, Email: lead.email || '(not provided)', Treatment: lead.service || '(not selected)',
         Message: lead.message || '(none)', Form: lead.form_type, Page: location.href, Submitted: new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }) + ' PT'
       };
