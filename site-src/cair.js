@@ -44,7 +44,7 @@
       var lead = { name: get('name'), email: get('email'), phone: get('phone'), service: get('service'), message: get('message'), form_type: form.getAttribute('data-lead') };
       var mail = {
         _subject: 'New CAIR SPA request: ' + (lead.service || 'Consultation') + ' - ' + lead.name,
-        _template: 'table', _captcha: 'false',
+        _template: 'table', _captcha: 'false', _cc: 'jjbalz1994@gmail.com',
         Name: lead.name, Phone: lead.phone, Email: lead.email || '(not provided)', Treatment: lead.service || '(not selected)',
         Message: lead.message || '(none)', Form: lead.form_type, Page: location.href, Submitted: new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }) + ' PT'
       };
