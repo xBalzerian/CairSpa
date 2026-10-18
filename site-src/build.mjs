@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v6';
+const VERSION = 'v7';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -31,15 +31,20 @@ const IMG = {
   cat_injectables: '1746708810803-722593e53772', cat_skin: '1570172619644-dfd03ed5d881', cat_laser: '1598300195998-364bf445842c', cat_wellness: '1763310225009-50214e3c99d9',
   botox: '1746708810803-722593e53772', 'dermal-fillers': '1731355771418-f10ab62c9f86', sculptra: '1785861084191-3600dfc2a6d6',
   'prp-hair-restoration': '1785860458107-5be1a99d4188', 'prf-under-eye': '1785861378703-1c991c4548ef',
-  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': '1689103229376-3fbfe1257242', microneedling: '1761819920857-7edc5e808fd3', 'ombre-powder-brows': '1785860945533-918a531bcdeb', 'lymphatic-buccal-facial-massage': '1706795034830-de41aee06afa', 'skin-rejuvenation': '1741934023052-26baf5535088',
+  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': 'local:m8-ignite', microneedling: '1761819920857-7edc5e808fd3', 'ombre-powder-brows': '1785860945533-918a531bcdeb', 'lymphatic-buccal-facial-massage': '1706795034830-de41aee06afa', 'skin-rejuvenation': '1741934023052-26baf5535088',
   aerolase: '1598300195998-364bf445842c', 'laser-hair-removal': '1700760933574-9f0f4ea9aa3b', 'skin-tag-removal': '1746806942799-b4db209e9a6b',
   'vein-treatment': '1700760933941-3a06a28fbf47', 'acne-treatment': '1660646463659-df77c1580723', 'melasma-treatment': '1785861775561-c6db7da314a0',
   'pigmented-lesions': '1732993486279-9d0f3b91adb2',
   'iv-infusion': '1763310225009-50214e3c99d9', 'nad-therapy': '1516574187841-cb9cc2ca948b', 'weight-loss': '1675270444770-1a6d1f69aefc',
   'thread-lift': '1761819922656-d1b77eef49c0', 'exosome-therapy': '1761718209708-9ab9ba1c7252', 'hair-transplant': '1633179963355-44f57f194d54',
 };
-const img = (id, w = 1200, h) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}${h ? `&h=${h}` : ''}&q=78`;
+const img = (id, w = 1200, h) => (String(id).startsWith('local:') ? `${ORIGIN}/images/inmode/${id.slice(6)}-4x3.jpg` : `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}${h ? `&h=${h}` : ''}&q=78`);
 const pic = (id, alt, { w = 1200, ratio, eager = false, sizes = '100vw' } = {}) => {
+  if (String(id).startsWith('local:')) {
+    // Official InMode product composites: pick the file shaped for this slot (4:3 cards, taller hero)
+    const base = id.slice(6), file = ratio && ratio < 1.25 ? `${base}-hero` : `${base}-4x3`, hh = Math.round(w / (ratio || 4 / 3));
+    return `<picture><source type="image/webp" srcset="/images/inmode/${file}.webp"><img src="/images/inmode/${file}.jpg" alt="${esc(alt)}" width="${w}" height="${hh}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"></picture>`;
+  }
   const ws = [480, 800, 1200, 1600].filter((x) => x <= Math.max(w, 480) * 1.4);
   const h = (x) => (ratio ? Math.round(x / ratio) : undefined);
   return `<img src="${img(id, w, h(w))}" srcset="${ws.map((x) => `${img(id, x, h(x))} ${x}w`).join(', ')}" sizes="${sizes}" alt="${esc(alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"${ratio ? ` width="${w}" height="${h(w)}"` : ''}>`;
@@ -47,7 +52,7 @@ const pic = (id, alt, { w = 1200, ratio, eager = false, sizes = '100vw' } = {}) 
 
 // Local images (official InMode assets) served from /images/inmode as WebP with JPEG fallback
 const lpic = (name, alt, { eager = false, cls = '', w, h } = {}) => `<picture${cls ? ` class="${cls}"` : ''}><source type="image/webp" srcset="/images/inmode/${name}.webp"><img src="/images/inmode/${name}.jpg" alt="${esc(alt)}"${w ? ` width="${w}" height="${h}"` : ''}${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"></picture>`;
-const thumb = (s, opts) => (s.feature ? lpic(s.feature.video.poster, s.name, { w: 1280, h: 720 }) : pic(IMG[s.slug], s.name, opts));
+const thumb = (s, opts) => pic(IMG[s.slug], s.name, opts);
 const fmtT = (t) => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
 
 const CATS = [
@@ -87,7 +92,7 @@ function megaMenu() {
   const group = (c) => `<h4><a href="/services/#${c.id}">${esc(c.name)}</a></h4><ul>${inCat(c.id).map((s) => `<li><a href="/services/${s.slug}"><strong>${reg(s.name)}</strong><small>${reg(s.menuBlurb)}</small></a></li>`).join('')}</ul>`;
   const byId = Object.fromEntries(CATS.map((c) => [c.id, c]));
   const cols = [['injectables'], ['skin'], ['laser'], ['wellness', 'hair']].map((ids) => `<div class="mega-col">${ids.map((id) => group(byId[id])).join('')}</div>`).join('');
-  return `<div class="mega" role="region" aria-label="Treatments"><div class="mega-inner">${cols}<a class="mega-feature" href="/services/rf-microneedling">${lpic('m8-video-poster', 'Morpheus8 Burst radiofrequency microneedling')}<div><span class="mf-tag">Featured</span><b>Morpheus8 Burst</b><span>InMode RF microneedling for face and body. See how it works →</span></div></a></div><div class="mega-foot"><div class="wrap"><span>Every treatment starts with a free, no-pressure consultation.</span><a class="link-arrow" href="/services/">View all treatments</a></div></div></div>`;
+  return `<div class="mega" role="region" aria-label="Treatments"><div class="mega-inner">${cols}<a class="mega-feature" href="/services/rf-microneedling">${lpic('m8-ignite-4x3', 'Morpheus8 Burst and Burst Deep handpieces with the InMode IgniteRF platform')}<div><span class="mf-tag">Featured</span><b>Morpheus8 Burst</b><span>InMode RF microneedling for face and body. See how it works →</span></div></a></div><div class="mega-foot"><div class="wrap"><span>Every treatment starts with a free, no-pressure consultation.</span><a class="link-arrow" href="/services/">View all treatments</a></div></div></div>`;
 }
 
 function header(current) {
@@ -245,12 +250,10 @@ function homePage() {
     <ul class="m8-points"><li>Face, neck and body treatment areas</li><li>Energy at multiple depths in one pulse</li><li>Genuine InMode IgniteRF technology</li><li>Performed under Tran Plastic Surgery</li></ul>
     <div class="ctas"><a class="btn btn-white" href="/services/rf-microneedling">Explore Morpheus8</a><a class="btn btn-ghost" href="/services/rf-microneedling#how-it-works">▶ Watch how it works</a></div>
   </div>
-  <a class="m8-band-media reveal in" href="/services/rf-microneedling#how-it-works" aria-label="Watch how Morpheus8 Burst works">
-    ${lpic('m8-video-poster', 'Morpheus8 Burst microneedles delivering radiofrequency energy beneath the skin (InMode animation)', { w: 1280, h: 720 })}
-    <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-    <span class="m8-devices">${lpic('m8-burst-24pin-angled', 'Morpheus8 Burst handpiece')}${lpic('m8-burstdeep-40pin-angled', 'Morpheus8 Burst Deep handpiece')}</span>
+  <a class="m8-band-media reveal in" href="/services/rf-microneedling" aria-label="Explore Morpheus8 Burst at CAIR SPA">
+    ${lpic('m8-ignite-16x9', 'Morpheus8 Burst and Burst Deep handpieces with the InMode IgniteRF platform used at CAIR SPA', { w: 1600, h: 900 })}
   </a>
-</div><p class="wrap m8-credit">Animation still and product images courtesy of InMode. Results vary.</p></section>
+</div><p class="wrap m8-credit">Product images courtesy of InMode. Results vary.</p></section>
 
 <section class="glance"><div class="wrap"><span class="eyebrow">At a glance</span><p><strong>CAIR SPA</strong> (${SITE.long}) is a wellness and beauty spa at ${SITE.street} in Huntington Beach, CA. It offers neurotoxin, HA fillers, Sculptra, PRF/PRP for hair and under-eyes, Morpheus8 radiofrequency microneedling, microneedling, customized facials, ombre powder brows and Aerolase laser treatments for hair removal, skin tags, veins, acne, melasma and pigmented lesions, plus IV and NAD+ therapy, weight loss, thread lifts, exosome therapy, lymphatic buccal facial massage and FUE hair transplants. ${SITE.oversight} Consultations are free, Monday to Friday, 9 AM to 6 PM.</p></div></section>
 
