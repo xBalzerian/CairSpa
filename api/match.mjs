@@ -91,7 +91,7 @@ const CATALOG = [
  {
   "slug": "microneedling",
   "name": "Microneedling",
-  "blurb": "Collagen induction for smoother, fresher-looking skin",
+  "blurb": "SkinStylus microneedling and Ellisys Sense microneedle RF",
   "goodFor": [
    "Rough or uneven texture",
    "Dullness and uneven tone",

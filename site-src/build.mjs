@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v3e';
+const VERSION = 'v3f';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -31,7 +31,7 @@ const IMG = {
   cat_injectables: '1746708810803-722593e53772', cat_skin: '1570172619644-dfd03ed5d881', cat_laser: '1598300195998-364bf445842c', cat_wellness: '1763310225009-50214e3c99d9',
   botox: '1746708810803-722593e53772', 'dermal-fillers': '1731355771418-f10ab62c9f86', sculptra: '1785861084191-3600dfc2a6d6',
   'prp-hair-restoration': '1785860458107-5be1a99d4188', 'prf-under-eye': '1785861378703-1c991c4548ef',
-  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': 'local:m8-ignite', microneedling: '1761819920857-7edc5e808fd3', 'ombre-powder-brows': '1785860945533-918a531bcdeb', 'lymphatic-buccal-facial-massage': '1706795034830-de41aee06afa', 'skin-rejuvenation': '1741934023052-26baf5535088',
+  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': 'local:m8-ignite', microneedling: 'local:microneedling-devices', 'ombre-powder-brows': '1785860945533-918a531bcdeb', 'lymphatic-buccal-facial-massage': '1706795034830-de41aee06afa', 'skin-rejuvenation': '1741934023052-26baf5535088',
   aerolase: '1598300195998-364bf445842c', 'laser-hair-removal': '1700760933574-9f0f4ea9aa3b', 'skin-tag-removal': '1746806942799-b4db209e9a6b',
   'vein-treatment': '1700760933941-3a06a28fbf47', 'acne-treatment': '1660646463659-df77c1580723', 'melasma-treatment': '1785861775561-c6db7da314a0',
   'pigmented-lesions': '1732993486279-9d0f3b91adb2',
@@ -309,6 +309,11 @@ function servicePage(s) {
   </div>
   <aside class="sticky-card">${leadForm({ title: `Ask about ${s.name.replace(/®/g, '')}`, note: 'Free consultation. We’ll call you to book.', source: `Service Page: ${s.name}`, preselect: s.name })}</aside>
 </div></section>
+
+${s.devices ? `<section class="sec bg-sand" id="devices"><div class="wrap">
+  <div class="sec-head reveal"><div><span class="eyebrow">Our technology</span><h2>The devices we use</h2></div><p>Your provider chooses the device and settings for your skin and goals at your free consultation.</p></div>
+  <div class="dev-grid">${s.devices.map((d) => `<div class="dev-card reveal"><div class="dev-img"><img src="/images/inmode/${d.img}" alt="${esc(d.name)} ${esc(d.label.toLowerCase())}" loading="lazy" decoding="async"></div>${d.logo ? `<img class="dev-logo" src="/images/inmode/${d.logo}" alt="${esc(d.name)} logo" loading="lazy">` : ''}<h3>${esc(d.name)}</h3><span class="dev-label">${esc(d.label)}</span><p>${esc(d.text)}</p></div>`).join('')}</div>
+</div></section>` : ''}
 
 <section class="sec bg-white"><div class="wrap">
   <div class="center-head reveal"><span class="eyebrow">The process</span><h2>How ${reg(s.name)} works at CAIR SPA</h2></div>
