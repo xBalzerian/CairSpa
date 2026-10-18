@@ -2,11 +2,11 @@
   "slug": "microneedling",
   "name": "Microneedling",
   "category": "skin",
-  "menuBlurb": "Collagen induction for smoother, fresher-looking skin",
+  "menuBlurb": "SkinStylus microneedling and Ellisys Sense microneedle RF",
   "metaTitle": "Microneedling in Huntington Beach | CAIR SPA",
-  "metaDescription": "Microneedling at CAIR SPA stimulates collagen to improve texture, fine lines, pores and mild acne scars with little downtime. Book a free consultation.",
+  "metaDescription": "Microneedling at CAIR SPA in Huntington Beach with the SkinStylus pen and Ellisys Sense microneedle RF for texture, pores and acne scars. Book a free consult.",
   "h1": "Microneedling in Huntington Beach",
-  "intro": "Microneedling, also called collagen induction therapy, is a skin treatment that uses very fine needles to create tiny controlled channels, prompting your skin to make new collagen and elastin. It is a good fit for adults who want smoother texture, a fresher glow, smaller-looking pores, softer fine lines or improved mild acne scars with little downtime.",
+  "intro": "Microneedling, also called collagen induction therapy, uses very fine needles to create tiny controlled channels that prompt your skin to make new collagen and elastin. At CAIR SPA in Huntington Beach we offer it with the SkinStylus microneedling pen and the Ellisys Sense microneedle RF system, for adults who want smoother texture, smaller-looking pores, softer fine lines or improved acne scars.",
   "quickFacts": [
     {
       "label": "Treatment time",
@@ -14,7 +14,7 @@
     },
     {
       "label": "Downtime",
-      "value": "Often 1–3 days of redness"
+      "value": "Often 1–3 days of redness; RF may take a little longer"
     },
     {
       "label": "Results",
@@ -26,8 +26,9 @@
     }
   ],
   "whatIs": [
-    "Standard microneedling uses a sterile device with tiny needles to make microscopic channels in the outer layers of the skin. Your body responds by repairing those channels, which can gradually lead to smoother, firmer and more even-looking skin. No radiofrequency or heat is used, so the treatment is gentler and recovery is usually quicker.",
-    "Microneedling differs from RF microneedling with Morpheus8, which adds radiofrequency energy through the needles to heat deeper layers for more remodeling and tightening, with a bit more downtime. Standard microneedling is often a good choice for overall texture, glow and early signs of aging, while Morpheus8 is commonly chosen for deeper scarring or laxity. A consultation decides which fits your skin and goals. All services are performed under Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon."
+    "Microneedling uses a sterile device with tiny needles to make microscopic channels in the skin. Your body responds by repairing those channels, which can gradually lead to smoother, firmer and more even-looking skin. Your provider sets the needle depth for each area, from shallow passes for overall glow to deeper settings for scarring.",
+    "For standard microneedling we use the SkinStylus SteriLock microneedling pen with sealed, single-use cartridges in 12-pin, 36-pin and 36-pin HiLo configurations. The manufacturer reports FDA clearance for improving the appearance of facial acne scars in Fitzpatrick skin types I to III, surgical or traumatic hypertrophic scars on the abdomen, and periorbital wrinkles, in adults aged 22 and older.",
+    "When radiofrequency is a better fit, we use the Ellisys Sense microneedle RF system. Its gold-plated microneedles deliver radiofrequency energy at the depth your provider selects, and a gentle vacuum draws the skin against the tip before the needles deploy. RF microneedling adds controlled heat for more remodeling and tightening, with a little more downtime. For deeper laxity, we also offer RF microneedling with Morpheus8. A consultation decides which option fits your skin and goals. All services are performed under Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon."
   ],
   "goodFor": [
     "Rough or uneven texture",
@@ -83,13 +84,32 @@
       "a": "Healthy adults with concerns like dull texture, pores, fine lines or mild acne scars are often good candidates. Microneedling may not be suitable during pregnancy, with active acne or skin infections, after recent isotretinoin use or with a tendency to form keloids. Your provider reviews this at your consultation."
     },
     {
+      "q": "Which microneedling devices do you use?",
+      "a": "CAIR SPA uses the SkinStylus SteriLock microneedling pen for standard microneedling and the Ellisys Sense microneedle RF system when radiofrequency is helpful. We also offer RF microneedling with Morpheus8 on a separate page. Your provider recommends the device and settings at your free consultation."
+    },
+    {
       "q": "Should I choose microneedling or Morpheus8?",
-      "a": "Standard microneedling is gentler with less downtime and is often chosen for overall texture and glow. Morpheus8 adds radiofrequency energy for deeper remodeling and tightening, which can suit deeper scars or mild laxity. A free consultation helps decide which treatment fits your goals."
+      "a": "Standard microneedling with SkinStylus is often a good choice for texture, glow and early signs of aging, while RF microneedling with Ellisys Sense or Morpheus8 adds heat for deeper remodeling, scarring or laxity, with a little more downtime. A free consultation helps you choose."
     }
   ],
   "related": [
     "rf-microneedling",
     "facial",
     "skin-rejuvenation"
+  ],
+  "devices": [
+    {
+      "img": "device-ellisys-sense.png",
+      "name": "Ellisys Sense",
+      "label": "Microneedle RF system",
+      "text": "Gold-plated microneedles deliver radiofrequency energy at a selected depth, with vacuum assist that draws the skin to the tip before the needles deploy."
+    },
+    {
+      "img": "device-skinstylus-pen.jpg",
+      "logo": "skinstylus-logo.png",
+      "name": "SkinStylus",
+      "label": "Microneedling pen",
+      "text": "The SkinStylus SteriLock pen uses sealed, single-use cartridges (12-pin, 36-pin and 36-pin HiLo) for precise, adjustable microneedling."
+    }
   ]
 }
