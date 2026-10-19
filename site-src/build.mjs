@@ -31,7 +31,7 @@ const IMG = {
   cat_injectables: '1746708810803-722593e53772', cat_skin: '1570172619644-dfd03ed5d881', cat_laser: '1598300195998-364bf445842c', cat_wellness: '1763310225009-50214e3c99d9',
   botox: '1746708810803-722593e53772', 'dermal-fillers': '1731355771418-f10ab62c9f86', sculptra: '1785861084191-3600dfc2a6d6',
   'prp-hair-restoration': '1785860458107-5be1a99d4188', 'prf-under-eye': '1785861378703-1c991c4548ef',
-  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': 'local:m8-ignite', microneedling: 'local:microneedling-devices', 'ombre-powder-brows': '1785860945533-918a531bcdeb', 'lymphatic-buccal-facial-massage': '1706795034830-de41aee06afa', 'skin-rejuvenation': '1741934023052-26baf5535088',
+  facial: '1570172619644-dfd03ed5d881', 'rf-microneedling': 'local:m8-ignite', microneedling: 'local:microneedling-devices-v2', 'ombre-powder-brows': '1785860945533-918a531bcdeb', 'lymphatic-buccal-facial-massage': '1706795034830-de41aee06afa', 'skin-rejuvenation': '1741934023052-26baf5535088',
   aerolase: '1598300195998-364bf445842c', 'laser-hair-removal': '1700760933574-9f0f4ea9aa3b', 'skin-tag-removal': '1746806942799-b4db209e9a6b',
   'vein-treatment': '1700760933941-3a06a28fbf47', 'acne-treatment': '1660646463659-df77c1580723', 'melasma-treatment': '1785861775561-c6db7da314a0',
   'pigmented-lesions': '1732993486279-9d0f3b91adb2',

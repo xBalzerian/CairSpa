@@ -91,7 +91,7 @@ const CATALOG = [
  {
   "slug": "microneedling",
   "name": "Microneedling",
-  "blurb": "SkinStylus microneedling and Ellisys Sense microneedle RF",
+  "blurb": "SkinStylus microneedling and Ellisys Sense microneedling RF",
   "goodFor": [
    "Rough or uneven texture",
    "Dullness and uneven tone",

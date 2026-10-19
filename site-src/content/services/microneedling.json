@@ -2,11 +2,11 @@
   "slug": "microneedling",
   "name": "Microneedling",
   "category": "skin",
-  "menuBlurb": "SkinStylus microneedling and Ellisys Sense microneedle RF",
+  "menuBlurb": "SkinStylus microneedling and Ellisys Sense microneedling RF",
   "metaTitle": "Microneedling in Huntington Beach | CAIR SPA",
-  "metaDescription": "Microneedling at CAIR SPA in Huntington Beach with the SkinStylus pen and Ellisys Sense microneedle RF for texture, pores and acne scars. Book a free consult.",
+  "metaDescription": "Microneedling at CAIR SPA in Huntington Beach with the SkinStylus pen and Ellisys Sense microneedling RF for texture, pores and acne scars. Free consult.",
   "h1": "Microneedling in Huntington Beach",
-  "intro": "Microneedling, also called collagen induction therapy, uses very fine needles to create tiny controlled channels that prompt your skin to make new collagen and elastin. At CAIR SPA in Huntington Beach we offer it with the SkinStylus microneedling pen and the Ellisys Sense microneedle RF system, for adults who want smoother texture, smaller-looking pores, softer fine lines or improved acne scars.",
+  "intro": "Microneedling, also called collagen induction therapy, uses very fine needles to create tiny controlled channels that prompt your skin to make new collagen and elastin. At CAIR SPA in Huntington Beach we offer it with the SkinStylus microneedling pen and the Ellisys Sense microneedling RF system, for adults who want smoother texture, smaller-looking pores, softer fine lines or improved acne scars.",
   "quickFacts": [
     {
       "label": "Treatment time",
@@ -28,7 +28,7 @@
   "whatIs": [
     "Microneedling uses a sterile device with tiny needles to make microscopic channels in the skin. Your body responds by repairing those channels, which can gradually lead to smoother, firmer and more even-looking skin. Your provider sets the needle depth for each area, from shallow passes for overall glow to deeper settings for scarring.",
     "For standard microneedling we use the SkinStylus SteriLock microneedling pen with sealed, single-use cartridges in 12-pin, 36-pin and 36-pin HiLo configurations. The manufacturer reports FDA clearance for improving the appearance of facial acne scars in Fitzpatrick skin types I to III, surgical or traumatic hypertrophic scars on the abdomen, and periorbital wrinkles, in adults aged 22 and older.",
-    "When radiofrequency is a better fit, we use the Ellisys Sense microneedle RF system. Its gold-plated microneedles deliver radiofrequency energy at the depth your provider selects, and a gentle vacuum draws the skin against the tip before the needles deploy. RF microneedling adds controlled heat for more remodeling and tightening, with a little more downtime. For deeper laxity, we also offer RF microneedling with Morpheus8. A consultation decides which option fits your skin and goals. All services are performed under Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon."
+    "When radiofrequency is a better fit, we use the Ellisys Sense microneedling RF system. Its gold-plated microneedles deliver radiofrequency energy at the depth your provider selects, and a gentle vacuum draws the skin against the tip before the needles deploy. RF microneedling adds controlled heat for more remodeling and tightening, with a little more downtime. For deeper laxity, we also offer RF microneedling with Morpheus8. A consultation decides which option fits your skin and goals. All services are performed under Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon."
   ],
   "goodFor": [
     "Rough or uneven texture",
@@ -85,7 +85,7 @@
     },
     {
       "q": "Which microneedling devices do you use?",
-      "a": "CAIR SPA uses the SkinStylus SteriLock microneedling pen for standard microneedling and the Ellisys Sense microneedle RF system when radiofrequency is helpful. We also offer RF microneedling with Morpheus8 on a separate page. Your provider recommends the device and settings at your free consultation."
+      "a": "CAIR SPA uses the SkinStylus SteriLock microneedling pen for standard microneedling and the Ellisys Sense microneedling RF system when radiofrequency is helpful. We also offer RF microneedling with Morpheus8 on a separate page. Your provider recommends the device and settings at your free consultation."
     },
     {
       "q": "Should I choose microneedling or Morpheus8?",
@@ -101,7 +101,7 @@
     {
       "img": "device-ellisys-sense.png",
       "name": "Ellisys Sense",
-      "label": "Microneedle RF system",
+      "label": "Microneedling RF system",
       "text": "Gold-plated microneedles deliver radiofrequency energy at a selected depth, with vacuum assist that draws the skin to the tip before the needles deploy."
     },
     {
