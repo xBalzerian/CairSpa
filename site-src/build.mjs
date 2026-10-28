@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v12';
+const VERSION = 'v13';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -69,6 +69,8 @@ const services = ORDER.map((slug) => JSON.parse(fs.readFileSync(path.join(SRC, '
 const bySlug = Object.fromEntries(services.map((s) => [s.slug, s]));
 const inCat = (c) => services.filter((s) => s.category === c);
 
+const CITIES = JSON.parse(fs.readFileSync(path.join(SRC, 'content/areas.json'), 'utf8'));
+const cityHref = (c) => `/${c.slug}`;
 const AREAS = [
   ['Huntington Beach', '/huntington-beach-medical-spa'], ['Fountain Valley', '/fountain-valley-medical-spa'], ['Costa Mesa', '/costa-mesa-medical-spa'],
   ['Newport Beach', '/newport-beach-medical-spa'], ['Westminster', '/westminster-medical-spa'], ['Orange County', '/orange-county-medical-spa'],
@@ -104,7 +106,7 @@ function header(current) {
   <a class="brand" href="/" aria-label="CAIR SPA home"><img src="/images/logo-phoenix-new.png" alt="" width="46" height="46"><span><span class="brand-name">CAIR SPA</span><span class="brand-sub">WELLNESS &amp; BEAUTY SPA</span></span></a>
   <nav aria-label="Main"><ul class="menu">
     <li class="has-mega"><button type="button" aria-expanded="false">Treatments${I.chev}</button>${megaMenu()}</li>
-    <li class="has-drop"><button type="button" aria-expanded="false">Areas We Serve${I.chev}</button><ul class="drop">${AREAS.map(([n, h]) => `<li><a href="${h}">${n}</a></li>`).join('')}</ul></li>
+    <li class="has-drop"><button type="button" aria-expanded="false">Areas We Serve${I.chev}</button><ul class="drop">${AREAS.map(([n, h]) => `<li><a href="${h}">${n}</a></li>`).join('')}<li><a href="/orange-county-medical-spa#cities"><b>All areas we serve</b></a></li></ul></li>
     <li><a href="/products/"${cur('products')}>Products</a></li>
     <li><a href="/about/"${cur('about')}>About</a></li>
     <li><a href="/faq/"${cur('faq')}>FAQ</a></li>
@@ -115,7 +117,7 @@ function header(current) {
 <div class="drawer" id="drawer" aria-hidden="true"><div class="drawer-bg" data-close-drawer></div><div class="drawer-panel" role="dialog" aria-label="Menu">
   <div class="drawer-head"><a class="brand" href="/"><img src="/images/logo-phoenix-new.png" alt="" width="40" height="40"><span class="brand-name" style="font-size:22px">CAIR SPA</span></a><button class="drawer-close" type="button" aria-label="Close menu" data-close-drawer>×</button></div>
   <div class="drawer-body">${CATS.map((c) => `<details><summary>${esc(c.name)}</summary><ul>${inCat(c.id).map((s) => `<li><a href="/services/${s.slug}">${reg(s.name)}</a></li>`).join('')}</ul></details>`).join('')}
-    <details><summary>Areas We Serve</summary><ul>${AREAS.map(([n, h]) => `<li><a href="${h}">${n}</a></li>`).join('')}</ul></details>
+    <details><summary>Areas We Serve</summary><ul>${CITIES.map((c) => `<li><a href="${cityHref(c)}">${c.name}</a></li>`).join('')}<li><a href="/orange-county-medical-spa">All of Orange County</a></li></ul></details>
     <a class="d-link" href="/services/">All treatments</a><a class="d-link" href="/products/">Products</a><a class="d-link" href="/about/">About</a><a class="d-link" href="/faq/">FAQ</a><a class="d-link" href="/contact/">Contact</a></div>
   <div class="drawer-foot"><a class="btn btn-primary" href="/contact/#book">Book free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a><a class="d-cell" href="tel:${SITE.cellTel}">Cell: ${SITE.cell}</a></div>
 </div></div>`;
@@ -134,7 +136,7 @@ function footer() {
     <div><h5>Wellness & More</h5><ul>${list('wellness')}</ul><h5 style="margin-top:28px">Hair</h5><ul>${list('hair')}</ul></div>
     <div><h5>Clinic</h5><ul><li><a href="/about/">About CAIR SPA</a></li><li><a href="/services/">All treatments</a></li><li><a href="/products/">Skincare products</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact & booking</a></li><li><a href="${SITE.reviews}" target="_blank" rel="noopener">Google reviews</a></li><li><a href="/privacy-policy.html">Privacy policy</a></li><li><a href="/terms-of-service.html">Terms of service</a></li></ul></div>
   </div>
-  <div class="foot-areas"><b>Serving</b>${AREAS.map(([n, h]) => `<a href="${h}">${n}</a>`).join('')}</div>
+  <div class="foot-areas"><b>Serving</b>${CITIES.map((c) => `<a href="${cityHref(c)}">${c.name}</a>`).join('')}<a href="/orange-county-medical-spa">Orange County</a></div>
   <div class="foot-legal"><p>${SITE.oversight} Results vary from person to person. A consultation is required to determine whether a treatment is right for you. Content on this site is for general information and is not medical advice.</p><div class="row"><span>© ${new Date().getFullYear()} CAIR SPA. All rights reserved.</span><span>Photography is illustrative; models shown are not CAIR SPA patients.</span></div></div>
 </div></footer>
 <div class="mbar"><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call</a><a class="btn btn-primary" href="/contact/#book">Free consult</a></div>`;
@@ -147,9 +149,9 @@ const BUSINESS = {
   image: `${ORIGIN}/images/logo-phoenix-new.png`, logo: `${ORIGIN}/images/logo-phoenix-new.png`,
   description: `Wellness and beauty spa in Huntington Beach, CA offering neurotoxin, fillers, Sculptra, PRF/PRP, microneedling, customized facials, Aerolase laser treatments and wellness services, plus medical-grade SkinCeuticals skincare. Services are performed under the oversight of Tran Plastic Surgery.`,
   address: { '@type': 'PostalAddress', streetAddress: SITE.street, addressLocality: SITE.city, addressRegion: SITE.region, postalCode: SITE.zip, addressCountry: 'US' },
-  geo: { '@type': 'GeoCoordinates', latitude: 33.6784, longitude: -117.9988 },
+  geo: { '@type': 'GeoCoordinates', latitude: 33.6588, longitude: -117.9535 },
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '18:00' }],
-  areaServed: AREAS.map(([n]) => ({ '@type': 'City', name: n })),
+  areaServed: CITIES.map((c) => ({ '@type': 'City', name: c.name })),
   makesOffer: services.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name.replace(/®/g, ''), url: `${ORIGIN}/services/${s.slug}` } })),
 };
 
@@ -440,6 +442,77 @@ ${blocks}
   return layout({ title: 'Skincare Products | SkinCeuticals & Rejuran | CAIR SPA Huntington Beach', description: 'CAIR SPA in Huntington Beach carries medical-grade SkinCeuticals skincare, including C E Ferulic, plus Rejuran. Ask our team which products suit your skin.', canonical: '/products/', body, current: 'products', schema: [crumbSchema([['Home', '/'], ['Products', '/products/']])] });
 }
 
+const cityCard = (c) => `<a class="city-card" href="${cityHref(c)}"><b>${c.name}</b><span>${c.home ? 'Our home city' : `About ${c.mi} miles`}</span></a>`;
+
+function cityPage(c) {
+  const where = c.home ? 'in Huntington Beach' : `near ${c.name}`;
+  const faqs = [
+    c.home
+      ? { q: 'Where is CAIR SPA in Huntington Beach?', a: `CAIR SPA is at ${SITE.street}, Huntington Beach, CA ${SITE.zip}.` }
+      : { q: `How far is CAIR SPA from ${c.name}?`, a: `CAIR SPA is about ${c.mi} miles from ${c.name}, roughly ${c.min} minutes by car without traffic. The usual route is ${c.route}. We are at ${SITE.street}, Huntington Beach.` },
+    { q: 'Are you open on weekends?', a: 'Our regular hours are Monday to Friday, 9 AM to 6 PM. Saturday and Sunday appointments are available by appointment, so call us to book a weekend visit.' },
+    { q: 'Is the consultation free?', a: 'Yes. Every treatment starts with a free, no-obligation consultation, and you get an exact quote before anything begins.' },
+    { q: 'Who oversees treatments at CAIR SPA?', a: SITE.oversight },
+  ];
+  const nearby = CITIES.filter((x) => x.slug !== c.slug).sort((a, b) => (a.mi || 0) - (b.mi || 0)).slice(0, 6);
+  const getting = c.home
+    ? `<dl class="info-list"><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: By appointment</dd></div>${c.areas.length ? `<div><dt>Neighborhoods</dt><dd>${c.areas.join(', ')} and the rest of Huntington Beach</dd></div>` : ''}</dl>`
+    : `<dl class="info-list"><div><dt>Distance</dt><dd>About ${c.mi} miles from ${c.name}</dd></div><div><dt>Drive time</dt><dd>Around ${c.min} minutes without traffic</dd></div><div><dt>Usual route</dt><dd>${c.route[0].toUpperCase() + c.route.slice(1)}</dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: By appointment</dd></div>${c.areas.length ? `<div><dt>Coming from</dt><dd>${c.areas.join(', ')} and all of ${c.name}</dd></div>` : ''}</dl>`;
+  const body = `
+<section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/orange-county-medical-spa">Areas we serve</a><span aria-hidden="true">/</span><span>${c.name}</span></nav>
+  <div class="page-hero-grid"><div><span class="eyebrow">Areas we serve · ${c.name}</span><h1>Wellness &amp; beauty spa ${where}</h1><p class="lead">${c.intro} <strong>${SITE.oversight}</strong></p>
+    <div class="ctas"><a class="btn btn-primary" href="#book">${I.cal}Book free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a></div>
+    <div class="trust-row"><span>${I.check}Free consultation</span><span>${I.check}Weekends by appointment</span></div></div>
+  <div>${leadForm({ title: 'Get a call back', note: `Leave your number and we’ll call to book your free consultation.`, source: `${c.name} page` })}</div></div></div></section>
+
+<section class="sec bg-white"><div class="wrap split">
+  <div class="reveal"><span class="eyebrow">${c.home ? 'Visit us' : `Getting here from ${c.name}`}</span><h2 style="margin:14px 0 18px">${c.home ? 'Your Huntington Beach wellness &amp; beauty spa' : `An easy trip from ${c.name}`}</h2>${getting}
+    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}Get directions</a><a class="btn btn-outline" href="tel:${SITE.cellTel}">${I.phone}Cell ${SITE.cell}</a></div></div>
+  <div class="reveal">${oversightBand()}</div>
+</div></section>
+
+<section class="sec" id="treatments"><div class="wrap">
+  <div class="sec-head reveal"><div><span class="eyebrow">Treatments</span><h2>What ${c.home ? 'Huntington Beach' : c.name} clients can book at CAIR SPA</h2></div><p>Every treatment has its own page with what to expect, downtime and answers to common questions. Not sure which is right for you? Start with a free consultation.</p></div>
+  ${treatmentsBlock()}
+</div></section>
+
+<section class="sec bg-white" id="products"><div class="wrap">
+  <div class="sec-head reveal"><div><span class="eyebrow">Skincare we carry</span><h2>Medical-grade products for home care</h2></div><p>${SITE.skincare} Ask our team which products fit your skin at your visit.</p></div>
+  ${productsTeaser()}
+</div></section>
+
+<section class="sec" id="faq"><div class="wrap">${faqBlock(faqs, { title: `Questions from ${c.home ? 'Huntington Beach' : c.name} clients` })}</div></section>
+
+<section class="sec bg-white"><div class="wrap"><div class="center-head reveal"><span class="eyebrow">Also serving</span><h2>Nearby areas</h2></div><div class="city-grid city-grid-3">${nearby.map(cityCard).join('')}</div><p style="margin-top:24px;text-align:center"><a class="link-arrow" href="/orange-county-medical-spa#cities">All areas we serve</a></p></div></section>
+
+<section class="sec"><div class="wrap">${visitBlock()}</div></section>`;
+  const title = c.home ? 'Wellness & Beauty Spa in Huntington Beach, CA | CAIR SPA' : `Wellness & Beauty Spa near ${c.name}, CA | CAIR SPA`;
+  const description = c.home
+    ? `CAIR SPA is a wellness and beauty spa at ${SITE.street}, Huntington Beach. Injectables, skin, Aerolase laser and wellness care. Free consultations; weekends by appointment.`
+    : `CAIR SPA in Huntington Beach is about ${c.mi} miles from ${c.name}. Injectables, skin, Aerolase laser and wellness care. Free consultations; weekends by appointment.`;
+  return layout({ title, description, canonical: cityHref(c), body, current: 'areas', schema: [faqSchema(faqs), crumbSchema([['Home', '/'], ['Areas we serve', '/orange-county-medical-spa'], [c.name, cityHref(c)]])] });
+}
+
+function countyPage() {
+  const faqs = [
+    { q: 'Which Orange County cities does CAIR SPA serve?', a: `Clients visit us from across Orange County and nearby Long Beach, including ${CITIES.filter((c) => !c.home).map((c) => c.name).join(', ')}.` },
+    { q: 'Are you open on weekends?', a: 'Our regular hours are Monday to Friday, 9 AM to 6 PM. Saturday and Sunday appointments are available by appointment.' },
+    { q: 'Who oversees treatments at CAIR SPA?', a: SITE.oversight },
+  ];
+  const body = `
+<section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Areas we serve</span></nav>
+  <div class="page-hero-grid"><div><span class="eyebrow">Areas we serve · Orange County</span><h1>Wellness &amp; beauty spa for Orange County</h1><p class="lead">CAIR SPA is at ${SITE.street} in Huntington Beach, central to much of Orange County and close to I-405 and Pacific Coast Highway. <strong>${SITE.oversight}</strong></p>
+    <div class="ctas"><a class="btn btn-primary" href="#book">${I.cal}Book free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a></div>
+    <div class="trust-row"><span>${I.check}Free consultation</span><span>${I.check}Weekends by appointment</span></div></div>
+  <div>${leadForm({ title: 'Get a call back', note: 'Leave your number and we’ll call to book your free consultation.', source: 'Orange County page' })}</div></div></div></section>
+<section class="sec bg-white" id="cities"><div class="wrap"><div class="center-head reveal"><span class="eyebrow">Areas we serve</span><h2>Distance from your city</h2><p class="muted">Approximate driving distance to CAIR SPA in Huntington Beach.</p></div><div class="city-grid">${CITIES.map(cityCard).join('')}</div></div></section>
+<section class="sec" id="treatments"><div class="wrap"><div class="sec-head reveal"><div><span class="eyebrow">Treatments</span><h2>Care for face, skin, hair and body</h2></div><p>Every treatment has its own page with what to expect, downtime and answers to common questions.</p></div>${treatmentsBlock()}</div></section>
+<section class="sec-sm"><div class="wrap">${oversightBand()}</div></section>
+<section class="sec bg-white" id="faq"><div class="wrap">${faqBlock(faqs, { title: 'Questions from Orange County clients' })}</div></section>
+<section class="sec"><div class="wrap">${visitBlock()}</div></section>`;
+  return layout({ title: 'Wellness & Beauty Spa Serving Orange County, CA | CAIR SPA', description: 'CAIR SPA in Huntington Beach serves clients across Orange County. See the distance from your city. Free consultations; weekends by appointment.', canonical: '/orange-county-medical-spa', body, current: 'areas', schema: [faqSchema(faqs), crumbSchema([['Home', '/'], ['Areas we serve', '/orange-county-medical-spa']])] });
+}
+
 function contactPage() {
   const body = `
 <section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Contact</span></nav>
@@ -468,6 +541,8 @@ write('about/index.html', aboutPage());
 write('contact/index.html', contactPage());
 write('faq/index.html', faqPage());
 write('products/index.html', productsPage());
+CITIES.forEach((c) => write(`${c.slug}/index.html`, cityPage(c)));
+write('orange-county-medical-spa/index.html', countyPage());
 fs.copyFileSync(path.join(SRC, 'cair.css'), path.join(ROOT, `assets/cair-${VERSION}.css`));
 fs.copyFileSync(path.join(SRC, 'cair.js'), path.join(ROOT, `assets/cair-${VERSION}.js`));
 
@@ -476,7 +551,7 @@ const catalog = services.map((s) => ({ slug: s.slug, name: s.name.replace(/®/g,
 write('api/match.mjs', fs.readFileSync(path.join(SRC, 'match.template.js'), 'utf8').replace('/*CATALOG*/[]', JSON.stringify(catalog, null, 1)));
 
 // sitemap: new pages + existing area/legal pages
-const urls = ['/', '/services/', ...services.map((s) => `/services/${s.slug}`), '/products/', '/about/', '/contact/', '/faq/', ...AREAS.map(([, h]) => h)];
+const urls = ['/', '/services/', ...services.map((s) => `/services/${s.slug}`), '/products/', '/about/', '/contact/', '/faq/', ...CITIES.map(cityHref), '/orange-county-medical-spa'];
 const existing = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8').match(/<loc>[^<]+<\/loc>/g)?.map((l) => l.replace(/<\/?loc>/g, '').replace(ORIGIN, '')) || [];
 const keep = existing.filter((u) => /-medical-spa$/.test(u) && !urls.includes(u));
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...urls, ...keep].map((u) => `  <url><loc>${ORIGIN}${u}</loc><lastmod>${TODAY}</lastmod></url>`).join('\n')}\n</urlset>\n`);
@@ -485,4 +560,4 @@ services.filter((x) => x.feature).forEach((x) => {
   const ch = x.feature.video.chapters, ts = (t) => `00:${String(Math.floor(t / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}.000`;
   write('videos/morpheus8-burst-chapters.vtt', 'WEBVTT\n\n' + ch.map((c, i) => `${i + 1}\n${ts(c.t)} --> ${ts(i < ch.length - 1 ? ch[i + 1].t : 125)}\n${c.title}\n`).join('\n'));
 });
-console.log(`Built ${services.length + 6} pages + sitemap (${urls.length + keep.length} URLs).`);
+console.log(`Built ${services.length + 7 + CITIES.length} pages + sitemap (${urls.length + keep.length} URLs).`);

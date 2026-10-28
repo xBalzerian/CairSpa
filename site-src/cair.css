@@ -468,3 +468,15 @@ textarea.field{min-height:110px;resize:vertical}
 .topbar span,.topbar a{white-space:nowrap}
 @media (max-width:1400px){.topbar .tb-right span{display:none}}
 @media (max-width:1180px){.topbar .tb-left span:nth-child(2){display:none}}
+
+/* Areas we serve */
+.city-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.city-card{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;transition:border-color .2s,transform .2s var(--ease)}
+.city-card:hover{border-color:var(--brand);transform:translateY(-2px)}
+.city-card b{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--ink)}
+.city-card span{font-size:13.5px;color:var(--muted)}
+.bg-white .city-card{background:var(--ivory)}
+.city-grid-3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:640px){.city-grid-3{grid-template-columns:repeat(2,1fr)}}
+.split>.reveal .oversight{grid-template-columns:auto 1fr}
+.split>.reveal .oversight .link-arrow{grid-column:2}
