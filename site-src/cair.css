@@ -410,3 +410,8 @@ textarea.field{min-height:110px;resize:vertical}
 .prod-panel{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;min-height:340px;border-radius:var(--r-lg);background:linear-gradient(150deg,var(--brand-50),#fff 70%);border:1px solid var(--line);padding:40px}
 .prod-panel .prod-mark{font-size:54px}
 @media (max-width:860px){.prod-grid,.prod-row{grid-template-columns:1fr}.prod-row{gap:32px}.prod-panel{display:none}}
+
+/* Top bar: keep each item on one line, drop the least important items as space runs out */
+.topbar span,.topbar a{white-space:nowrap}
+@media (max-width:1400px){.topbar .tb-right span{display:none}}
+@media (max-width:1180px){.topbar .tb-left span:nth-child(2){display:none}}

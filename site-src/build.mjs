@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v3g';
+const VERSION = 'v3h';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -17,7 +17,7 @@ const SITE = {
   cell: '(949) 948-9399', cellTel: '+19499489399',
   email: 'CAIRmedspa@gmail.com',
   street: '20951 Brookhurst St, Ste 115', city: 'Huntington Beach', region: 'CA', zip: '92646',
-  hours: 'Mon–Fri · 9:00 AM – 6:00 PM',
+  hours: 'Mon–Fri 9 AM – 6 PM · Sat–Sun by appointment',
   maps: 'https://www.google.com/maps/dir/?api=1&destination=CAIR+SPA+20951+Brookhurst+St+Ste+115+Huntington+Beach+CA+92646',
   mapEmbed: 'https://www.google.com/maps?q=20951+Brookhurst+St+Ste+115,+Huntington+Beach,+CA+92646&output=embed',
   reviews: 'https://www.google.com/maps/search/?api=1&query=CAIR+SPA+20951+Brookhurst+St+Huntington+Beach',
@@ -210,14 +210,14 @@ function faqBlock(faqs, { title = 'Frequently asked questions', intro = 'Can’t
 const faqSchema = (faqs) => ({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
 const crumbSchema = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: `${ORIGIN}${u}` })) });
 const oversightBand = () => `<div class="oversight reveal"><div class="ic">${I.shield}</div><div><h3>Expert oversight you can trust</h3><p>${SITE.oversight} Tran Plastic Surgery is located in our building at 20951 Brookhurst St.</p></div><a class="link-arrow" href="/about/">About our care</a></div>`;
-const visitBlock = () => `<div class="visit"><div><span class="eyebrow">Visit us</span><h2 style="margin-top:14px">Find us in Huntington Beach</h2><dl class="info-list"><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a> <span class="muted">(main)</span><br><a href="tel:${SITE.cellTel}">${SITE.cell}</a> <span class="muted">(cell)</span></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: Closed</dd></div></dl><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}Get directions</a><a class="btn btn-outline" href="/contact/#book">Book a visit</a></div></div><div class="map"><iframe title="Map showing CAIR SPA location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${SITE.mapEmbed}"></iframe></div></div>`;
+const visitBlock = () => `<div class="visit"><div><span class="eyebrow">Visit us</span><h2 style="margin-top:14px">Find us in Huntington Beach</h2><dl class="info-list"><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a> <span class="muted">(main)</span><br><a href="tel:${SITE.cellTel}">${SITE.cell}</a> <span class="muted">(cell)</span></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: By appointment</dd></div></dl><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}Get directions</a><a class="btn btn-outline" href="/contact/#book">Book a visit</a></div></div><div class="map"><iframe title="Map showing CAIR SPA location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${SITE.mapEmbed}"></iframe></div></div>`;
 
 const GENERAL_FAQS = [
   { q: 'Is the consultation really free?', a: 'Yes. Your first consultation at CAIR SPA is free and has no obligation. We listen to your goals, assess your skin and recommend a personalized plan with an exact quote before any treatment begins.' },
   { q: 'Who performs treatments at CAIR SPA?', a: 'All services at CAIR SPA are performed under Tran Plastic Surgery. Tran Plastic Surgery is led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon located in the same building.' },
   { q: 'How much do treatments cost?', a: 'Pricing depends on your goals, the treatment and the amount needed, so every plan is personalized. Book a free consultation and you will receive an exact quote before anything begins.' },
   { q: 'Where is CAIR SPA located?', a: 'CAIR SPA is at 20951 Brookhurst St, Suite 115, Huntington Beach, CA 92646, close to Fountain Valley and a short drive from Costa Mesa, Westminster and Newport Beach.' },
-  { q: 'What are your hours?', a: 'We are open Monday through Friday, 9:00 AM to 6:00 PM. Call (949) 688-5898 or request a call back online to book.' },
+  { q: 'What are your hours?', a: 'We are open Monday through Friday, 9:00 AM to 6:00 PM, and Saturday and Sunday by appointment. Call (949) 688-5898 or request a call back online to book.' },
   { q: 'Which treatments have little or no downtime?', a: 'Customized facials and IV therapy typically have no downtime. Neurotoxin and fillers may cause mild swelling or bruising for a day or two, and microneedling usually causes a few days of redness. Your provider will explain what to expect for your plan.' },
 ];
 
@@ -240,7 +240,7 @@ function homePage() {
     <h1>Natural-looking results, <em class="accent">medically guided.</em></h1>
     <p class="lead"><strong>${SITE.oversight}</strong> Neurotoxin, fillers, Sculptra<sup>®</sup>, Morpheus8 RF microneedling, customized facials, ombre powder brows, Aerolase laser care and FUE hair transplants in Huntington Beach, plus medical-grade SkinCeuticals skincare. Every plan starts with a free, no-pressure consultation.</p>
     <div class="ctas"><a class="btn btn-primary" href="#book">${I.cal}Book your free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a></div>
-    <div class="trust-row"><span>${I.check}Free consultation</span><span>${I.check}Performed under Tran Plastic Surgery</span><span>${I.check}Open Mon–Fri, 9–6</span></div>
+    <div class="trust-row"><span>${I.check}Free consultation</span><span>${I.check}Performed under Tran Plastic Surgery</span><span>${I.check}Weekends by appointment</span></div>
   </div>
   <div class="hero-media">
     <div class="hero-photo">${pic(IMG.hero, 'Client receiving a professional facial treatment', { w: 1100, ratio: 0.8, eager: true, sizes: '(max-width:1024px) 100vw, 50vw' })}</div>
@@ -249,7 +249,7 @@ function homePage() {
   </div>
 </div></section>
 
-<section class="glance"><div class="wrap"><span class="eyebrow">At a glance</span><p><strong>CAIR SPA</strong> (${SITE.long}) is a wellness and beauty spa at ${SITE.street} in Huntington Beach, CA. It offers neurotoxin, HA fillers, Sculptra, PRF/PRP for hair and under-eyes, Morpheus8 radiofrequency microneedling, microneedling, customized facials, ombre powder brows and Aerolase laser treatments for hair removal, skin tags, veins, acne, melasma and pigmented lesions, plus IV and NAD+ therapy, weight loss, thread lifts, exosome therapy, lymphatic buccal facial massage and FUE hair transplants. ${SITE.oversight} ${SITE.skincare} Consultations are free, Monday to Friday, 9 AM to 6 PM.</p></div></section>
+<section class="glance"><div class="wrap"><span class="eyebrow">At a glance</span><p><strong>CAIR SPA</strong> (${SITE.long}) is a wellness and beauty spa at ${SITE.street} in Huntington Beach, CA. It offers neurotoxin, HA fillers, Sculptra, PRF/PRP for hair and under-eyes, Morpheus8 radiofrequency microneedling, microneedling, customized facials, ombre powder brows and Aerolase laser treatments for hair removal, skin tags, veins, acne, melasma and pigmented lesions, plus IV and NAD+ therapy, weight loss, thread lifts, exosome therapy, lymphatic buccal facial massage and FUE hair transplants. ${SITE.oversight} ${SITE.skincare} Consultations are free. Hours are Monday to Friday, 9 AM to 6 PM, with Saturday and Sunday by appointment.</p></div></section>
 
 <section class="sec" id="treatments"><div class="wrap">
   <div class="sec-head reveal"><div><span class="eyebrow">Treatments</span><h2>Care for face, skin, hair and body</h2></div><p>Every treatment has its own page with what to expect, downtime and answers to common questions. Not sure which is right for you? That’s what the free consultation is for.</p></div>
@@ -401,7 +401,7 @@ function contactPage() {
   const body = `
 <section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Contact</span></nav>
   <div class="page-hero-grid"><div><span class="eyebrow">Contact & booking</span><h1>Book your free consultation</h1><p class="lead">Call us, or send a request and our team will call you back to schedule. Consultations are free and there’s no obligation.</p>
-    <dl class="info-list"><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a> <span class="muted">(main)</span><br><a href="tel:${SITE.cellTel}">${SITE.cell}</a> <span class="muted">(cell)</span></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM</dd></div></dl></div>
+    <dl class="info-list"><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a> <span class="muted">(main)</span><br><a href="tel:${SITE.cellTel}">${SITE.cell}</a> <span class="muted">(cell)</span></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: By appointment</dd></div></dl></div>
   <div>${leadForm({ title: 'Request an appointment', note: 'We’ll call you to confirm a time that works.', source: 'Contact Page', full: true })}</div></div></div></section>
 <section class="sec"><div class="wrap">${visitBlock()}</div></section>`;
   return layout({ title: 'Contact & Book | CAIR SPA Huntington Beach', description: 'Book a free consultation at CAIR SPA, 20951 Brookhurst St Ste 115, Huntington Beach. Call (949) 688-5898 or request a call back online.', canonical: '/contact/', body, current: 'contact', schema: [crumbSchema([['Home', '/'], ['Contact', '/contact/']])] });
