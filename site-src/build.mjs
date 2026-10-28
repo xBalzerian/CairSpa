@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const SRC = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SRC, '..');
-const VERSION = 'v10';
+const VERSION = 'v11';
 const ORIGIN = 'https://cairspa.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -21,7 +21,8 @@ const SITE = {
   maps: 'https://www.google.com/maps/dir/?api=1&destination=CAIR+SPA+20951+Brookhurst+St+Ste+115+Huntington+Beach+CA+92646',
   mapEmbed: 'https://www.google.com/maps?q=20951+Brookhurst+St+Ste+115,+Huntington+Beach,+CA+92646&output=embed',
   reviews: 'https://www.google.com/maps/search/?api=1&query=CAIR+SPA+20951+Brookhurst+St+Huntington+Beach',
-  oversight: 'All services are performed under Tran Plastic Surgery.',
+  oversight: 'Every service at CAIR SPA is performed under the oversight of Tran Plastic Surgery, led by Dr. Tuan Tran, a triple board-certified plastic, reconstructive and hand surgeon.',
+  skincare: 'We carry medical-grade skincare from SkinCeuticals, plus Rejuran.',
 };
 
 // Real photography (Unsplash licence). Models, not patients.
@@ -104,6 +105,7 @@ function header(current) {
   <nav aria-label="Main"><ul class="menu">
     <li class="has-mega"><button type="button" aria-expanded="false">Treatments${I.chev}</button>${megaMenu()}</li>
     <li class="has-drop"><button type="button" aria-expanded="false">Areas We Serve${I.chev}</button><ul class="drop">${AREAS.map(([n, h]) => `<li><a href="${h}">${n}</a></li>`).join('')}</ul></li>
+    <li><a href="/products/"${cur('products')}>Products</a></li>
     <li><a href="/about/"${cur('about')}>About</a></li>
     <li><a href="/faq/"${cur('faq')}>FAQ</a></li>
     <li><a href="/contact/"${cur('contact')}>Contact</a></li>
@@ -114,7 +116,7 @@ function header(current) {
   <div class="drawer-head"><a class="brand" href="/"><img src="/images/logo-phoenix-new.png" alt="" width="40" height="40"><span class="brand-name" style="font-size:22px">CAIR SPA</span></a><button class="drawer-close" type="button" aria-label="Close menu" data-close-drawer>×</button></div>
   <div class="drawer-body">${CATS.map((c) => `<details><summary>${esc(c.name)}</summary><ul>${inCat(c.id).map((s) => `<li><a href="/services/${s.slug}">${reg(s.name)}</a></li>`).join('')}</ul></details>`).join('')}
     <details><summary>Areas We Serve</summary><ul>${AREAS.map(([n, h]) => `<li><a href="${h}">${n}</a></li>`).join('')}</ul></details>
-    <a class="d-link" href="/services/">All treatments</a><a class="d-link" href="/about/">About</a><a class="d-link" href="/faq/">FAQ</a><a class="d-link" href="/contact/">Contact</a></div>
+    <a class="d-link" href="/services/">All treatments</a><a class="d-link" href="/products/">Products</a><a class="d-link" href="/about/">About</a><a class="d-link" href="/faq/">FAQ</a><a class="d-link" href="/contact/">Contact</a></div>
   <div class="drawer-foot"><a class="btn btn-primary" href="/contact/#book">Book free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a><a class="d-cell" href="tel:${SITE.cellTel}">Cell: ${SITE.cell}</a></div>
 </div></div>`;
 }
@@ -130,7 +132,7 @@ function footer() {
     <div><h5>Injectables</h5><ul>${list('injectables')}</ul></div>
     <div><h5>Skin & Laser</h5><ul>${list('skin')}${list('laser')}</ul></div>
     <div><h5>Wellness & More</h5><ul>${list('wellness')}</ul><h5 style="margin-top:28px">Hair</h5><ul>${list('hair')}</ul></div>
-    <div><h5>Clinic</h5><ul><li><a href="/about/">About CAIR SPA</a></li><li><a href="/services/">All treatments</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact & booking</a></li><li><a href="${SITE.reviews}" target="_blank" rel="noopener">Google reviews</a></li><li><a href="/privacy-policy.html">Privacy policy</a></li><li><a href="/terms-of-service.html">Terms of service</a></li></ul></div>
+    <div><h5>Clinic</h5><ul><li><a href="/about/">About CAIR SPA</a></li><li><a href="/services/">All treatments</a></li><li><a href="/products/">Skincare products</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact & booking</a></li><li><a href="${SITE.reviews}" target="_blank" rel="noopener">Google reviews</a></li><li><a href="/privacy-policy.html">Privacy policy</a></li><li><a href="/terms-of-service.html">Terms of service</a></li></ul></div>
   </div>
   <div class="foot-areas"><b>Serving</b>${AREAS.map(([n, h]) => `<a href="${h}">${n}</a>`).join('')}</div>
   <div class="foot-legal"><p>${SITE.oversight} Results vary from person to person. A consultation is required to determine whether a treatment is right for you. Content on this site is for general information and is not medical advice.</p><div class="row"><span>© ${new Date().getFullYear()} CAIR SPA. All rights reserved.</span><span>Photography is illustrative; models shown are not CAIR SPA patients.</span></div></div>
@@ -143,7 +145,7 @@ const BUSINESS = {
   name: SITE.name, alternateName: SITE.long, url: `${ORIGIN}/`, telephone: '+1-949-688-5898', email: SITE.email,
   contactPoint: [{ '@type': 'ContactPoint', telephone: '+1-949-688-5898', contactType: 'customer service', areaServed: 'US', availableLanguage: 'English' }, { '@type': 'ContactPoint', telephone: '+1-949-948-9399', contactType: 'customer service', areaServed: 'US' }],
   image: `${ORIGIN}/images/logo-phoenix-new.png`, logo: `${ORIGIN}/images/logo-phoenix-new.png`,
-  description: `Wellness and beauty spa in Huntington Beach, CA offering neurotoxin, fillers, Sculptra, PRF/PRP, microneedling, customized facials, Aerolase laser treatments and wellness services. ${SITE.oversight}`,
+  description: `Wellness and beauty spa in Huntington Beach, CA offering neurotoxin, fillers, Sculptra, PRF/PRP, microneedling, customized facials, Aerolase laser treatments and wellness services, plus medical-grade SkinCeuticals skincare. Services are performed under the oversight of Tran Plastic Surgery.`,
   address: { '@type': 'PostalAddress', streetAddress: SITE.street, addressLocality: SITE.city, addressRegion: SITE.region, postalCode: SITE.zip, addressCountry: 'US' },
   geo: { '@type': 'GeoCoordinates', latitude: 33.6784, longitude: -117.9988 },
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '18:00' }],
@@ -212,7 +214,7 @@ function faqBlock(faqs, { title = 'Frequently asked questions', intro = 'Can’t
 }
 const faqSchema = (faqs) => ({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
 const crumbSchema = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: `${ORIGIN}${u}` })) });
-const oversightBand = () => `<div class="oversight reveal"><div class="ic">${I.shield}</div><div><h3>Expert oversight you can trust</h3><p>${SITE.oversight} Tran Plastic Surgery is led by Dr. Tuan Tran, who is triple board-certified in plastic, reconstructive and hand surgery, and is located in our building at 20951 Brookhurst St.</p></div><a class="link-arrow" href="/about/">About our care</a></div>`;
+const oversightBand = () => `<div class="oversight reveal"><div class="ic">${I.shield}</div><div><h3>Expert oversight you can trust</h3><p>${SITE.oversight} Tran Plastic Surgery is located in our building at 20951 Brookhurst St.</p></div><a class="link-arrow" href="/about/">About our care</a></div>`;
 const visitBlock = () => `<div class="visit"><div><span class="eyebrow">Visit us</span><h2 style="margin-top:14px">Find us in Huntington Beach</h2><dl class="info-list"><div><dt>Address</dt><dd>${SITE.street}<br>${SITE.city}, ${SITE.region} ${SITE.zip}</dd></div><div><dt>Phone</dt><dd><a href="tel:${SITE.tel}">${SITE.phone}</a> <span class="muted">(main)</span><br><a href="tel:${SITE.cellTel}">${SITE.cell}</a> <span class="muted">(cell)</span></dd></div><div><dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd></div><div><dt>Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday – Sunday: Closed</dd></div></dl><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="${SITE.maps}" target="_blank" rel="noopener">${I.pin}Get directions</a><a class="btn btn-outline" href="/contact/#book">Book a visit</a></div></div><div class="map"><iframe title="Map showing CAIR SPA location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${SITE.mapEmbed}"></iframe></div></div>`;
 
 const GENERAL_FAQS = [
@@ -224,6 +226,16 @@ const GENERAL_FAQS = [
   { q: 'Which treatments have little or no downtime?', a: 'Customized facials and IV therapy typically have no downtime. Neurotoxin and fillers may cause mild swelling or bruising for a day or two, and microneedling usually causes a few days of redness. Your provider will explain what to expect for your plan.' },
 ];
 
+const PRODUCTS = [
+  { id: 'skinceuticals', name: 'SkinCeuticals', tag: 'Medical-grade skincare', blurb: 'Science-backed professional skincare from L’Oréal’s Dermatological Beauty division, offered through physicians and skincare professionals.',
+    body: ['SkinCeuticals is a professional skincare line known for its antioxidant serums, including C E Ferulic<sup>®</sup>, a vitamin C serum made with 15% pure vitamin C (L-ascorbic acid), 1% vitamin E and 0.5% ferulic acid.', 'The range also includes cleansers, correctors, moisturizers and daily sunscreens. Our team can help you build a simple at-home routine that complements your in-clinic treatments.'],
+    points: ['Antioxidant serums such as C E Ferulic<sup>®</sup>', 'Correctors, moisturizers and cleansers', 'Daily sunscreen protection', 'Routine matched to your skin at your visit'] },
+  { id: 'rejuran', name: 'Rejuran<sup>®</sup>', tag: 'Korean skin-renewal skincare', blurb: 'Skincare from Korea’s PharmaResearch, built around salmon-derived polynucleotides (PN/PDRN).',
+    body: ['Rejuran is a Korean skincare brand from PharmaResearch, known for formulas built around salmon-derived polynucleotides (PN/PDRN), such as the Rejuran Healer Turnover Ampoule.', 'Ask our team which Rejuran products are in stock and whether they suit your skin and routine.'],
+    points: ['Polynucleotide (PN/PDRN) formulas', 'Lightweight ampoules and creams', 'Easy to layer into a daily routine', 'Recommended after a skin assessment'] },
+];
+const productsTeaser = () => `<div class="prod-grid">${PRODUCTS.map((p) => `<a class="prod-card reveal" href="/products/#${p.id}"><span class="prod-tag">${p.tag}</span><span class="prod-mark">${p.name}</span><p>${p.blurb}</p><span class="link-arrow">Learn more</span></a>`).join('')}</div>`;
+
 // ---------- pages ----------
 function homePage() {
   const body = `
@@ -231,7 +243,7 @@ function homePage() {
   <div class="reveal in">
     <span class="eyebrow">Wellness &amp; beauty spa · Huntington Beach, CA</span>
     <h1>Natural-looking results, <em class="accent">medically guided.</em></h1>
-    <p class="lead">Neurotoxin, fillers, Sculptra<sup>®</sup>, Morpheus8 RF microneedling, customized facials, ombre powder brows, Aerolase laser care and FUE hair transplants in Huntington Beach. Every plan starts with a free, no-pressure consultation.</p>
+    <p class="lead"><strong>${SITE.oversight}</strong> Neurotoxin, fillers, Sculptra<sup>®</sup>, Morpheus8 RF microneedling, customized facials, ombre powder brows, Aerolase laser care and FUE hair transplants in Huntington Beach, plus medical-grade SkinCeuticals skincare. Every plan starts with a free, no-pressure consultation.</p>
     <div class="ctas"><a class="btn btn-primary" href="#book">${I.cal}Book your free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a></div>
     <div class="trust-row"><span>${I.check}Free consultation</span><span>${I.check}Performed under Tran Plastic Surgery</span><span>${I.check}Open Mon–Fri, 9–6</span></div>
   </div>
@@ -255,11 +267,17 @@ function homePage() {
   </a>
 </div><p class="wrap m8-credit">Product images courtesy of InMode. Results vary.</p></section>
 
-<section class="glance"><div class="wrap"><span class="eyebrow">At a glance</span><p><strong>CAIR SPA</strong> (${SITE.long}) is a wellness and beauty spa at ${SITE.street} in Huntington Beach, CA. It offers neurotoxin, HA fillers, Sculptra, PRF/PRP for hair and under-eyes, Morpheus8 radiofrequency microneedling, microneedling, customized facials, ombre powder brows and Aerolase laser treatments for hair removal, skin tags, veins, acne, melasma and pigmented lesions, plus IV and NAD+ therapy, weight loss, thread lifts, exosome therapy, lymphatic buccal facial massage and FUE hair transplants. ${SITE.oversight} Consultations are free, Monday to Friday, 9 AM to 6 PM.</p></div></section>
+<section class="glance"><div class="wrap"><span class="eyebrow">At a glance</span><p><strong>CAIR SPA</strong> (${SITE.long}) is a wellness and beauty spa at ${SITE.street} in Huntington Beach, CA. It offers neurotoxin, HA fillers, Sculptra, PRF/PRP for hair and under-eyes, Morpheus8 radiofrequency microneedling, microneedling, customized facials, ombre powder brows and Aerolase laser treatments for hair removal, skin tags, veins, acne, melasma and pigmented lesions, plus IV and NAD+ therapy, weight loss, thread lifts, exosome therapy, lymphatic buccal facial massage and FUE hair transplants. ${SITE.oversight} ${SITE.skincare} Consultations are free, Monday to Friday, 9 AM to 6 PM.</p></div></section>
 
 <section class="sec" id="treatments"><div class="wrap">
   <div class="sec-head reveal"><div><span class="eyebrow">Treatments</span><h2>Care for face, skin, hair and body</h2></div><p>Every treatment has its own page with what to expect, downtime and answers to common questions. Not sure which is right for you? That’s what the free consultation is for.</p></div>
   ${treatmentsBlock()}
+</div></section>
+
+<section class="sec bg-white" id="products"><div class="wrap">
+  <div class="sec-head reveal"><div><span class="eyebrow">Skincare we carry</span><h2>Medical-grade products for home care</h2></div><p>${SITE.skincare} Ask our team which products fit your skin and your treatment plan at your visit.</p></div>
+  ${productsTeaser()}
+  <p style="margin-top:28px"><a class="link-arrow" href="/products/">View all products</a></p>
 </div></section>
 
 <section class="sec bg-white" id="match"><div class="wrap matcher">
@@ -406,6 +424,22 @@ function aboutPage() {
   return layout({ title: 'About CAIR SPA | Wellness & Beauty Spa in Huntington Beach', description: 'Learn about CAIR SPA, a Huntington Beach wellness and beauty spa offering injectables, skin, Aerolase laser and wellness care performed under Tran Plastic Surgery.', canonical: '/about/', body, current: 'about', schema: [crumbSchema([['Home', '/'], ['About', '/about/']])] });
 }
 
+function productsPage() {
+  const blocks = PRODUCTS.map((p, i) => `<section class="sec${i % 2 ? ' bg-white' : ''}" id="${p.id}"><div class="wrap prod-row">
+  <div class="prod-panel reveal"><span class="prod-tag">${p.tag}</span><span class="prod-mark">${p.name}</span></div>
+  <div class="reveal"><span class="eyebrow">${p.tag}</span><h2 style="margin:14px 0 18px">${p.name}</h2><div class="prose">${p.body.map((t) => `<p>${t}</p>`).join('')}</div>
+    <ul class="ticks">${p.points.map((t) => `<li><b>${t}</b></li>`).join('')}</ul>
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="/contact/#book">Ask about ${p.name}</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a></div></div>
+</div></section>`).join('\n');
+  const body = `
+<section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Products</span></nav><span class="eyebrow">Products</span><h1>Medical-grade skincare at CAIR SPA</h1><p class="lead">${SITE.skincare} Our team can recommend products that suit your skin and support your in-clinic treatments. Stop by or call to ask what’s in stock.</p><div class="ctas"><a class="btn btn-primary" href="/contact/#book">${I.cal}Book free consultation</a><a class="btn btn-outline" href="tel:${SITE.tel}">${I.phone}Call ${SITE.phone}</a></div></div></section>
+${blocks}
+<section class="sec-sm"><div class="wrap"><p class="disclaimer">Products are recommended after a skin assessment and availability may vary. SkinCeuticals and C E Ferulic are trademarks of L’Oréal; Rejuran is a trademark of PharmaResearch. CAIR SPA is not affiliated with or endorsed by these companies.</p></div></section>
+<section class="sec-sm"><div class="wrap">${oversightBand()}</div></section>
+<section class="sec"><div class="wrap">${visitBlock()}</div></section>`;
+  return layout({ title: 'Skincare Products | SkinCeuticals & Rejuran | CAIR SPA Huntington Beach', description: 'CAIR SPA in Huntington Beach carries medical-grade SkinCeuticals skincare, including C E Ferulic, plus Rejuran. Ask our team which products suit your skin.', canonical: '/products/', body, current: 'products', schema: [crumbSchema([['Home', '/'], ['Products', '/products/']])] });
+}
+
 function contactPage() {
   const body = `
 <section class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Contact</span></nav>
@@ -433,6 +467,7 @@ services.forEach((s) => write(`services/${s.slug}/index.html`, servicePage(s)));
 write('about/index.html', aboutPage());
 write('contact/index.html', contactPage());
 write('faq/index.html', faqPage());
+write('products/index.html', productsPage());
 fs.copyFileSync(path.join(SRC, 'cair.css'), path.join(ROOT, `assets/cair-${VERSION}.css`));
 fs.copyFileSync(path.join(SRC, 'cair.js'), path.join(ROOT, `assets/cair-${VERSION}.js`));
 
@@ -441,7 +476,7 @@ const catalog = services.map((s) => ({ slug: s.slug, name: s.name.replace(/®/g,
 write('api/match.mjs', fs.readFileSync(path.join(SRC, 'match.template.js'), 'utf8').replace('/*CATALOG*/[]', JSON.stringify(catalog, null, 1)));
 
 // sitemap: new pages + existing area/legal pages
-const urls = ['/', '/services/', ...services.map((s) => `/services/${s.slug}`), '/about/', '/contact/', '/faq/', ...AREAS.map(([, h]) => h)];
+const urls = ['/', '/services/', ...services.map((s) => `/services/${s.slug}`), '/products/', '/about/', '/contact/', '/faq/', ...AREAS.map(([, h]) => h)];
 const existing = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8').match(/<loc>[^<]+<\/loc>/g)?.map((l) => l.replace(/<\/?loc>/g, '').replace(ORIGIN, '')) || [];
 const keep = existing.filter((u) => /-medical-spa$/.test(u) && !urls.includes(u));
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...urls, ...keep].map((u) => `  <url><loc>${ORIGIN}${u}</loc><lastmod>${TODAY}</lastmod></url>`).join('\n')}\n</urlset>\n`);
@@ -450,4 +485,4 @@ services.filter((x) => x.feature).forEach((x) => {
   const ch = x.feature.video.chapters, ts = (t) => `00:${String(Math.floor(t / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}.000`;
   write('videos/morpheus8-burst-chapters.vtt', 'WEBVTT\n\n' + ch.map((c, i) => `${i + 1}\n${ts(c.t)} --> ${ts(i < ch.length - 1 ? ch[i + 1].t : 125)}\n${c.title}\n`).join('\n'));
 });
-console.log(`Built ${services.length + 5} pages + sitemap (${urls.length + keep.length} URLs).`);
+console.log(`Built ${services.length + 6} pages + sitemap (${urls.length + keep.length} URLs).`);

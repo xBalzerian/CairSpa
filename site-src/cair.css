@@ -446,3 +446,20 @@ textarea.field{min-height:110px;resize:vertical}
 .dev-label{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
 .dev-card p{color:var(--muted);font-size:15px;max-width:420px;margin:0 auto}
 @media (max-width:760px){.dev-grid{grid-template-columns:1fr}.dev-img{height:240px}.dev-img img{max-height:240px}}
+
+/* Products (SkinCeuticals, Rejuran) */
+.menu > li > a,.menu > li > button{white-space:nowrap}
+@media (max-width:1360px){.menu > li > a,.menu > li > button{padding:0 10px}.menu > li > a::after,.menu > li > button::after{left:10px;right:10px}}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.prod-card{display:flex;flex-direction:column;gap:12px;background:var(--sand);border:1px solid var(--line);border-radius:var(--r-lg);padding:36px 34px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.prod-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(60,20,20,.35)}
+.prod-card p{color:var(--muted);font-size:15.5px}
+.prod-card .link-arrow{margin-top:auto}
+.prod-tag{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.prod-mark{font-family:var(--serif,Georgia,serif);font-size:40px;line-height:1.1;color:var(--ink)}
+.prod-mark sup,.prod-row h2 sup{font-size:.4em;vertical-align:super}
+.prod-row{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.prod-row>*{min-width:0}
+.prod-panel{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;min-height:340px;border-radius:var(--r-lg);background:linear-gradient(150deg,var(--brand-50),#fff 70%);border:1px solid var(--line);padding:40px}
+.prod-panel .prod-mark{font-size:54px}
+@media (max-width:860px){.prod-grid,.prod-row{grid-template-columns:1fr}.prod-row{gap:32px}.prod-panel{display:none}}
