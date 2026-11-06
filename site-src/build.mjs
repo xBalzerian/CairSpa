@@ -158,6 +158,7 @@ function layout({ title, description, canonical, body, current, schema = [], ogI
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="REUzpJypZkitEfVpAUncu2uQx0I1p8LKmgHgoc_RDZo">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${ORIGIN}${canonical}">
